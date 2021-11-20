@@ -6,14 +6,14 @@
   flex-direction: column;
   height: 100vh;
   justify-content: flex-end;
-  position: relative;
+  // position: relative;
   width: 100%;
   z-index: 2;
 }
 
 .content {
   inset: 0;
-  position: absolute;
+  // position: absolute;
 }
 
 .title {

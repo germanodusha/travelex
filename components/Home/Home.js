@@ -2,7 +2,8 @@ import React, { useRef, useState } from 'react'
 import styles from './Home.module.scss'
 import { useTranslations } from 'use-intl'
 import classNames from 'classnames'
-import Scroller from '../Scroller'
+import { ParallaxLayer } from '@react-spring/parallax'
+import PageScroller from '@/components/PageScroller'
 import Accordion from '../Accordion'
 import Footer from '../Layout/Footer'
 import imgBannerTwo from '../../public/images/bannerTwoHome.png'
@@ -16,7 +17,7 @@ function Home() {
   const [active, setActive] = useState('')
   const [page, setPage] = useState(0)
 
-  const onPressPagination = (page) => scroller.current.goToPage(page)
+  const onPressPagination = (page) => scroller.current.scrollTo(page)
 
   const faqItems = [
     {
@@ -42,24 +43,28 @@ function Home() {
       title: translate('bannerOne.title'),
       link: translate('bannerOne.link'),
       video: '/videos/bg-teste.mp4',
+      offset: 0,
     },
     {
       id: 'banner2',
       title: translate('bannerTwo.title'),
       link: translate('bannerTwo.link'),
       image: imgBannerTwo,
+      offset: 1,
     },
     {
       id: 'banner3',
       title: translate('bannerThree.title'),
       link: translate('bannerThree.link'),
       image: imgBannerThree,
+      offset: 2,
     },
     {
       id: 'banner4',
       title: translate('bannerFour.title'),
       link: translate('bannerFour.link'),
       image: imgBannerFour,
+      offset: 3,
     },
   ]
 
@@ -87,51 +92,56 @@ function Home() {
         ))}
       </div>
 
-      <Scroller ref={scroller} onBeforePageScroll={setPage}>
-        {bannerItems.map((b) => {
-          return (
+      <PageScroller ref={scroller} onPageChange={setPage} pages={6}>
+        {bannerItems.map((b) => (
+          <ParallaxLayer key={b.id} offset={b.offset}>
             <Banner
-              key={b.id}
               title={b.title}
               link={b.link}
               image={b.image}
               video={b.video}
             />
-          )
-        })}
+          </ParallaxLayer>
+        ))}
 
-        <div
-          className={styles['section']}
-          style={{ justifyContent: 'flex-end' }}
-        >
-          <p className={styles['section-subtitle']}>{translate('FAQ.title')}</p>
+        <ParallaxLayer offset={4}>
+          <div
+            className={styles['section']}
+            style={{ justifyContent: 'flex-end' }}
+          >
+            <p className={styles['section-subtitle']}>
+              {translate('FAQ.title')}
+            </p>
 
-          {faqItems.map((x) => {
-            const isActive = active === x.id
-            const activeClass = isActive ? 'active' : ''
-            const toggleAccordion = () => {
-              setActive(isActive ? '' : x.id)
-              // if (isActive) {
-              //   setActive('')
-              // } else {
-              //   setActive(x.id)
-              // }
-            }
-            return (
-              <Accordion
-                key={x.id}
-                id={x.id}
-                title={x.title}
-                content={x.content}
-                activeClass={activeClass}
-                toggleAccordion={toggleAccordion}
-              />
-            )
-          })}
-        </div>
+            {faqItems.map((x) => {
+              const isActive = active === x.id
+              const activeClass = isActive ? 'active' : ''
+              const toggleAccordion = () => {
+                setActive(isActive ? '' : x.id)
+                // if (isActive) {
+                //   setActive('')
+                // } else {
+                //   setActive(x.id)
+                // }
+              }
+              return (
+                <Accordion
+                  key={x.id}
+                  id={x.id}
+                  title={x.title}
+                  content={x.content}
+                  activeClass={activeClass}
+                  toggleAccordion={toggleAccordion}
+                />
+              )
+            })}
+          </div>
+        </ParallaxLayer>
 
-        <Footer />
-      </Scroller>
+        <ParallaxLayer offset={5}>
+          <Footer />
+        </ParallaxLayer>
+      </PageScroller>
     </>
   )
 }
