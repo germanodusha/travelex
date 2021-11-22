@@ -1,46 +1,49 @@
 import {
   forwardRef,
+  useCallback,
+  useState,
   useRef,
   useEffect,
-  useState,
   useImperativeHandle,
 } from 'react'
 import classNames from 'classnames'
+import { config as springConfig } from 'react-spring'
 import { Parallax } from '@react-spring/parallax'
-import useIsMobile from '@/hooks/useIsMobile'
+import { clamp } from '@/utils'
+import useBounceScroll from '@/hooks/useBounceScroll'
 import styles from './PageScroller.module.scss'
 
 const PageScroller = (
-  { children, className = '', pages = undefined, onPageChange = undefined },
+  { children, className = '', pages = 1, onPageChange = undefined },
   ref
 ) => {
   const scroller = useRef(null)
-  const isMobile = useIsMobile()
-  const [currentPage, setCurrentPage] = useState(0)
+  const [, setCurrentPage] = useState(0)
 
-  const toPrevPage = () => setCurrentPage((v) => v - 1)
+  const scrollTo = useCallback(
+    (i, isRelative = false) => {
+      const maxPages = pages - 1
 
-  const toNextPage = () => setCurrentPage((v) => v + 1)
+      setCurrentPage((v) => {
+        const newPage = clamp(isRelative ? v + i : i, 0, maxPages)
+        scroller.current.scrollTo(newPage)
+        if (typeof onPageChange === 'function') onPageChange(newPage)
+        return newPage
+      })
+    },
+    [pages, onPageChange]
+  )
 
-  useImperativeHandle(ref, () => ({
-    scrollTo: (page) => setCurrentPage(page),
-    toPrevPage,
-    toNextPage,
-  }))
+  useImperativeHandle(ref, () => ({ scrollTo }))
 
-  useEffect(() => {
-    if (currentPage > pages) {
-      setCurrentPage(pages - 1)
-      return
-    }
-    if (currentPage < 0) {
-      setCurrentPage(0)
-      return
-    }
-
-    scroller.current.scrollTo(currentPage)
-    if (typeof onPageChange === 'function') onPageChange(currentPage)
-  }, [pages, currentPage, onPageChange])
+  useBounceScroll({
+    callback: () => {
+      const toPage = Math.round(scroller.current.current / window.innerHeight)
+      scrollTo(toPage)
+    },
+    wait: 500,
+    preventDefault: false,
+  })
 
   useEffect(() => {
     const onKeydown = (event) => {
@@ -48,40 +51,29 @@ const PageScroller = (
         case 'ArrowLeft':
         case 'ArrowUp':
           event.preventDefault()
-          return toPrevPage()
+          return scrollTo(-1, true)
         case 'ArrowRight':
         case 'ArrowDown':
           event.preventDefault()
-          return toNextPage()
+          return scrollTo(1, true)
         default:
           return null
       }
     }
 
-    const onScroll = (event) => {
-      if (isMobile) return
-
-      event.preventDefault()
-
-      const scrollSize = event.deltaY + event.deltaX
-      if (scrollSize > 0) return toNextPage()
-      if (scrollSize < 0) return toPrevPage()
-    }
-
-    window.addEventListener('wheel', onScroll, { passive: false })
     window.addEventListener('keydown', onKeydown, { passive: false })
 
     return () => {
-      window.removeEventListener('wheel', onScroll, { passive: false })
-      window.removeEventListener('keydown', onKeydown, { passive: false })
+      window.removeEventListener('keydown', onKeydown)
     }
-  }, [isMobile])
+  }, [scrollTo])
 
   return (
     <Parallax
       ref={scroller}
       pages={pages}
       className={classNames(styles['scroller'], className)}
+      config={springConfig.gentle}
     >
       {children}
     </Parallax>
