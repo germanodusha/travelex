@@ -11,9 +11,10 @@ function Banner({
   children,
   video,
   showGradient = true,
+  bannerClass = undefined,
 }) {
   return (
-    <div key={id} className={classNames(styles['banner'], {})}>
+    <div className={classNames(styles['banner'], bannerClass)}>
       {image && (
         <div className={styles['banner-media']}>
           <Image src={image} alt={id} />

@@ -1,9 +1,12 @@
 import { useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-// import { useTranslations } from 'use-intl'
+import { useTranslations } from 'use-intl'
 import Footer from '@/components/Layout/Footer'
 import Title from '@/components/Title'
+import FAQAccordion from '@/components/FAQAccordion'
+import { FormTypes } from '@/components/RegisterForm'
+import FormPage from '@/components/FormPage'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import styles from './cambio.module.scss'
@@ -155,11 +158,52 @@ function ServicesContent({ services }) {
 }
 
 function FAQ() {
-  return null
+  const translate = useTranslations('Cambio')
+
+  const faqItems = [
+    {
+      id: 'faq1',
+      title: translate('FAQ.questionOneTitle'),
+      content: translate('FAQ.questionOne'),
+    },
+    {
+      id: 'faq2',
+      title: translate('FAQ.questionTwoTitle'),
+      content: translate('FAQ.questionTwo'),
+    },
+    {
+      id: 'faq3',
+      title: translate('FAQ.questionThreeTitle'),
+      content: translate('FAQ.questionThree'),
+    },
+  ]
+
+  return (
+    <div className={styles['faq']}>
+      <FAQAccordion faqItems={faqItems} theme="light" />
+    </div>
+  )
 }
 
 function Form() {
-  return null
+  const { query } = useRouter()
+
+  const type =
+    query.cambio === CambiosTypes.CORPORATIVO
+      ? FormTypes.CORPORATIVO
+      : FormTypes.PESSOA_FISICA
+
+  return (
+    <div className={styles['form']}>
+      <FormPage
+        description="Description"
+        descriptionTitle="Description title"
+        hideType
+        formType={type}
+        theme="light"
+      />
+    </div>
+  )
 }
 
 function Cambio() {

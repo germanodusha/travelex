@@ -32,6 +32,7 @@
   margin-top: $menu-height * 1.4;
   min-height: 100vh;
   padding: $padding-vertical $padding-horizontal * 1.1;
+  scroll-snap-align: start;
 
   &__nav {
     &-active {
@@ -77,5 +78,12 @@
   }
 }
 
-// .faq { }
-// .form { }
+.faq {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+.form {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}

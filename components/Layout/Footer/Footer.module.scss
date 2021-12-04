@@ -7,6 +7,7 @@
   padding-left: $padding-horizontal * 1.5;
   padding-right: $padding-horizontal * 1.5;
   padding-top: $padding-vertical * 1.5;
+  scroll-snap-align: start;
   width: 100%;
 }
 
