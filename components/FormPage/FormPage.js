@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import classNames from 'classnames'
 import Banner from '@/components/Banner'
 import { useMenuTheme } from '@/contexts/LayoutContext'
 import RegisterForm, { FormTypes } from '@/components/RegisterForm'
@@ -10,20 +11,31 @@ function FormPage({
   backgroundImage,
   hideFormType = false,
   formType = FormTypes.PESSOA_FISICA,
-  theme = 'light',
+  menuTheme = 'light',
+  theme = undefined,
   ...props
 }) {
   const { changeTheme } = useMenuTheme()
 
   useEffect(() => {
-    changeTheme(theme)
+    changeTheme(menuTheme)
     return () => changeTheme('dark')
-  }, [changeTheme, theme])
+  }, [changeTheme, menuTheme])
 
   return (
-    <Banner showGradient={false} image={backgroundImage}>
+    <Banner
+      showGradient={false}
+      image={backgroundImage}
+      bannerClass={classNames({
+        [styles['page-white']]: theme === 'white',
+      })}
+    >
       <div className={styles['page']}>
-        <div className={styles['page__desc']}>
+        <div
+          className={classNames(styles['page__desc'], {
+            [styles['page__desc-white']]: theme === 'white',
+          })}
+        >
           {descriptionTitle && (
             <p className={styles['page__desc-title']}>{descriptionTitle}</p>
           )}
@@ -34,6 +46,7 @@ function FormPage({
           <RegisterForm
             hideType={hideFormType}
             formType={formType}
+            theme={theme}
             {...props}
           />
         </div>

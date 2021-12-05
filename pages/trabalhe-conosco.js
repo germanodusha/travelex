@@ -16,7 +16,7 @@ function Cadastro(props) {
         descriptionTitle={translate('descriptionTitle')}
         formType={FormTypes.TRABALHE_CONOSCO}
         hideFormType
-        theme="light"
+        menuTheme="light"
         {...props}
       />
       <Footer />

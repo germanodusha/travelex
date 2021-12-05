@@ -33,6 +33,7 @@ const INITIAL_VALUE = {
 const RegisterForm = ({
   hideType = false,
   formType = FormTypes.PESSOA_FISICA,
+  theme = undefined,
 }) => {
   const translate = useTranslations('Form')
   const [type, setType] = useState(formType)
@@ -96,7 +97,11 @@ const RegisterForm = ({
   if (submiting) return <div>Enviando...</div>
   if (sended) return <div>Enviado com sucesso.</div>
   return (
-    <div className={styles['register-form']}>
+    <div
+      className={classNames(styles['register-form'], {
+        [styles['register-form__white']]: theme === 'white',
+      })}
+    >
       {!hideType && type !== FormTypes.TRABALHE_CONOSCO && (
         <div className={styles['select']}>
           <button
@@ -130,11 +135,17 @@ const RegisterForm = ({
                   name="corporateName"
                   type="text"
                   label={translate('inputs.corporateName')}
+                  className={classNames({
+                    [styles['register-form__white-input']]: theme === 'white',
+                  })}
                 />
                 <Field
                   name="cnpj"
                   type="text"
                   label={translate('inputs.cnpj')}
+                  className={classNames({
+                    [styles['register-form__white-input']]: theme === 'white',
+                  })}
                 />
               </>
             )}
@@ -147,6 +158,9 @@ const RegisterForm = ({
                   ? translate('inputs.representativeName')
                   : translate('inputs.name')
               }
+              className={classNames({
+                [styles['register-form__white-input']]: theme === 'white',
+              })}
             />
 
             <FieldGroup>
@@ -158,11 +172,17 @@ const RegisterForm = ({
                     ? translate('inputs.representativeCpf')
                     : translate('inputs.cpf')
                 }
+                className={classNames({
+                  [styles['register-form__white-input']]: theme === 'white',
+                })}
               />
               <PhoneField
                 name="phone"
                 errorMessage={translate('error.phoneInvalid')}
                 label={translate('inputs.phone')}
+                className={classNames({
+                  [styles['register-form__white-input']]: theme === 'white',
+                })}
               />
             </FieldGroup>
 
@@ -174,6 +194,9 @@ const RegisterForm = ({
                   ? translate('inputs.representativeEmail')
                   : translate('inputs.email')
               }
+              className={classNames({
+                [styles['register-form__white-input']]: theme === 'white',
+              })}
             />
 
             {type === FormTypes.TRABALHE_CONOSCO && (
@@ -182,23 +205,36 @@ const RegisterForm = ({
                   name="occupation"
                   type="text"
                   label={translate('inputs.occupation')}
+                  className={classNames({
+                    [styles['register-form__white-input']]: theme === 'white',
+                  })}
                 />
                 <Field
                   name="message"
                   type="text"
                   label={translate('inputs.message')}
+                  className={classNames({
+                    [styles['register-form__white-input']]: theme === 'white',
+                  })}
                 />
                 <Field
                   name="file"
                   type="file"
                   label={translate('inputs.file')}
                   accept="application/msword, application/pdf"
+                  className={classNames({
+                    [styles['register-form__white-input']]: theme === 'white',
+                  })}
                 />
               </>
             )}
 
             <div className={styles['register-form__divider']} />
-            <div className={styles['button']}>
+            <div
+              className={classNames(styles['button'], {
+                [styles['button__white']]: theme === 'white',
+              })}
+            >
               <button type="submit">{translate('send')}</button>
             </div>
           </Form>

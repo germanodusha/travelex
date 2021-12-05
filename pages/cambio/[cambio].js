@@ -163,7 +163,8 @@ function Form() {
         description={translate('form-description')}
         hideType
         formType={type}
-        theme="light"
+        menuTheme="light"
+        theme="white"
       />
     </div>
   )

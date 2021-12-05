@@ -12,7 +12,6 @@ const Menu = () => {
 
   useEffect(() => {
     setVisible(toggle === 'active' ? '' : 'menu')
-    console.log(visible)
   }, [toggle])
 
   return (

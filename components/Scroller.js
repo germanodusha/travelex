@@ -43,7 +43,6 @@ const Scroller = forwardRef((props, ref) => {
 
   const getNewPageNumber = (number) => {
     const newPage = Math.max(Math.min(totalPages, number), 0)
-    console.log({ newPage })
     return newPage
   }
 

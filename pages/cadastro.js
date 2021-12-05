@@ -11,7 +11,7 @@ function Cadastro(props) {
       backgroundImage={imgBannerOne}
       description={translate('description')}
       // descriptionTitle="Trabalho conosco"
-      theme="light"
+      menuTheme="light"
       hideFormType={false}
       formType={FormTypes.PESSOA_FISICA}
       {...props}

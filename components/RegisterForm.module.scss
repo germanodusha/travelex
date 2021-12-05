@@ -10,6 +10,15 @@
   &__divider {
     min-height: 10vh;
   }
+
+  &__white-input {
+    border-bottom-color: $navy-blue;
+    color: $navy-blue;
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
 }
 
 .button {
@@ -21,6 +30,15 @@
   &:hover {
     border-bottom-color: $navy-blue !important;
     color: $navy-blue;
+  }
+
+  &__white {
+    color: $navy-blue;
+
+    &:hover {
+      border-bottom-color: $gray !important;
+      color: $gray;
+    }
   }
 }
 

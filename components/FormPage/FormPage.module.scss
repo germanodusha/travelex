@@ -14,9 +14,17 @@
     padding-top: 25vh;
   }
 
+  &-white {
+    background-color: $white;
+  }
+
   &__desc {
     padding-bottom: $padding-vertical * 2;
     padding-right: $padding-vertical * 4;
+
+    &-white {
+      color: $navy-blue;
+    }
 
     p {
       opacity: 0.5;
@@ -34,8 +42,6 @@
       width: 38vw;
     }
   }
-
-  // &__form { }
 }
 
 .register {
