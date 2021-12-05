@@ -6,5 +6,4 @@ Allow: /
 Host: www.yourwebsite.com
 
 # Sitemaps
-Sitemap: www.yourwebsite.com/sitemap.xml
 Sitemap: /genesys-dev.vercel.app/server-sitemap.xml

@@ -143,7 +143,12 @@ function FAQ() {
 
   return (
     <div className={styles['faq']}>
-      <FAQAccordion faqItems={faqItems} theme="white" />
+      <FAQAccordion
+        showTitle
+        title={translate('FAQ.title')}
+        faqItems={faqItems}
+        theme="white"
+      />
     </div>
   )
 }

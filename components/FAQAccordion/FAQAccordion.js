@@ -9,6 +9,7 @@ function FAQAccordion({
   theme = 'dark',
   showContact = false,
   faqItems = [],
+  title = undefined,
 }) {
   const translate = useTranslations('FAQ')
   const [active, setActive] = useState('')
@@ -21,7 +22,9 @@ function FAQAccordion({
       })}
     >
       {showTitle && (
-        <p className={styles['section__subtitle']}>{translate('title')}</p>
+        <p className={styles['section__subtitle']}>
+          {title || translate('title')}
+        </p>
       )}
 
       {faqItems.map((x) => {
