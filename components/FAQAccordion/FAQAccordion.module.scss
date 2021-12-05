@@ -23,6 +23,15 @@
     }
   }
 
+  &__white {
+    background: $white;
+
+    div,
+    p {
+      color: $black;
+    }
+  }
+
   &__subtitle {
     color: $white;
     font-family: Bebas Neue Regular;

@@ -92,7 +92,9 @@ function ServicesContent() {
                 <div className={styles['services__nav-active']} />
               )}
               <Link href={getHref(path)}>
-                <a>{translate(`services.${path}`)}</a>
+                <a>
+                  <h3>{translate(`services.${path}`)}</h3>
+                </a>
               </Link>
             </div>
           ))}
@@ -101,11 +103,18 @@ function ServicesContent() {
 
       <div className={styles['services__body']}>
         <div className={styles['services__service-desk']}>
-          <h3>{translate(`services.${servicePath}`)}</h3>
+          <div className={styles['services__service-header']} />
           <p>{translate(`services.${servicePath}-body`)}</p>
         </div>
 
-        <div className={styles['services__service-mobile']}></div>
+        <div className={styles['services__service-mobile']}>
+          {services.map((path) => (
+            <div key={path} id={path}>
+              <h3>{translate(`services.${path}`)}</h3>
+              <p>{translate(`services.${path}-body`)}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -134,7 +143,7 @@ function FAQ() {
 
   return (
     <div className={styles['faq']}>
-      <FAQAccordion faqItems={faqItems} theme="light" />
+      <FAQAccordion faqItems={faqItems} theme="white" />
     </div>
   )
 }
@@ -164,7 +173,7 @@ function Cambio() {
   useLockScrollFirstPage()
 
   return (
-    <div className={styles['content']}>
+    <div>
       <Cover />
       <ServicesContent />
       <FAQ />

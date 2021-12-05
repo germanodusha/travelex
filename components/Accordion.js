@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useMemo, useState, useRef, useEffect } from 'react'
 import classNames from 'classnames'
 import styles from './Accordion.module.scss'
 import { Chevron } from './Icons'
@@ -13,6 +13,18 @@ function Accordion({
   const activeContent = useRef(null)
   const [setHeight, setHeightState] = useState('0px')
   const [setRotate, setRotateState] = useState('accordion-icon')
+
+  const iconFill = useMemo(() => {
+    switch (theme) {
+      case 'dark':
+        return 'white'
+      case 'white':
+      case 'light':
+        return 'black'
+      default:
+        return 'black'
+    }
+  }, [theme])
 
   useEffect(() => {
     setHeightState(
@@ -36,7 +48,7 @@ function Accordion({
             styles[`${setRotate}`]
           )}
         >
-          <Chevron fill={theme === 'light' ? 'black' : 'white'} />
+          <Chevron fill={iconFill} />
         </div>
       </button>
       <div

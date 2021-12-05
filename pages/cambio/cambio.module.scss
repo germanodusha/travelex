@@ -1,7 +1,5 @@
 @import '@/styles/theme';
 
-// .content { }
-
 .cover {
   background-color: $navy-blue;
   display: flex;
@@ -29,16 +27,32 @@
 
 .services {
   display: flex;
-  margin-top: $menu-height * 1.4;
   min-height: 100vh;
-  padding: $padding-vertical $padding-horizontal * 1.1;
+  padding: $menu-height * 1.4 $padding-horizontal * 1.1 $padding-vertical;
   scroll-snap-align: start;
+
+  p {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-family: Bebas Neue Regular;
+    font-size: 1.8em;
+  }
+
+  &__bg-header {
+    background-color: $white;
+    height: $menu-height * 1.4;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
 
   &__nav {
     &-active {
       background-color: $navy-blue;
-      bottom: 0.3rem;
-      height: 0.22rem;
+      bottom: 0.6rem;
+      height: 0.3rem;
       position: absolute;
       transform: translateX(-110%);
       width: $padding-vertical * 1.1;
@@ -67,8 +81,36 @@
       top: $menu-height * 1.4;
     }
 
-    // &-desk { }
-    // &-mobile { }
+    &-desk {
+      display: none;
+      min-width: 35vw;
+
+      @media (min-width: $min-width-sm) {
+        display: block;
+      }
+    }
+  }
+
+  &__service {
+    &-desk {
+      display: none;
+
+      @media (min-width: $min-width-sm) {
+        display: block;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &-mobile {
+      display: block;
+
+      @media (min-width: $min-width-sm) {
+        display: none;
+      }
+    }
   }
 
   &__body {

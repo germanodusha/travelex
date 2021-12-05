@@ -17,6 +17,7 @@ function FAQAccordion({
     <div
       className={classNames(styles['section'], {
         [styles['section__light']]: theme === 'light',
+        [styles['section__white']]: theme === 'white',
       })}
     >
       {showTitle && (
