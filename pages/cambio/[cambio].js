@@ -11,17 +11,44 @@ import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import styles from './cambio.module.scss'
 
-const LOREM_IPSUM =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae nulla ac velit accumsan mattis. Proin eget turpis felis. Praesent vitae tortor eu leo dictum molestie id eget odio. In tellus magna, facilisis a lectus quis, rhoncus consectetur sem. In eget risus luctus, feugiat dolor sed, interdum mi. Proin condimentum mauris metus, sit amet luctus dui suscipit tristique. Duis a sapien eget velit tincidunt hendrerit. Nam aliquam semper velit in suscipit. Ut quis massa in magna viverra rhoncus id quis mi.\n\nCurabitur at interdum eros. Quisque eu venenatis velit. Duis vel aliquam lacus. Fusce aliquet luctus eros quis mollis. Mauris viverra efficitur neque sit amet auctor. Praesent vitae dictum arcu, eu porta mauris. In at efficitur orci. Vivamus tristique tempus semper. Fusce porttitor massa sit amet neque eleifend consequat. Pellentesque sed sodales sapien. Quisque eu cursus erat. Nunc malesuada fringilla egestas. Proin eu sodales eros. Nulla mi mauris, rutrum finibus cursus at, vestibulum non tortor.'
+const useCambioTranslations = () => {
+  const router = useRouter()
+  const translate = useTranslations(`cambio-${router.query.cambio}`)
+
+  return translate
+}
+
+const CambiosTypes = {
+  CORPORATIVO: 'corporativo',
+  PESSOA_FISICA: 'pessoa-fisica',
+}
+
+const Services = {
+  [CambiosTypes.CORPORATIVO]: [
+    'analises-registros-e-declaracoes',
+    'hedge',
+    'assesoria-e-servicos',
+    'trade-finance',
+    'trade-service',
+  ],
+  [CambiosTypes.PESSOA_FISICA]: [
+    'cambio-turismo',
+    'transferencias-internacionais',
+    'pagamentos-internacionais',
+    'hedge',
+  ],
+}
 
 function Cover() {
+  const translate = useCambioTranslations()
+
   return (
     <div className={styles['cover']}>
       <ChangeThemeOnScroll theme="light" />
       <div className={styles['cover__header']} />
       <div>
         <Title
-          mainTitle={'Câmbio Corporativo\nTravelex Partners'}
+          mainTitle={translate('title')}
           color="white"
           titleClassName={styles['cover__title']}
         />
@@ -32,106 +59,40 @@ function Cover() {
   )
 }
 
-const CambiosTypes = {
-  CORPORATIVO: 'corporativo',
-  PESSOA_FISICA: 'pessoa-fisica',
-}
-
-const Services = {
-  [CambiosTypes.CORPORATIVO]: [
-    {
-      id: 0,
-      title: 'Análises, Registros e Declarações',
-      body: `Análises, Registros e Declarações\n\n${LOREM_IPSUM}`,
-      path: 'analises-registros-e-declaracoes',
-    },
-    {
-      id: 1,
-      title: 'Hedge',
-      body: `Hedge\n\n${LOREM_IPSUM}`,
-      path: 'hedge',
-    },
-    {
-      id: 2,
-      title: 'Assesoria e Serviços',
-      body: `Assessoria e Serviços\n\n${LOREM_IPSUM}`,
-      path: 'assesoria-e-servicos',
-    },
-    {
-      id: 3,
-      title: 'Trade Finance',
-      body: `Trade Finance\n\n${LOREM_IPSUM}`,
-      path: 'trade-finance',
-    },
-    {
-      id: 4,
-      title: 'Trade Service',
-      body: `Trade Service\n\n${LOREM_IPSUM}`,
-      path: 'trade-service',
-    },
-  ],
-  [CambiosTypes.PESSOA_FISICA]: [
-    {
-      id: 0,
-      title: 'Câmbio Turismo',
-      body: `Câmbio Turismo\n\n${LOREM_IPSUM}`,
-      path: 'cambio-turismo',
-    },
-    {
-      id: 1,
-      title: 'Transferências Internacionais',
-      body: `Transferências Internacionais\n\n${LOREM_IPSUM}`,
-      path: 'transferencias-internacionais',
-    },
-    {
-      id: 2,
-      title: 'Pagamentos Internacionais',
-      body: `Pagamentos Internacionais\n\n${LOREM_IPSUM}`,
-      path: 'pagamentos-internacionais',
-    },
-    {
-      id: 3,
-      title: 'Hedge',
-      body: `Hedge\n\n${LOREM_IPSUM}`,
-      path: 'hedge',
-    },
-  ],
-}
-
-function ServicesContent({ services }) {
+function ServicesContent() {
   const router = useRouter()
-
-  const getHref = useCallback(
-    (path) =>
-      `${router.pathname.replace('[cambio]', router.query.cambio)}#${path}`,
-    [router.pathname, router.query]
-  )
+  const { cambio } = router.query
+  const services = Services[cambio]
+  const translate = useCambioTranslations()
 
   const servicePath = useMemo(() => {
-    const DEFAULT_PATH = services[0].path
-    const [, path] = router.asPath.split('#')
+    const DEFAULT_PATH = services[0]
 
+    const [, path] = router.asPath.split('#')
     if (!path) return DEFAULT_PATH
 
-    const isValid = services.map((s) => s.path).some((p) => p === path)
+    const isValid = services.some((p) => p === path)
     if (!isValid) return DEFAULT_PATH
 
     return path
   }, [services, router.asPath])
 
-  const service = services.find((s) => s.path === servicePath)
+  const getHref = useCallback(
+    (path) => `${router.pathname.replace('[cambio]', cambio)}#${path}`,
+    [router.pathname, cambio]
+  )
 
   return (
     <div className={styles['services']}>
       <div className={styles['services__nav-desk']}>
         <div className={styles['services__nav-sticky']}>
-          {services.map(({ id, title, path }) => (
+          {services.map((path, id) => (
             <div key={id} className={styles['services__nav-item']}>
               {path === servicePath && (
                 <div className={styles['services__nav-active']} />
               )}
               <Link href={getHref(path)}>
-                <a>{title}</a>
+                <a>{translate(`services.${path}`)}</a>
               </Link>
             </div>
           ))}
@@ -140,25 +101,18 @@ function ServicesContent({ services }) {
 
       <div className={styles['services__body']}>
         <div className={styles['services__service-desk']}>
-          <h3>{service?.title}</h3>
-          <p>{service?.body}</p>
+          <h3>{translate(`services.${servicePath}`)}</h3>
+          <p>{translate(`services.${servicePath}-body`)}</p>
         </div>
 
         <div className={styles['services__service-mobile']}></div>
-
-        {/**services.map(({ id, title, body, path }) => (
-          <div key={id} id={path}>
-            <h3 className={styles['services__nav-mobile']}>{title}</h3>
-            <p>{body}</p>
-          </div>
-        ))**/}
       </div>
     </div>
   )
 }
 
 function FAQ() {
-  const translate = useTranslations('Cambio')
+  const translate = useCambioTranslations()
 
   const faqItems = [
     {
@@ -187,6 +141,7 @@ function FAQ() {
 
 function Form() {
   const { query } = useRouter()
+  const translate = useCambioTranslations()
 
   const type =
     query.cambio === CambiosTypes.CORPORATIVO
@@ -196,8 +151,7 @@ function Form() {
   return (
     <div className={styles['form']}>
       <FormPage
-        description="Description"
-        descriptionTitle="Description title"
+        description={translate('form-description')}
         hideType
         formType={type}
         theme="light"
@@ -207,15 +161,12 @@ function Form() {
 }
 
 function Cambio() {
-  const { query } = useRouter()
-  // const translate = useTranslations('Corporate')
-
   useLockScrollFirstPage()
 
   return (
     <div className={styles['content']}>
       <Cover />
-      <ServicesContent services={Services[query.cambio]} />
+      <ServicesContent />
       <FAQ />
       <Form />
       <Footer />
