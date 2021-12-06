@@ -1,7 +1,9 @@
 import { useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslations } from 'use-intl'
+import classNames from 'classnames'
 import Footer from '@/components/Layout/Footer'
 import Title from '@/components/Title'
 import FAQAccordion from '@/components/FAQAccordion'
@@ -9,6 +11,10 @@ import { FormTypes } from '@/components/RegisterForm'
 import FormPage from '@/components/FormPage'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
+import imgBannerOne from '../../public/images/bannerTwoHome.png'
+import imgBannerTwo from '../../public/images/bannerTwoHome.png'
+import imgBannerThree from '../../public/images/bannerThreeHome.png'
+import imgBannerFour from '../../public/images/bannerFourHome.png'
 import styles from './cambio.module.scss'
 
 const useCambioTranslations = () => {
@@ -25,17 +31,17 @@ const CambiosTypes = {
 
 const Services = {
   [CambiosTypes.CORPORATIVO]: [
-    'analises-registros-e-declaracoes',
-    'hedge',
-    'assesoria-e-servicos',
-    'trade-finance',
-    'trade-service',
+    { image: imgBannerOne, path: 'analises-registros-e-declaracoes' },
+    { image: imgBannerTwo, path: 'hedge' },
+    { image: imgBannerThree, path: 'assesoria-e-servicos' },
+    { image: imgBannerFour, path: 'trade-finance' },
+    { image: imgBannerOne, path: 'trade-service' },
   ],
   [CambiosTypes.PESSOA_FISICA]: [
-    'cambio-turismo',
-    'transferencias-internacionais',
-    'pagamentos-internacionais',
-    'hedge',
+    { image: imgBannerOne, path: 'cambio-turismo' },
+    { image: imgBannerTwo, path: 'transferencias-internacionais' },
+    { image: imgBannerThree, path: 'pagamentos-internacionais' },
+    { image: imgBannerFour, path: 'hedge' },
   ],
 }
 
@@ -65,16 +71,16 @@ function ServicesContent() {
   const services = Services[cambio]
   const translate = useCambioTranslations()
 
-  const servicePath = useMemo(() => {
-    const DEFAULT_PATH = services[0]
+  const service = useMemo(() => {
+    const DEFAULT_SERVICE = services[0]
 
     const [, path] = router.asPath.split('#')
-    if (!path) return DEFAULT_PATH
+    if (!path) return DEFAULT_SERVICE
 
-    const isValid = services.some((p) => p === path)
-    if (!isValid) return DEFAULT_PATH
+    const findService = services.find((p) => p.path === path)
+    if (!findService) return DEFAULT_SERVICE
 
-    return path
+    return findService
   }, [services, router.asPath])
 
   const getHref = useCallback(
@@ -86,9 +92,9 @@ function ServicesContent() {
     <div className={styles['services']}>
       <div className={styles['services__nav-desk']}>
         <div className={styles['services__nav-sticky']}>
-          {services.map((path, id) => (
+          {services.map(({ path }, id) => (
             <div key={id} className={styles['services__nav-item']}>
-              {path === servicePath && (
+              {path === service.path && (
                 <div className={styles['services__nav-active']} />
               )}
               <Link href={getHref(path)}>
@@ -103,13 +109,35 @@ function ServicesContent() {
 
       <div className={styles['services__body']}>
         <div className={styles['services__service-desk']}>
+          <div className={styles['services__service-bg']}>
+            {/** TODO try with background image **/}
+            <Image
+              alt="background"
+              src={service.image}
+              objectFit="cover"
+              layout="fill"
+            />
+          </div>
           <div className={styles['services__service-header']} />
-          <p>{translate(`services.${servicePath}-body`)}</p>
+          <p>{translate(`services.${service.path}-body`)}</p>
         </div>
 
         <div className={styles['services__service-mobile']}>
-          {services.map((path) => (
+          {services.map(({ path, image }) => (
             <div key={path} id={path}>
+              <div
+                className={classNames(
+                  styles['services__service-bg'],
+                  styles['services__service-bg-mobile']
+                )}
+              >
+                <Image
+                  alt="background"
+                  src={image}
+                  objectFit="cover"
+                  layout="fill"
+                />
+              </div>
               <h3>{translate(`services.${path}`)}</h3>
               <p>{translate(`services.${path}-body`)}</p>
             </div>
