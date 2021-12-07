@@ -20,6 +20,8 @@ import styles from './cambio.module.scss'
 const LOREM_IPSUM =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci magna, fermentum eu scelerisque id, efficitur ut dui. Sed mattis aliquet placerat. Integer imperdiet, eros et semper malesuada, sapien lorem luctus erat, ac auctor erat velit sed odio. Quisque efficitur nulla sed tortor dictum, vitae lobortis turpis pharetra. Sed et tempor tellus, non accumsan enim. Curabitur scelerisque erat dignissim turpis commodo ullamcorper. Curabitur malesuada nibh in facilisis consectetur. Curabitur non luctus nunc, vitae rutrum risus. In sed mi leo. Vivamus tempor tellus quis velit sagittis bibendum. Mauris eu suscipit augue. In id nunc nisl.'
 
+const themeOptions = { background: 'white' }
+
 const useCambioTranslations = () => {
   const router = useRouter()
   const translate = useTranslations(`cambio-${router.query.cambio}`)
@@ -53,7 +55,7 @@ function Cover() {
 
   return (
     <div className={styles['cover']}>
-      <ChangeThemeOnScroll theme="light" />
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
       <div className={styles['cover__header']} />
       <div>
         <Title
@@ -63,7 +65,7 @@ function Cover() {
         />
         <div className={styles['cover__border']} />
       </div>
-      <ChangeThemeOnScroll theme="light" />
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
     </div>
   )
 }
@@ -217,7 +219,17 @@ function Form() {
         menuTheme="light"
         theme="white"
       />
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
     </div>
+  )
+}
+
+function FooterWrapper() {
+  return (
+    <>
+      <ChangeThemeOnScroll theme="dark" options={{}} />
+      <Footer />
+    </>
   )
 }
 
@@ -230,7 +242,7 @@ function Cambio() {
       <ServicesContent />
       <FAQ />
       <Form />
-      <Footer />
+      <FooterWrapper />
     </div>
   )
 }

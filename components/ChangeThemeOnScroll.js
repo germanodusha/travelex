@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react'
 import { useIntersection } from 'react-use'
 import { useMenuTheme } from '@/contexts/LayoutContext'
 
-function ChangeThemeOnScroll({ theme, style }) {
+function ChangeThemeOnScroll({ theme, options = {}, style }) {
   const ref = useRef()
   const { changeTheme } = useMenuTheme()
 
@@ -14,8 +14,8 @@ function ChangeThemeOnScroll({ theme, style }) {
 
   useEffect(() => {
     if (!intersection || !intersection.isIntersecting) return
-    changeTheme(theme)
-  }, [intersection, theme])
+    changeTheme(theme, options)
+  }, [intersection, options, theme])
 
   return (
     <div
