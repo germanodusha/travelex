@@ -178,7 +178,7 @@ const RegisterForm = ({
               />
               <PhoneField
                 name="phone"
-                errorMessage={translate('error.phoneInvalid')}
+                errorMessage={translate('errors.phoneInvalid')}
                 label={translate('inputs.phone')}
                 className={classNames({
                   [styles['register-form__white-input']]: theme === 'white',
@@ -188,7 +188,7 @@ const RegisterForm = ({
 
             <EmailField
               name="email"
-              errorMessage={translate('error.emailInvalid')}
+              errorMessage={translate('errors.emailInvalid')}
               label={
                 type === FormTypes.CORPORATIVO
                   ? translate('inputs.representativeEmail')

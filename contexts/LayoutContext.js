@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useCallback, useContext, useState } from 'react'
 
 function isObject(value) {
   return value && typeof value === 'object' && value.constructor === Object
@@ -10,7 +10,7 @@ function LayoutProvider({ children }) {
   const [menuTheme, setMenuTheme] = useState('dark')
   const [menuOptions, setOptions] = useState({})
 
-  const changeMenuTheme = (theme, options = {}) => {
+  const changeMenuTheme = useCallback((theme, options = {}) => {
     const isValidTheme = ['light', 'dark', 'white'].includes(theme)
     if (!isValidTheme) {
       throw new Error('Invalid theme. light or dark is available')
@@ -23,7 +23,7 @@ function LayoutProvider({ children }) {
 
     setMenuTheme(theme)
     setOptions(options)
-  }
+  }, [])
 
   return (
     <LayoutContext.Provider value={{ menuTheme, changeMenuTheme, menuOptions }}>

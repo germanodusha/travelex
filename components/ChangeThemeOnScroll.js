@@ -15,7 +15,7 @@ function ChangeThemeOnScroll({ theme, style }) {
   useEffect(() => {
     if (!intersection || !intersection.isIntersecting) return
     changeTheme(theme)
-  }, [intersection, theme, changeTheme])
+  }, [intersection, theme])
 
   return (
     <div
