@@ -25,6 +25,7 @@ function LayoutProvider({ children }) {
     setOptions(options)
   }, [])
 
+  console.log({ menuOptions })
   return (
     <LayoutContext.Provider value={{ menuTheme, changeMenuTheme, menuOptions }}>
       {children}
