@@ -28,24 +28,17 @@
 .services {
   display: flex;
   min-height: 100vh;
-  padding: 0 $padding-horizontal * 1.1;
   scroll-snap-align: start;
 
   p {
+    color: $navy-blue;
     font-size: 1.8em;
   }
 
   h3 {
+    color: $navy-blue;
     font-family: Bebas Neue Regular;
     font-size: 1.8em;
-  }
-
-  &__bg-header {
-    background-color: $white;
-    height: $menu-height * 1.4;
-    left: 0;
-    position: absolute;
-    right: 0;
   }
 
   &__nav {
@@ -59,6 +52,7 @@
     }
 
     &-item {
+      padding-left: $padding-horizontal * 1.1;
       padding-right: $padding-horizontal * 2;
       position: relative;
       text-transform: uppercase;
@@ -92,21 +86,33 @@
   }
 
   &__service {
-    &-bg {
-      height: 100%;
-      left: 30vw;
-      position: absolute;
-      right: 0;
-      z-index: -1;
+    &-banner {
+      height: 100vh;
+      position: relative;
+      width: 100%;
 
       img {
         filter: blur(7px);
+        height: 100vh;
         transform: scale(1.1);
       }
+    }
 
-      &-mobile {
-        left: 0;
+    &-description {
+      font-weight: bold;
+      padding: 0 $padding-horizontal;
+      position: absolute;
+      top: 0;
+
+      @media (min-width: $min-width-sm) {
+        padding-left: $padding-horizontal * 4;
+        width: 70%;
       }
+    }
+
+    &-body {
+      padding-right: $padding-horizontal * 1.1;
+      scroll-snap-align: start;
     }
 
     &-desk {
@@ -124,10 +130,15 @@
 
     &-mobile {
       display: block;
+      padding-top: $menu-height;
 
       @media (min-width: $min-width-sm) {
         display: none;
       }
+    }
+
+    &-mobile-body {
+      padding: 0 $padding-horizontal;
     }
   }
 

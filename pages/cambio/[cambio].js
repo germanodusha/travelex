@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react'
+import { useCallback, useRef, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -17,6 +17,9 @@ import imgBannerThree from '../../public/images/bannerThreeHome.png'
 import imgBannerFour from '../../public/images/bannerFourHome.png'
 import styles from './cambio.module.scss'
 
+const LOREM_IPSUM =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci magna, fermentum eu scelerisque id, efficitur ut dui. Sed mattis aliquet placerat. Integer imperdiet, eros et semper malesuada, sapien lorem luctus erat, ac auctor erat velit sed odio. Quisque efficitur nulla sed tortor dictum, vitae lobortis turpis pharetra. Sed et tempor tellus, non accumsan enim. Curabitur scelerisque erat dignissim turpis commodo ullamcorper. Curabitur malesuada nibh in facilisis consectetur. Curabitur non luctus nunc, vitae rutrum risus. In sed mi leo. Vivamus tempor tellus quis velit sagittis bibendum. Mauris eu suscipit augue. In id nunc nisl.'
+
 const useCambioTranslations = () => {
   const router = useRouter()
   const translate = useTranslations(`cambio-${router.query.cambio}`)
@@ -31,11 +34,11 @@ const CambiosTypes = {
 
 const Services = {
   [CambiosTypes.CORPORATIVO]: [
-    { image: imgBannerOne, path: 'analises-registros-e-declaracoes' },
-    { image: imgBannerTwo, path: 'hedge' },
-    { image: imgBannerThree, path: 'assesoria-e-servicos' },
     { image: imgBannerFour, path: 'trade-finance' },
     { image: imgBannerOne, path: 'trade-service' },
+    { image: imgBannerTwo, path: 'hedge' },
+    { image: imgBannerThree, path: 'assesoria-e-servicos' },
+    { image: imgBannerOne, path: 'analises-registros-e-declaracoes' },
   ],
   [CambiosTypes.PESSOA_FISICA]: [
     { image: imgBannerOne, path: 'cambio-turismo' },
@@ -66,6 +69,7 @@ function Cover() {
 }
 
 function ServicesContent() {
+  const serviceBody = useRef()
   const router = useRouter()
   const { cambio } = router.query
   const services = Services[cambio]
@@ -88,6 +92,10 @@ function ServicesContent() {
     [router.pathname, cambio]
   )
 
+  const handleNavigate = () => {
+    serviceBody.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  }
+
   return (
     <div className={styles['services']}>
       <div className={styles['services__nav-desk']}>
@@ -99,7 +107,13 @@ function ServicesContent() {
               )}
               <Link href={getHref(path)}>
                 <a>
-                  <h3>{translate(`services.${path}`)}</h3>
+                  <h3
+                    onClick={handleNavigate}
+                    onKeyDown={() => {}}
+                    role="presentation"
+                  >
+                    {translate(`services.${path}`)}
+                  </h3>
                 </a>
               </Link>
             </div>
@@ -107,19 +121,19 @@ function ServicesContent() {
         </div>
       </div>
 
-      <div className={styles['services__body']}>
-        <div className={styles['services__service-desk']}>
-          <div className={styles['services__service-bg']}>
-            {/** TODO try with background image **/}
-            <Image
-              alt="background"
-              src={service.image}
-              objectFit="cover"
-              layout="fill"
-            />
+      <div className={styles['services__body']} ref={serviceBody}>
+        <div className={styles['services__service-desk']} id={service.path}>
+          <div className={styles['services__service-banner']}>
+            <Image alt="background" src={service.image} objectFit="cover" />
+            {/** TODO locole this **/}
+            <div className={styles['services__service-description']}>
+              <p>{LOREM_IPSUM}</p>
+            </div>
           </div>
-          <div className={styles['services__service-header']} />
-          <p>{translate(`services.${service.path}-body`)}</p>
+
+          <div className={styles['services__service-body']}>
+            <p>{translate(`services.${service.path}-body`)}</p>
+          </div>
         </div>
 
         <div className={styles['services__service-mobile']}>
@@ -131,15 +145,19 @@ function ServicesContent() {
                   styles['services__service-bg-mobile']
                 )}
               >
-                <Image
-                  alt="background"
-                  src={image}
-                  objectFit="cover"
-                  layout="fill"
-                />
+                <div className={styles['services__service-banner']}>
+                  <Image alt="background" src={image} objectFit="cover" />
+                  {/** TODO locole this **/}
+                  <div className={styles['services__service-description']}>
+                    <p>{LOREM_IPSUM}</p>
+                  </div>
+                </div>
               </div>
-              <h3>{translate(`services.${path}`)}</h3>
-              <p>{translate(`services.${path}-body`)}</p>
+
+              <div className={styles['services__service-mobile-body']}>
+                <h3>{translate(`services.${path}`)}</h3>
+                <p>{translate(`services.${path}-body`)}</p>
+              </div>
             </div>
           ))}
         </div>
