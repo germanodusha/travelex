@@ -1,3 +1,4 @@
+import { useCallback, useState, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -13,9 +14,28 @@ function MenuLinks({ visible }) {
   const translate = useTranslations('Layout')
   const { locale, locales, route } = useRouter()
   const otherLocale = locales?.find((cur) => cur !== locale)
+  const [subMenu, setSubmenu] = useState('cambio-corporativo')
+  const [menuHover, setMenuHover] = useState(false)
+  const [menuTextHover, setMenuTextHover] = useState(false)
+  const corpRef = useRef(null)
+  const personRef = useRef(null)
+
+  const onMouseEnterText = useCallback((type) => {
+    setMenuTextHover(true)
+    setSubmenu(type)
+  }, [])
+
+  const subMenuPadding =
+    subMenu === 'cambio-corporativo'
+      ? corpRef.current?.getBoundingClientRect().left || 0
+      : personRef.current?.getBoundingClientRect().left || 0
 
   return (
     <div
+      onMouseOver={() => setMenuHover(true)}
+      onMouseLeave={() => setMenuHover(false)}
+      onFocus={() => void 0}
+      onBlur={() => void 0}
       className={classNames(styles[`${visible}`], styles[theme])}
       styles={{
         ...(options.background ? { backgroundColor: options.background } : {}),
@@ -68,6 +88,11 @@ function MenuLinks({ visible }) {
 
               <Link href="/cambio/corporativo">
                 <a
+                  ref={corpRef}
+                  onMouseEnter={() => onMouseEnterText('cambio-corporativo')}
+                  onMouseLeave={() => setMenuTextHover(null)}
+                  onFocus={() => void 0}
+                  onBlur={() => void 0}
                   className={classNames({
                     [styles[`${theme}__link-active`]]:
                       route === '/cambio/corporativo',
@@ -79,6 +104,11 @@ function MenuLinks({ visible }) {
 
               <Link href="/cambio/pessoa-fisica">
                 <a
+                  ref={personRef}
+                  onMouseEnter={() => onMouseEnterText('cambio-pessoa-fisica')}
+                  onMouseLeave={() => setMenuTextHover(null)}
+                  onFocus={() => void 0}
+                  onBlur={() => void 0}
                   className={classNames({
                     [styles[`${theme}__link-active`]]:
                       route === '/cambio/pessoa-fisica',
@@ -121,6 +151,23 @@ function MenuLinks({ visible }) {
               </button>
             </Link>
           </div>
+        </div>
+      </div>
+
+      <div
+        className={classNames(styles['submenu'], {
+          [styles['submenu-enabled']]: menuHover || menuTextHover,
+        })}
+      >
+        <div
+          className={styles['submenu__links']}
+          style={{ paddingLeft: subMenuPadding }}
+        >
+          <p>{subMenu}</p>
+          <p>{subMenu}</p>
+          <p>{subMenu}</p>
+          <p>{subMenu}</p>
+          <p>{subMenu}</p>
         </div>
       </div>
     </div>

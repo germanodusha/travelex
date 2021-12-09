@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: 2;
 }
 
 .menu-logo {
@@ -295,5 +296,27 @@
     &:hover {
       color: $white !important;
     }
+  }
+}
+
+.submenu {
+  background-color: $gray-blue;
+  bottom: unset;
+  height: fit-content;
+  inset: 0;
+  padding-top: $menu-height;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out, height 0.3s ease-in;
+  will-change: transform, height;
+  z-index: -1;
+
+  &-enabled {
+    transform: translateY(0);
+  }
+
+  &__links {
+    transition: padding 0.1s ease-in-out;
+    will-change: padding;
   }
 }
