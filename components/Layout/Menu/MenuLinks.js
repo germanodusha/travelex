@@ -160,7 +160,11 @@ function MenuLinks({ visible }) {
                 </a>
               </Link>
 
-              <a href="/blog" target="_blank">
+              <a
+                href="https://www.travelexbank.com.br/blog/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {translate('menu.blog')}
               </a>
             </div>
