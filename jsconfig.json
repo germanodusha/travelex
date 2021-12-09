@@ -5,6 +5,7 @@
       "@/components/*": ["components/*"],
       "@/config": ["config/index.js"],
       "@/contexts/*": ["contexts/*"],
+      "@/enums/*": ["enums/*"],
       "@/hooks/*": ["hooks/*"],
       "@/styles/*": ["styles/*"],
       "@/utils": ["utils/index.js"],

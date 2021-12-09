@@ -5,16 +5,49 @@ import { useRouter } from 'next/router'
 import { useTranslations } from 'next-intl'
 import classNames from 'classnames'
 import { useMenuTheme } from '@/contexts/LayoutContext'
+import { CambiosTypes, Services } from '@/enums/cambio'
 import mainLogoWhite from '../../../public/images/TravelexBranco.png'
 import mainLogoColorful from '../../../public/images/TravelexLogo.png'
 import styles from './Menu.module.scss'
+
+function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
+  const router = useRouter()
+  const translate = useTranslations(subMenu ? `cambio-${subMenu}` : 'cambio')
+  const items = Services[subMenu] || []
+  const [, service] = router.asPath.split('#')
+
+  return (
+    <div
+      className={classNames(styles['menu-links'], styles['submenu'], {
+        [styles['submenu-enabled']]: (menuHover || menuTextHover) && subMenu,
+      })}
+    >
+      <div
+        className={styles['submenu__links']}
+        style={{ paddingLeft: subMenuPadding }}
+      >
+        {items.map((item) => (
+          <Link key={item.path} href={`/cambio/${subMenu}#${item.path}`}>
+            <a
+              className={classNames({
+                [styles['submenu__links-active']]: item.path === service,
+              })}
+            >
+              {translate(`services.${item.path}`)}
+            </a>
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 function MenuLinks({ visible }) {
   const { theme, options } = useMenuTheme()
   const translate = useTranslations('Layout')
   const { locale, locales, route } = useRouter()
   const otherLocale = locales?.find((cur) => cur !== locale)
-  const [subMenu, setSubmenu] = useState('cambio-corporativo')
+  const [subMenu, setSubmenu] = useState(null)
   const [menuHover, setMenuHover] = useState(false)
   const [menuTextHover, setMenuTextHover] = useState(false)
   const corpRef = useRef(null)
@@ -25,18 +58,20 @@ function MenuLinks({ visible }) {
     setSubmenu(type)
   }, [])
 
+  const onMouseLeaveMenu = useCallback(() => {
+    setMenuTextHover(false)
+    setSubmenu(null)
+  }, [])
+
   const subMenuPadding =
-    subMenu === 'cambio-corporativo'
+    subMenu === CambiosTypes.CORPORATIVO
       ? corpRef.current?.getBoundingClientRect().left || 0
       : personRef.current?.getBoundingClientRect().left || 0
 
-  console.log(visible, options, 343, {
-    ...(options.background ? { backgroundColor: options.background } : {}),
-  })
   return (
     <div
       onMouseOver={() => setMenuHover(true)}
-      onMouseLeave={() => setMenuHover(false)}
+      onMouseLeave={onMouseLeaveMenu}
       onFocus={() => void 0}
       onBlur={() => void 0}
       className={classNames(styles[`${visible}`], styles[theme])}
@@ -92,7 +127,9 @@ function MenuLinks({ visible }) {
               <Link href="/cambio/corporativo">
                 <a
                   ref={corpRef}
-                  onMouseEnter={() => onMouseEnterText('cambio-corporativo')}
+                  onMouseEnter={() =>
+                    onMouseEnterText(CambiosTypes.CORPORATIVO)
+                  }
                   onMouseLeave={() => setMenuTextHover(null)}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
@@ -108,7 +145,9 @@ function MenuLinks({ visible }) {
               <Link href="/cambio/pessoa-fisica">
                 <a
                   ref={personRef}
-                  onMouseEnter={() => onMouseEnterText('cambio-pessoa-fisica')}
+                  onMouseEnter={() =>
+                    onMouseEnterText(CambiosTypes.PESSOA_FISICA)
+                  }
                   onMouseLeave={() => setMenuTextHover(null)}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
@@ -157,22 +196,12 @@ function MenuLinks({ visible }) {
         </div>
       </div>
 
-      <div
-        className={classNames(styles['submenu'], {
-          [styles['submenu-enabled']]: menuHover || menuTextHover,
-        })}
-      >
-        <div
-          className={styles['submenu__links']}
-          style={{ paddingLeft: subMenuPadding }}
-        >
-          <p>{subMenu}</p>
-          <p>{subMenu}</p>
-          <p>{subMenu}</p>
-          <p>{subMenu}</p>
-          <p>{subMenu}</p>
-        </div>
-      </div>
+      <SubMenu
+        menuHover={menuHover}
+        menuTextHover={menuTextHover}
+        subMenu={subMenu}
+        subMenuPadding={subMenuPadding}
+      />
     </div>
   )
 }
