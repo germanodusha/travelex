@@ -69,7 +69,7 @@
   color: $white;
   font-size: 1.25em;
   font-weight: 600;
-  padding-right: $padding-horizontal;
+  margin-right: $padding-horizontal;
 }
 
 .menu-cta {
@@ -254,6 +254,10 @@
     }
   }
 
+  &__link-hover {
+    border-bottom-color: $blue !important;
+  }
+
   &__link-active {
     color: $gray-second !important;
 
@@ -270,6 +274,10 @@
     &:hover {
       color: $gray-second;
     }
+  }
+
+  &__link-hover {
+    border-bottom-color: $white !important;
   }
 
   &__link-active {
@@ -299,8 +307,12 @@
   }
 }
 
+.link {
+  border-bottom: 3px solid transparent;
+}
+
 .submenu {
-  background-color: $gray-blue;
+  background-color: rgba($gray-blue, 0.1);
   bottom: unset;
   height: fit-content;
   inset: 0;
@@ -318,9 +330,13 @@
   &__links {
     display: flex;
     flex-direction: column;
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem;
     transition: padding 0.1s ease-in-out;
     will-change: padding;
+
+    &-empty {
+      height: 1.3rem;
+    }
 
     &-active {
       font-style: italic;
