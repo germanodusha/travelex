@@ -68,6 +68,9 @@ function MenuLinks({ visible }) {
       ? corpRef.current?.getBoundingClientRect().left || 0
       : personRef.current?.getBoundingClientRect().left || 0
 
+  console.log(visible, options, 343, {
+    ...(options.background ? { backgroundColor: options.background } : {}),
+  })
   return (
     <div
       onMouseOver={() => setMenuHover(true)}
