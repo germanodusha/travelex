@@ -80,7 +80,7 @@
   a {
     @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
 
-    padding: 0 0.5em;
+    margin: 0 0.5em;
   }
 }
 

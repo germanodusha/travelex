@@ -119,7 +119,10 @@ function MenuLinks({ visible }) {
               />
               <Link href="/institucional">
                 <a
-                  onMouseEnter={() => setHover('institucional')}
+                  onMouseEnter={() => {
+                    setHover('institucional')
+                    setSubmenu(null)
+                  }}
                   onMouseLeave={() => setHover(null)}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
@@ -187,7 +190,10 @@ function MenuLinks({ visible }) {
                 href="https://www.travelexbank.com.br/blog/"
                 target="_blank"
                 rel="noreferrer"
-                onMouseEnter={() => setHover('blog')}
+                onMouseEnter={() => {
+                  setHover('blog')
+                  setSubmenu(null)
+                }}
                 onMouseLeave={() => setHover(null)}
                 onFocus={() => void 0}
                 onBlur={() => void 0}
@@ -211,7 +217,10 @@ function MenuLinks({ visible }) {
               />
               <Link href="/cadastro">
                 <a
-                  onMouseEnter={() => setHover('openAcc')}
+                  onMouseEnter={() => {
+                    setHover('openAcc')
+                    setSubmenu(null)
+                  }}
                   onMouseLeave={() => setHover(null)}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
