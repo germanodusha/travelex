@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import Scroller, { ScrollerSection } from '@/components/Scroller'
 import Title from '@/components/Title'
 import Footer from '@/components/Layout/Footer'
+import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import styles from './UsefulPage.module.scss'
 
 function UsefulPage({
@@ -62,7 +63,17 @@ function UsefulPage({
 
         {children}
 
+        <ChangeThemeOnScroll
+          theme="light"
+          style={{ transform: 'translateY(-30%)' }}
+        />
+        <ChangeThemeOnScroll theme="dark" options={{}} />
         <Footer />
+        <ChangeThemeOnScroll
+          theme="dark"
+          options={{}}
+          style={{ transform: 'translateY(-100%)' }}
+        />
       </Wrapper>
     </div>
   )
