@@ -1,7 +1,7 @@
 @import '@/styles/theme';
 
 .title {
-  @include config-transition-prop(opacity, top, transform);
+  @include config-transition-prop([opacity, top, transform]);
 
   opacity: 1;
   position: absolute;
