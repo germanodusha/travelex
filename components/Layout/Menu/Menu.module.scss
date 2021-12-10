@@ -57,7 +57,7 @@
   }
 
   &__dark {
-    border-left-color: $gray-second;
+    border-left-color: $white;
   }
 
   &__white {
@@ -108,7 +108,7 @@
   }
 
   &__dark {
-    border-left-color: $gray-second;
+    border-left-color: $white;
   }
 
   &__white {
@@ -142,7 +142,7 @@
   }
 
   &__dark {
-    color: $gray-second;
+    color: $white;
   }
 
   &__white {
@@ -265,18 +265,18 @@
 
 .dark {
   a {
-    color: $gray-second;
+    color: $white;
 
     &:hover {
-      color: $blue;
+      color: $gray-second;
     }
   }
 
   &__link-active {
-    color: $blue !important;
+    color: $gray-second !important;
 
     &:hover {
-      color: $gray-second !important;
+      color: $white !important;
     }
   }
 }

@@ -195,7 +195,11 @@ function Form() {
         menuTheme="light"
         theme="white"
       />
-      <ChangeThemeOnScroll theme="light" options={themeOptions} />
+      <ChangeThemeOnScroll
+        theme="light"
+        options={themeOptions}
+        style={{ transform: 'translateY(-100%)' }}
+      />
     </div>
   )
 }
@@ -205,6 +209,11 @@ function FooterWrapper() {
     <>
       <ChangeThemeOnScroll theme="dark" options={{}} />
       <Footer />
+      <ChangeThemeOnScroll
+        theme="dark"
+        options={{}}
+        style={{ transform: 'translateY(-100%)' }}
+      />
     </>
   )
 }
