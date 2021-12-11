@@ -1,39 +1,30 @@
-import React, { useRef, useState } from 'react'
-import styles from './Home.module.scss'
+import React from 'react'
 import { useTranslations } from 'use-intl'
-import classNames from 'classnames'
-import Scroller from '../Scroller'
+import CarouselWithInterval from '@/components/CarouselWithInterval'
+import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import Footer from '../Layout/Footer'
 import imgBannerTwo from '../../public/images/bannerTwoHome.png'
 import imgBannerThree from '../../public/images/bannerThreeHome.png'
 import imgBannerFour from '../../public/images/bannerFourHome.png'
 import Banner from '../Banner'
-import FAQAccordion from '@/components/FAQAccordion'
+
+function CarouselItem({ item }) {
+  return (
+    <Banner
+      showGradient={false} // TODO add at carousel level
+      key={item.id}
+      title={item.title}
+      link={item.link}
+      image={item.image}
+      video={item.video}
+    />
+  )
+}
 
 function Home() {
-  const scroller = useRef(null)
   const translate = useTranslations('Home')
-  const [page, setPage] = useState(0)
 
-  const onPressPagination = (page) => scroller.current.goToPage(page)
-
-  const faqItems = [
-    {
-      id: 'faq1',
-      title: translate('FAQ.questionOneTitle'),
-      content: translate('FAQ.questionOne'),
-    },
-    {
-      id: 'faq2',
-      title: translate('FAQ.questionTwoTitle'),
-      content: translate('FAQ.questionTwo'),
-    },
-    {
-      id: 'faq3',
-      title: translate('FAQ.questionThreeTitle'),
-      content: translate('FAQ.questionThree'),
-    },
-  ]
+  useLockScrollFirstPage()
 
   const bannerItems = [
     {
@@ -63,48 +54,10 @@ function Home() {
   ]
 
   return (
-    <>
-      <div
-        className={classNames(styles['pagination'], {
-          [styles['pagination-hide']]: page >= bannerItems.length,
-        })}
-      >
-        {bannerItems.map((_, i) => (
-          <div
-            key={i}
-            className={classNames(styles['pagination__item'], {
-              [styles['pagination__item-active']]: i === page,
-            })}
-            role="button"
-            tabIndex={i}
-            onClick={() => onPressPagination(i)}
-            onPress={() => onPressPagination(i)}
-            onKeyDown={() => onPressPagination(i)}
-          >
-            <div className={classNames(styles['pagination__item-bg'])} />
-          </div>
-        ))}
-      </div>
-
-      <Scroller ref={scroller} onBeforePageScroll={setPage}>
-        {bannerItems.map((b) => {
-          return (
-            <Banner
-              showGradient
-              key={b.id}
-              title={b.title}
-              link={b.link}
-              image={b.image}
-              video={b.video}
-            />
-          )
-        })}
-
-        <FAQAccordion showTitle faqItems={faqItems} />
-
-        <Footer />
-      </Scroller>
-    </>
+    <main>
+      <CarouselWithInterval data={bannerItems} RenderItem={CarouselItem} />
+      <Footer />
+    </main>
   )
 }
 

@@ -1,19 +1,21 @@
 @import '@/styles/theme';
 
+.content {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+
+  &__inner {
+    transition: transform 0.4s ease-in;
+    will-change: transform;
+  }
+}
+
 .pagination {
   bottom: 1rem;
   display: flex;
   left: $padding-horizontal * 3;
-  opacity: 1;
-  position: fixed;
-  transition: 0.3s opacity;
-  transition-delay: 0;
-  will-change: opacity;
-  z-index: 5;
-
-  &-hide {
-    opacity: 0;
-  }
+  position: absolute;
 
   &__item {
     margin-right: 0.3rem;
