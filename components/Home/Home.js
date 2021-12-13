@@ -11,7 +11,7 @@ import Banner from '../Banner'
 function CarouselItem({ item }) {
   return (
     <Banner
-      showGradient={false} // TODO add at carousel level
+      showGradient
       key={item.id}
       title={item.title}
       link={item.link}
