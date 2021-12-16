@@ -2,7 +2,7 @@
 
 .menu {
   background-color: transparent;
-  height: $menu-height + 1em;
+  height: $menu-height * 1.4;
   position: fixed;
   top: 0;
   width: 100%;
@@ -125,17 +125,11 @@
   padding: 0 $padding-horizontal;
 }
 
-.menu-lang p {
-  color: $gray-blue;
-}
-
-.menu-lang > * {
-  color: $white;
-  margin-left: 1em;
-}
-
-.menu-lang-btn {
-  @include config-transition-prop(color);
+// .menu-lang p {
+//   color: $navy-blue
+// }
+.menu-lang-p {
+  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
 
   &__light {
     color: $blue;
@@ -146,7 +140,40 @@
   }
 
   &__white {
-    color: $white;
+    color: $gray-blue;
+  }
+}
+
+.menu-lang > * {
+  // color: $white;
+  margin-left: 1em;
+}
+
+.menu-lang-btn {
+  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+
+  &__light {
+    color: $gray-second;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__dark {
+    color: $gray-blue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__white {
+    color: $gray-second;
+
+    &:hover {
+      color: $blue;
+    }
   }
 }
 
@@ -314,7 +341,8 @@
 .submenu {
   background-color: rgba($gray-blue, 0.1);
   bottom: unset;
-  height: fit-content;
+  // height: fit-content;
+  height: 13em;
   inset: 0;
   padding-top: $menu-height;
   position: absolute;

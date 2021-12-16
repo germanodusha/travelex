@@ -6,6 +6,7 @@
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  margin-bottom: $menu-height * 1.4;
 
   &__header {
     background-color: $white;
@@ -13,13 +14,15 @@
   }
 
   &__title {
-    padding-bottom: 0;
+    font-size: 3em;
+    line-height: 1em;
+    padding-bottom: $padding-vertical;
   }
 
   &__border {
     background-color: $white;
     height: 0.7em;
-    margin-bottom: 3em;
+    margin-bottom: 1.5rem;
     margin-top: 1em;
     width: 10vw;
   }

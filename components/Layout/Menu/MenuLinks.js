@@ -234,7 +234,9 @@ function MenuLinks({ visible }) {
             </div>
           </div>
           <div className={styles['menu-lang']}>
-            <p>{translate('menu.currentLocale')}</p>
+            <p className={classNames(styles[`menu-lang-p__${theme}`])}>
+              {translate('menu.currentLocale')}
+            </p>
             <Link href={route} locale={otherLocale}>
               <button
                 className={classNames(

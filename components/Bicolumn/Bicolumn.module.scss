@@ -5,7 +5,7 @@
   padding-top: $menu-height;
 
   div {
-    font-size: 3em;
+    font-size: 4em;
     padding: $padding-vertical $padding-horizontal * 0.7;
 
     @media (min-width: $min-width-sm) {
@@ -24,10 +24,23 @@
 
   &__header {
     background-color: $white;
-    height: $menu-height * 2;
+    // Checar se há necessidade de deixar esquerda grande
+    // height: $menu-height * 2;
+    height: $menu-height * 1.4;
     position: sticky;
     top: 0;
     width: 100%;
+    z-index: 1;
+  }
+
+  &__header-logo {
+    background-color: $white;
+    // Checar se há necessidade de deixar esquerda grande
+    height: $menu-height * 2;
+    // height: $menu-height + 1em;
+    position: sticky;
+    top: 0;
+    width: 35%;
     z-index: 1;
   }
 

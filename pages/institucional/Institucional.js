@@ -10,7 +10,9 @@ import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import styles from './Institucional.module.scss'
 import bannerInstitutional from '../../public/images/bannerInstitutional.png'
 import imgInstitutional from '../../public/images/imgInstitutional.png'
+import imgLivro from '../../public/images/IMG9.png'
 import imgNext from '../../public/images/seta.svg'
+// import imgNextHover from '../../public/images/seta_hover.svg'
 
 function InstitucionalContent({
   text,
@@ -41,6 +43,7 @@ function Carousel() {
   const [currentItem, setCurrentItem] = useState(0)
 
   const handleNext = () => setCurrentItem((v) => Math.min(2, v + 1))
+  const handlePrev = () => setCurrentItem((v) => Math.max(0, v - 1))
 
   const items = [
     {
@@ -57,13 +60,14 @@ function Carousel() {
     },
     {
       id: 3,
-      bg: imgInstitutional,
+      bg: imgLivro,
       left: '+300k',
       right: 'Novos investimentos no travelex bank em 2021',
     },
   ]
 
   const showNext = currentItem < items.length - 1
+  const showPrev = currentItem > 0
 
   return (
     <div className={styles['carousel']}>
@@ -84,6 +88,20 @@ function Carousel() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div
+        className={classNames(styles['carousel__prev'], {
+          [styles['carousel__prev-hidden']]: !showPrev,
+          [styles['carousel__prev-visible']]: showPrev,
+        })}
+        onClick={handlePrev}
+        onPress={handlePrev}
+        onKeyPress={() => {}}
+        role="button"
+        tabIndex={0}
+      >
+        <Image src={imgNext} alt="" objectFit="cover" />
       </div>
 
       <div

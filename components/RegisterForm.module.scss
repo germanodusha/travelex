@@ -28,16 +28,16 @@
   width: fit-content;
 
   &:hover {
-    border-bottom-color: $navy-blue !important;
-    color: $navy-blue;
+    border-bottom-color: $gray-second !important;
+    color: $gray-second;
   }
 
   &__white {
-    color: $navy-blue;
+    color: $gray;
 
     &:hover {
-      border-bottom-color: $gray !important;
-      color: $gray;
+      border-bottom-color: $navy-blue !important;
+      color: $navy-blue;
     }
   }
 }
