@@ -3,11 +3,15 @@
 .content {
   height: 100vh;
   overflow: hidden;
-  width: 100%;
 
   &__inner {
+    display: flex;
     transition: transform 0.4s ease-in;
     will-change: transform;
+  }
+
+  &__page {
+    width: 100vw;
   }
 }
 

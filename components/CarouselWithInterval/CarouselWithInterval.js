@@ -8,20 +8,24 @@ function CarouselWithInterval({ data = [], RenderItem }) {
 
   const nextItem = useCallback(() => {
     const maxPage = data.length - 1
-    console.log('[nextItem]')
     setPage((current) => (current >= maxPage ? 0 : current + 1))
-  }, [])
+  }, [data.length])
 
-  useInterval(nextItem, 6000)
+  useInterval(nextItem, 3000)
 
   return (
     <div className={styles['content']}>
       <div
         className={styles['content__inner']}
-        style={{ transform: `translateY(-${100 * page}vh)` }}
+        style={{
+          transform: `translateX(-${100 * page}vw)`,
+          width: `${data.length * 100}vw`,
+        }}
       >
         {data.map((item, i) => (
-          <RenderItem key={item.id} item={item} index={i} />
+          <div key={item.id} className={styles['content__page']}>
+            <RenderItem item={item} index={i} />
+          </div>
         ))}
       </div>
 
