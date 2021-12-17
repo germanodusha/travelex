@@ -6,6 +6,7 @@
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  // ajuste
   margin-bottom: $menu-height * 1.4;
 
   &__header {
@@ -149,6 +150,32 @@
     display: flex;
     flex: 1 1;
     flex-direction: column;
+  }
+}
+
+.buffer {
+  padding: $padding-horizontal;
+  scroll-snap-align: end;
+
+  @media (min-width: $min-width-sm) {
+    max-width: 35vw;
+    scroll-snap-align: none;
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    h3 {
+      color: $navy-blue;
+      font-family: Bebas Neue Regular;
+      font-size: 1.3em;
+      line-height: 1em;
+
+      @media (min-width: $min-width-sm) {
+        font-size: 1.8em;
+        line-height: 1em;
+      }
+    }
   }
 }
 

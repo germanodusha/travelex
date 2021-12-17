@@ -5,10 +5,11 @@
   padding-top: $menu-height;
 
   div {
-    font-size: 4em;
+    font-size: 2em;
     padding: $padding-vertical $padding-horizontal * 0.7;
 
     @media (min-width: $min-width-sm) {
+      font-size: 4em;
       padding: $padding-vertical $padding-horizontal * 1.15;
     }
   }
@@ -35,13 +36,17 @@
 
   &__header-logo {
     background-color: $white;
+
     // Checar se há necessidade de deixar esquerda grande
-    height: $menu-height * 2;
+    height: $menu-height * 1.4;
     // height: $menu-height + 1em;
     position: sticky;
     top: 0;
     width: 35%;
     z-index: 1;
+    @media (min-width: $min-width-sm) {
+      height: $menu-height * 2;
+    }
   }
 
   &__left {

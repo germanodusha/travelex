@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { useTranslations } from 'use-intl'
 import { Formik, Form } from 'formik'
@@ -39,6 +39,10 @@ const RegisterForm = ({
   const [type, setType] = useState(formType)
   const [submiting, setSubmiting] = useState(false)
   const [sended, setSended] = useState(false)
+
+  useEffect(() => {
+    setType(formType)
+  }, [formType])
 
   const handleValidate = (values) => {
     const errors = {}
