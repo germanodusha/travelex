@@ -184,6 +184,15 @@
   z-index: 10;
 }
 
+.header-small-closebtn {
+  bottom: 0;
+  margin: 0;
+  padding: 0 $padding-vertical $padding-vertical 0;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+}
+
 .menu-small {
   display: none;
   width: 100%;
@@ -203,11 +212,13 @@
   }
 
   .menu-wrapper {
-    background-color: $cherry-red;
+    // background-color: $cherry-red;
+    background-color: $navy-blue;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: flex-start;
     position: absolute;
     width: 100vw;
     z-index: 5;
@@ -215,7 +226,9 @@
 
   .menu-links {
     flex-direction: column;
-    padding: $padding-vertical;
+    height: 55vh;
+    // padding: $padding-vertical;
+    padding: 0;
     width: 100%;
   }
 
@@ -223,17 +236,40 @@
     color: $white;
     font-family: Bebas Neue Regular;
     font-size: 1.5em;
+    padding-left: 0.7em;
+
+    &:hover {
+      background-color: $white;
+      color: $navy-blue !important;
+    }
   }
 
-  .menu-about-border,
-  .menu-cta-border {
+  .menu-about-border {
     display: none;
+  }
+
+  .menu-cta-border {
+    border-bottom: 1px $white solid;
+    border-left: 0;
+    width: 100vw;
   }
 
   .menu-about {
     display: flex;
     flex-direction: column;
+    padding: 0;
+    // width: 100%;
+  }
+
+  .menu-cta {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+
+    a {
+      margin: 0;
+      width: 100vw;
+    }
   }
 
   .menu-left {
@@ -241,6 +277,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transform: translateY(45vh);
   }
 
   .menu-small {
@@ -264,7 +301,10 @@
   }
 
   .menu-lang {
+    bottom: calc(24px + 2.5em);
     justify-content: flex-end;
+    position: fixed;
+    right: 0;
   }
 
   .menu-lang p {

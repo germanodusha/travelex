@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames'
@@ -6,10 +6,20 @@ import { useMenuTheme } from '@/contexts/LayoutContext'
 import mainLogoWhite from '../../../public/images/TravelexBranco.png'
 import mainLogoColorful from '../../../public/images/TravelexLogo.png'
 import styles from './Menu.module.scss'
-import { MenuIcon } from '../../Icons'
+import { MenuIcon, MenuClose } from '../../Icons'
 
 const MenuSmall = ({ toggleMenu }) => {
   const { theme } = useMenuTheme()
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleClick() {
+    if (isOpen) {
+      setIsOpen(false)
+    } else {
+      setIsOpen(true)
+    }
+  }
 
   return (
     <nav
@@ -30,8 +40,27 @@ const MenuSmall = ({ toggleMenu }) => {
             </a>
           </Link>
         </div>
-        <button className={styles['header-small-button']} onClick={toggleMenu}>
+        <button
+          className={classNames(styles['header-small-button'], {
+            [styles['menu-logo']]: isOpen,
+          })}
+          onClick={() => {
+            toggleMenu()
+            handleClick()
+          }}
+        >
           <MenuIcon fill={theme === 'dark' ? '#bebebe' : '#221f42'} />
+        </button>
+        <button
+          className={classNames(styles['header-small-closebtn'], {
+            [styles['menu-logo']]: !isOpen,
+          })}
+          onClick={() => {
+            toggleMenu()
+            handleClick()
+          }}
+        >
+          <MenuClose fill={theme === 'dark' ? '#bebebe' : '#221f42'} />
         </button>
       </div>
     </nav>
