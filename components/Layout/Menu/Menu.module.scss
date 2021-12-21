@@ -2,13 +2,17 @@
 
 .menu {
   background-color: transparent;
-  height: $menu-height + 1em;
+  height: $menu-height * 1.4;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 5;
 
   a {
+    @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+  }
+
+  button {
     @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
   }
 }
@@ -72,12 +76,25 @@
   margin-right: $padding-horizontal;
 }
 
+.menu-links button {
+  color: $white;
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-right: $padding-horizontal;
+}
+
 .menu-cta {
   @include config-transition-prop(background-color);
 
   background-color: transparent;
 
   a {
+    @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+
+    margin: 0 0.5em;
+  }
+
+  button {
     @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
 
     margin: 0 0.5em;
@@ -92,6 +109,10 @@
   }
 
   a {
+    color: $gray-second !important;
+  }
+
+  button {
     color: $gray-second !important;
   }
 }
@@ -125,17 +146,11 @@
   padding: 0 $padding-horizontal;
 }
 
-.menu-lang p {
-  color: $gray-blue;
-}
-
-.menu-lang > * {
-  color: $white;
-  margin-left: 1em;
-}
-
-.menu-lang-btn {
-  @include config-transition-prop(color);
+// .menu-lang p {
+//   color: $navy-blue
+// }
+.menu-lang-p {
+  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
 
   &__light {
     color: $blue;
@@ -146,7 +161,40 @@
   }
 
   &__white {
-    color: $white;
+    color: $gray-blue;
+  }
+}
+
+.menu-lang > * {
+  // color: $white;
+  margin-left: 1em;
+}
+
+.menu-lang-btn {
+  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+
+  &__light {
+    color: $gray-second;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__dark {
+    color: $gray-blue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__white {
+    color: $gray-second;
+
+    &:hover {
+      color: $blue;
+    }
   }
 }
 
@@ -154,6 +202,15 @@
 .header-small-button {
   margin: 0;
   padding: $padding-vertical;
+  z-index: 10;
+}
+
+.header-small-closebtn {
+  bottom: 0;
+  margin: 0;
+  padding: 0 $padding-vertical $padding-vertical 0;
+  position: fixed;
+  right: 0;
   z-index: 10;
 }
 
@@ -166,88 +223,19 @@
   display: none;
 }
 
-@media (max-width: $max-width-sm) {
-  .menu {
-    visibility: hidden;
-  }
-
-  .menu-logo {
-    display: none;
-  }
-
-  .menu-wrapper {
-    background-color: $cherry-red;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    position: absolute;
-    width: 100vw;
-    z-index: 5;
-  }
-
-  .menu-links {
-    flex-direction: column;
-    padding: $padding-vertical;
-    width: 100%;
-  }
-
-  .menu-links a {
-    color: $white;
-    font-family: Bebas Neue Regular;
-    font-size: 1.5em;
-  }
-
-  .menu-about-border,
-  .menu-cta-border {
-    display: none;
-  }
-
-  .menu-about {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .menu-left {
-    align-items: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .menu-small {
-    display: block;
-    height: 3em;
-    position: fixed;
-    top: 0;
-    z-index: 6;
-  }
-
-  .menu-mobile {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .mobile-logo {
-    display: block;
-    max-width: 280px;
-    z-index: 11;
-  }
-
-  .menu-lang {
-    justify-content: flex-end;
-  }
-
-  .menu-lang p {
-    color: $white;
-  }
-}
-
 .light {
   a {
     color: $blue;
+    // color: $white;
+
+    &:hover {
+      color: $gray-second;
+    }
+  }
+
+  button {
+    color: $blue;
+    // color: $white;
 
     &:hover {
       color: $gray-second;
@@ -276,6 +264,14 @@
     }
   }
 
+  button {
+    color: $white;
+
+    &:hover {
+      color: $gray-second;
+    }
+  }
+
   &__link-hover {
     border-bottom-color: $white !important;
   }
@@ -294,7 +290,15 @@
     color: $white;
 
     &:hover {
-      color: $gray-second;
+      color: $white !important;
+    }
+  }
+
+  button {
+    color: $white;
+
+    &:hover {
+      color: $white !important;
     }
   }
 
@@ -307,6 +311,222 @@
   }
 }
 
+@media (max-width: $max-width-sm) {
+  .menu {
+    visibility: hidden;
+  }
+
+  .menu-logo {
+    display: none;
+  }
+
+  .menu-wrapper {
+    // background-color: $cherry-red;
+    background-color: $navy-blue;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    // justify-content: space-between;
+    justify-content: flex-start;
+    position: fixed;
+    width: 100vw;
+    z-index: 5;
+  }
+
+  .menu-links {
+    flex-direction: column;
+    height: 55vh;
+    // padding: $padding-vertical;
+    padding: 0;
+    width: 100%;
+  }
+
+  .menu-links a {
+    color: $white;
+    font-family: Bebas Neue Regular;
+    font-size: 1.5em;
+    padding-left: 0.7em;
+
+    &:hover {
+      background-color: $white;
+      color: $navy-blue !important;
+    }
+  }
+
+  .menu-links button {
+    color: $white;
+    font-family: Bebas Neue Regular;
+    font-size: 1.5em;
+    padding-left: 0.7em;
+    text-align: start;
+
+    &:hover {
+      background-color: $white;
+      color: $navy-blue !important;
+    }
+  }
+
+  .menu-about-border {
+    display: none;
+  }
+
+  .menu-cta-border {
+    border-bottom: 1px $white solid;
+    border-left: 0;
+    width: 100vw;
+  }
+
+  .menu-about {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    // width: 100%;
+  }
+
+  .menu-cta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    a {
+      margin: 0;
+      width: 100vw;
+    }
+
+    button {
+      margin: 0;
+      width: 100vw;
+    }
+  }
+
+  .menu-left {
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateY(45vh);
+  }
+
+  .menu-small {
+    display: block;
+    height: 3em;
+    position: fixed;
+    top: 0;
+    z-index: 6;
+  }
+
+  .menu-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .mobile-logo {
+    display: block;
+    max-width: 280px;
+    z-index: 11;
+  }
+
+  .menu-lang {
+    bottom: calc(24px + 2.5em);
+    justify-content: flex-end;
+    position: fixed;
+    right: 0;
+  }
+
+  .menu-lang p {
+    color: $white;
+  }
+
+  .light {
+    a {
+      // color: $blue;
+      color: $white;
+
+      &:hover {
+        color: $gray-second;
+      }
+    }
+
+    button {
+      // color: $blue;
+      color: $white;
+
+      &:hover {
+        color: $gray-second;
+      }
+    }
+
+    &__link-hover {
+      border-bottom-color: $white !important;
+    }
+
+    &__link-active {
+      color: $gray-second !important;
+
+      &:hover {
+        color: $blue !important;
+      }
+    }
+  }
+
+  .dark {
+    a {
+      color: $white;
+
+      &:hover {
+        color: $gray-second;
+      }
+    }
+
+    button {
+      color: $white;
+
+      &:hover {
+        color: $gray-second;
+      }
+    }
+
+    &__link-hover {
+      border-bottom-color: $white !important;
+    }
+
+    &__link-active {
+      color: $gray-second !important;
+
+      &:hover {
+        color: $white !important;
+      }
+    }
+  }
+
+  .white {
+    a {
+      color: $white;
+
+      &:hover {
+        color: $white !important;
+      }
+    }
+
+    button {
+      color: $white;
+
+      &:hover {
+        color: $white !important;
+      }
+    }
+
+    &__link-active {
+      color: $gray-second !important;
+
+      &:hover {
+        color: $white !important;
+      }
+    }
+  }
+}
+
 .link {
   border-bottom: 3px solid transparent;
 }
@@ -314,7 +534,8 @@
 .submenu {
   background-color: rgba($gray-blue, 0.1);
   bottom: unset;
-  height: fit-content;
+  // height: fit-content;
+  height: 13em;
   inset: 0;
   padding-top: $menu-height;
   position: absolute;

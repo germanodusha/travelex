@@ -144,6 +144,22 @@ function ServicesContent() {
   )
 }
 
+function BUFFER() {
+  const translate = useCambioTranslations()
+
+  const text = translate('BUFFER.title')
+  const telefone = translate('BUFFER.telefone')
+  const email = translate('BUFFER.email')
+
+  return (
+    <div className={styles['buffer']}>
+      <div className={styles['buffer__title']}>
+        <h3>{`${text} ${telefone} e ${email}`}</h3>
+      </div>
+    </div>
+  )
+}
+
 function FAQ() {
   const translate = useCambioTranslations()
 
@@ -181,7 +197,7 @@ function Form() {
   const { query } = useRouter()
   const translate = useCambioTranslations()
 
-  const type =
+  let type =
     query.cambio === CambiosTypes.CORPORATIVO
       ? FormTypes.CORPORATIVO
       : FormTypes.PESSOA_FISICA
@@ -225,6 +241,7 @@ function Cambio() {
     <div>
       <Cover />
       <ServicesContent />
+      <BUFFER />
       <FAQ />
       <Form />
       <FooterWrapper />

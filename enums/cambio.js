@@ -1,7 +1,8 @@
-import imgBannerOne from '../public/images/bannerTwoHome.png'
-import imgBannerTwo from '../public/images/bannerTwoHome.png'
-import imgBannerThree from '../public/images/bannerThreeHome.png'
-import imgBannerFour from '../public/images/bannerFourHome.png'
+// import imgBannerOne from '../public/images/bannerTwoHome.png'
+// import imgBannerTwo from '../public/images/bannerTwoHome.png'
+// import imgBannerThree from '../public/images/bannerThreeHome.png'
+// import imgBannerFour from '../public/images/bannerFourHome.png'
+import imgBanner from '../public/images/IMG9.png'
 
 const CambiosTypes = {
   CORPORATIVO: 'corporativo',
@@ -10,17 +11,17 @@ const CambiosTypes = {
 
 const Services = {
   [CambiosTypes.CORPORATIVO]: [
-    { image: imgBannerFour, path: 'trade-finance' },
-    { image: imgBannerOne, path: 'trade-service' },
-    { image: imgBannerTwo, path: 'hedge' },
-    { image: imgBannerThree, path: 'assesoria-e-servicos' },
-    { image: imgBannerOne, path: 'analises-registros-e-declaracoes' },
+    { image: imgBanner, path: 'trade-finance' },
+    { image: imgBanner, path: 'trade-service' },
+    { image: imgBanner, path: 'hedge' },
+    { image: imgBanner, path: 'assesoria-e-servicos' },
+    { image: imgBanner, path: 'analises-registros-e-declaracoes' },
   ],
   [CambiosTypes.PESSOA_FISICA]: [
-    { image: imgBannerOne, path: 'cambio-turismo' },
-    { image: imgBannerTwo, path: 'transferencias-internacionais' },
-    { image: imgBannerThree, path: 'pagamentos-internacionais' },
-    { image: imgBannerFour, path: 'hedge' },
+    { image: imgBanner, path: 'cambio-turismo' },
+    { image: imgBanner, path: 'transferencias-internacionais' },
+    { image: imgBanner, path: 'pagamentos-internacionais' },
+    { image: imgBanner, path: 'hedge' },
   ],
 }
 

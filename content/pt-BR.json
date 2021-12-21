@@ -60,7 +60,7 @@
   },
   "About": {
     "title": "Institucional",
-    "mainTitle": "Quem Somos",
+    "mainTitle": "Institucional",
     "mainSubtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     "mainParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "dataOne": "300K",
@@ -80,7 +80,7 @@
   },
   "cambio": {},
   "cambio-corporativo": {
-    "title": "Câmbio Corporativo\nTravellex Partners",
+    "title": "Câmbio Corporativo\nTravelex Partners",
     "services": {
       "analises-registros-e-declaracoes": "Análises, Registros e Declarações",
       "analises-registros-e-declaracoes-body": "Análises, Registros e Declarações\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae nulla ac velit accumsan mattis. Proin eget turpis felis. Praesent vitae tortor eu leo dictum molestie id eget odio. In tellus magna, facilisis a lectus quis, rhoncus consectetur sem. In eget risus luctus, feugiat dolor sed, interdum mi. Proin condimentum mauris metus, sit amet luctus dui suscipit tristique. Duis a sapien eget velit tincidunt hendrerit. Nam aliquam semper velit in suscipit. Ut quis massa in magna viverra rhoncus id quis mi.\n\nCurabitur at interdum eros. Quisque eu venenatis velit. Duis vel aliquam lacus. Fusce aliquet luctus eros quis mollis. Mauris viverra efficitur neque sit amet auctor. Praesent vitae dictum arcu, eu porta mauris. In at efficitur orci. Vivamus tristique tempus semper. Fusce porttitor massa sit amet neque eleifend consequat. Pellentesque sed sodales sapien. Quisque eu cursus erat. Nunc malesuada fringilla egestas. Proin eu sodales eros. Nulla mi mauris, rutrum finibus cursus at, vestibulum non tortor.",
@@ -92,6 +92,11 @@
       "trade-finance-body": "Trade Finance\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae nulla ac velit accumsan mattis. Proin eget turpis felis. Praesent vitae tortor eu leo dictum molestie id eget odio. In tellus magna, facilisis a lectus quis, rhoncus consectetur sem. In eget risus luctus, feugiat dolor sed, interdum mi. Proin condimentum mauris metus, sit amet luctus dui suscipit tristique. Duis a sapien eget velit tincidunt hendrerit. Nam aliquam semper velit in suscipit. Ut quis massa in magna viverra rhoncus id quis mi.\n\nCurabitur at interdum eros. Quisque eu venenatis velit. Duis vel aliquam lacus. Fusce aliquet luctus eros quis mollis. Mauris viverra efficitur neque sit amet auctor. Praesent vitae dictum arcu, eu porta mauris. In at efficitur orci. Vivamus tristique tempus semper. Fusce porttitor massa sit amet neque eleifend consequat. Pellentesque sed sodales sapien. Quisque eu cursus erat. Nunc malesuada fringilla egestas. Proin eu sodales eros. Nulla mi mauris, rutrum finibus cursus at, vestibulum non tortor.",
       "trade-service": "Trade Service",
       "trade-service-body": "Trade Service\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae nulla ac velit accumsan mattis. Proin eget turpis felis. Praesent vitae tortor eu leo dictum molestie id eget odio. In tellus magna, facilisis a lectus quis, rhoncus consectetur sem. In eget risus luctus, feugiat dolor sed, interdum mi. Proin condimentum mauris metus, sit amet luctus dui suscipit tristique. Duis a sapien eget velit tincidunt hendrerit. Nam aliquam semper velit in suscipit. Ut quis massa in magna viverra rhoncus id quis mi.\n\nCurabitur at interdum eros. Quisque eu venenatis velit. Duis vel aliquam lacus. Fusce aliquet luctus eros quis mollis. Mauris viverra efficitur neque sit amet auctor. Praesent vitae dictum arcu, eu porta mauris. In at efficitur orci. Vivamus tristique tempus semper. Fusce porttitor massa sit amet neque eleifend consequat. Pellentesque sed sodales sapien. Quisque eu cursus erat. Nunc malesuada fringilla egestas. Proin eu sodales eros. Nulla mi mauris, rutrum finibus cursus at, vestibulum non tortor."
+    },
+    "BUFFER": {
+      "title": "Precisa de ajuda? Acesse nossa página de dúvidas frequêntes ou entre em contato conosco",
+      "email": "contato@travelexpartners.com.br",
+      "telefone": "+55 11 xxxxx-xxxx"
     },
     "FAQ": {
       "title": "Dúvidas Frequente",
@@ -105,7 +110,7 @@
     "form-description": "Form description"
   },
   "cambio-pessoa-fisica": {
-    "title": "Câmbio Pessoa Física\nTravellex Partners",
+    "title": "Câmbio Pessoa Física\nTravelex Partners",
     "services": {
       "cambio-turismo": "Câmbio Turismo",
       "cambio-turismo-body": "Câmbio Turismo\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae nulla ac velit accumsan mattis. Proin eget turpis felis. Praesent vitae tortor eu leo dictum molestie id eget odio. In tellus magna, facilisis a lectus quis, rhoncus consectetur sem. In eget risus luctus, feugiat dolor sed, interdum mi. Proin condimentum mauris metus, sit amet luctus dui suscipit tristique. Duis a sapien eget velit tincidunt hendrerit. Nam aliquam semper velit in suscipit. Ut quis massa in magna viverra rhoncus id quis mi.\n\nCurabitur at interdum eros. Quisque eu venenatis velit. Duis vel aliquam lacus. Fusce aliquet luctus eros quis mollis. Mauris viverra efficitur neque sit amet auctor. Praesent vitae dictum arcu, eu porta mauris. In at efficitur orci. Vivamus tristique tempus semper. Fusce porttitor massa sit amet neque eleifend consequat. Pellentesque sed sodales sapien. Quisque eu cursus erat. Nunc malesuada fringilla egestas. Proin eu sodales eros. Nulla mi mauris, rutrum finibus cursus at, vestibulum non tortor.",
@@ -116,7 +121,13 @@
       "hedge": "Hedge",
       "hedge-body": "Hedge\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae nulla ac velit accumsan mattis. Proin eget turpis felis. Praesent vitae tortor eu leo dictum molestie id eget odio. In tellus magna, facilisis a lectus quis, rhoncus consectetur sem. In eget risus luctus, feugiat dolor sed, interdum mi. Proin condimentum mauris metus, sit amet luctus dui suscipit tristique. Duis a sapien eget velit tincidunt hendrerit. Nam aliquam semper velit in suscipit. Ut quis massa in magna viverra rhoncus id quis mi.\n\nCurabitur at interdum eros. Quisque eu venenatis velit. Duis vel aliquam lacus. Fusce aliquet luctus eros quis mollis. Mauris viverra efficitur neque sit amet auctor. Praesent vitae dictum arcu, eu porta mauris. In at efficitur orci. Vivamus tristique tempus semper. Fusce porttitor massa sit amet neque eleifend consequat. Pellentesque sed sodales sapien. Quisque eu cursus erat. Nunc malesuada fringilla egestas. Proin eu sodales eros. Nulla mi mauris, rutrum finibus cursus at, vestibulum non tortor."
     },
+    "BUFFER": {
+      "title": "Precisa de ajuda? Acesse nossa página de dúvidas frequêntes ou entre em contato conosco",
+      "email": "contato@travelexpartners.com.br",
+      "telefone": "+55 11 xxxxx-xxxx"
+    },
     "FAQ": {
+      "title": "Dúvidas Frequentes",
       "questionOneTitle": "Novas linhas de crédito para clientes Travelex Partners Plus?",
       "questionOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       "questionTwoTitle": "New lines of credit for Travelex Partners Plus customers?",
@@ -134,12 +145,12 @@
   "Compliance": {
     "title": "Compliance",
     "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare blandit libero in fermentum. Integer placerat nisi quis justo interdum, nec consectetur nisl finibus. Vestibulum placerat magna non urna vehicula fringilla. Nullam vel purus ac lorem pulvinar posuere a ut neque. Quisque suscipit fermentum hendrerit. Integer augue nulla, pellentesque ac pellentesque posuere, sollicitudin id odio. Aenean ultrices ex sit amet neque posuere venenatis. Fusce volutpat rhoncus fermentum. Integer at lobortis nisi, id ultricies elit. Donec ut consectetur est, eget mattis orci. Nulla ut porta tellus. Integer non cursus quam. Donec quis placerat eros.\n\nSed maximus augue magna, ultrices elementum nibh efficitur in. Maecenas sed tellus vitae enim accumsan tempus quis quis orci. Cras ac est non mauris convallis faucibus. Praesent ac lectus lorem. Nullam eget interdum ante. Praesent eu purus ac quam porttitor vestibulum. Curabitur accumsan commodo erat, eu facilisis turpis. Praesent eget purus vel mi tincidunt blandit pretium a massa. In hac habitasse platea dictumst. Praesent imperdiet ut ante dignissim cursus. Sed magna mi, consectetur porta ullamcorper nec, maximus nec purus. Praesent facilisis viverra quam, quis porta metus."
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare blandit libero in fermentum. Integer placerat nisi quis justo interdum, nec consectetur nisl finibus. Vestibulum placerat magna non urna vehicula fringilla. Nullam vel purus ac lorem pulvinar posuere a ut neque. Quisque suscipit fermentum hendrerit. Integer augue nulla, pellentesque ac pellentesque posuere, sollicitudin id odio. Aenean ultrices ex sit amet neque posuere venenatis. Fusce volutpat rhoncus fermentum. Integer at lobortis nisi, id ultricies elit. Donec ut consectetur est, eget mattis orci. Nulla ut porta tellus. Integer non cursus quam. Donec quis placerat eros."
   },
   "Ouvidoria": {
     "title": "Ouvidoria",
     "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare blandit libero in fermentum. Integer placerat nisi quis justo interdum, nec consectetur nisl finibus. Vestibulum placerat magna non urna vehicula fringilla. Nullam vel purus ac lorem pulvinar posuere a ut neque. Quisque suscipit fermentum hendrerit. Integer augue nulla, pellentesque ac pellentesque posuere, sollicitudin id odio. Aenean ultrices ex sit amet neque posuere venenatis. Fusce volutpat rhoncus fermentum. Integer at lobortis nisi, id ultricies elit. Donec ut consectetur est, eget mattis orci. Nulla ut porta tellus. Integer non cursus quam. Donec quis placerat eros.\n\nSed maximus augue magna, ultrices elementum nibh efficitur in. Maecenas sed tellus vitae enim accumsan tempus quis quis orci. Cras ac est non mauris convallis faucibus. Praesent ac lectus lorem. Nullam eget interdum ante. Praesent eu purus ac quam porttitor vestibulum. Curabitur accumsan commodo erat, eu facilisis turpis. Praesent eget purus vel mi tincidunt blandit pretium a massa. In hac habitasse platea dictumst. Praesent imperdiet ut ante dignissim cursus. Sed magna mi, consectetur porta ullamcorper nec, maximus nec purus. Praesent facilisis viverra quam, quis porta metus."
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare blandit libero in fermentum. Integer placerat nisi quis justo interdum, nec consectetur nisl finibus. Vestibulum placerat magna non urna vehicula fringilla. Nullam vel purus ac lorem pulvinar posuere a ut neque. Quisque suscipit fermentum hendrerit. Integer augue nulla, pellentesque ac pellentesque posuere, sollicitudin id odio. Aenean ultrices ex sit amet neque posuere venenatis. Fusce volutpat rhoncus fermentum. Integer at lobortis nisi, id ultricies elit. Donec ut consectetur est, eget mattis orci. Nulla ut porta tellus. Integer non cursus quam. Donec quis placerat eros."
   },
   "Form": {
     "person": "Pessoa Física",

@@ -6,6 +6,8 @@
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  // ajuste
+  margin-bottom: $menu-height * 1.4;
 
   &__header {
     background-color: $white;
@@ -13,13 +15,15 @@
   }
 
   &__title {
-    padding-bottom: 0;
+    font-size: 3em;
+    line-height: 1em;
+    padding-bottom: $padding-vertical;
   }
 
   &__border {
     background-color: $white;
     height: 0.7em;
-    margin-bottom: 3em;
+    margin-bottom: 1.5rem;
     margin-top: 1em;
     width: 10vw;
   }
@@ -146,6 +150,32 @@
     display: flex;
     flex: 1 1;
     flex-direction: column;
+  }
+}
+
+.buffer {
+  padding: $padding-horizontal;
+  scroll-snap-align: end;
+
+  @media (min-width: $min-width-sm) {
+    max-width: 35vw;
+    scroll-snap-align: none;
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    h3 {
+      color: $navy-blue;
+      font-family: Bebas Neue Regular;
+      font-size: 1.3em;
+      line-height: 1em;
+
+      @media (min-width: $min-width-sm) {
+        font-size: 1.8em;
+        line-height: 1em;
+      }
+    }
   }
 }
 

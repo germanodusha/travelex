@@ -8,6 +8,7 @@ function CarouselWithInterval({ data = [], RenderItem }) {
 
   const nextItem = useCallback(() => {
     const maxPage = data.length - 1
+
     setPage((current) => (current >= maxPage ? 0 : current + 1))
   }, [data.length])
 
