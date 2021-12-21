@@ -45,7 +45,7 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
   )
 }
 
-function MenuLinks({ visible }) {
+function MenuLinks({ visible, emptyMenu }) {
   const { theme, options } = useMenuTheme()
   const translate = useTranslations('Layout')
   const { locale, locales, route } = useRouter()
@@ -92,6 +92,7 @@ function MenuLinks({ visible }) {
                 styles[`menu-logo__${theme}`]
               )}
             >
+              {/* Logo da parte desktop */}
               {theme === 'dark' || theme === 'white' ? (
                 <Image
                   src={mainLogoWhite}
@@ -117,8 +118,8 @@ function MenuLinks({ visible }) {
                   styles[`menu-about-border__${theme}`]
                 )}
               />
-              <Link href="/institucional">
-                <a
+              <Link href="/institucional" passHref>
+                <button
                   onMouseEnter={() => {
                     setHover('institucional')
                     setSubmenu(null)
@@ -126,6 +127,7 @@ function MenuLinks({ visible }) {
                   onMouseLeave={() => setHover(null)}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
+                  onClick={emptyMenu}
                   className={classNames(styles['link'], {
                     [styles[`${theme}__link-active`]]:
                       route === '/institucional',
@@ -133,11 +135,11 @@ function MenuLinks({ visible }) {
                   })}
                 >
                   {translate('menu.about')}
-                </a>
+                </button>
               </Link>
 
-              <Link href="/cambio/corporativo">
-                <a
+              <Link href="/cambio/corporativo" passHref>
+                <button
                   ref={corpRef}
                   onMouseEnter={() => {
                     setHover(CambiosTypes.CORPORATIVO)
@@ -149,6 +151,7 @@ function MenuLinks({ visible }) {
                   }}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
+                  onClick={emptyMenu}
                   className={classNames(styles['link'], {
                     [styles[`${theme}__link-active`]]:
                       route === '/cambio/corporativo',
@@ -158,11 +161,11 @@ function MenuLinks({ visible }) {
                   })}
                 >
                   {translate('menu.company')}
-                </a>
+                </button>
               </Link>
 
-              <Link href="/cambio/pessoa-fisica">
-                <a
+              <Link href="/cambio/pessoa-fisica" passHref>
+                <button
                   ref={personRef}
                   onMouseEnter={() => {
                     setHover(CambiosTypes.PESSOA_FISICA)
@@ -174,6 +177,7 @@ function MenuLinks({ visible }) {
                   }}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
+                  onClick={emptyMenu}
                   className={classNames(styles['link'], {
                     [styles[`${theme}__link-active`]]:
                       route === '/cambio/pessoa-fisica',
@@ -183,7 +187,7 @@ function MenuLinks({ visible }) {
                   })}
                 >
                   {translate('menu.personal')}
-                </a>
+                </button>
               </Link>
 
               <a
@@ -215,8 +219,8 @@ function MenuLinks({ visible }) {
                   styles[`menu-cta-border__${theme}`]
                 )}
               />
-              <Link href="/cadastro">
-                <a
+              <Link href="/cadastro" passHref>
+                <button
                   onMouseEnter={() => {
                     setHover('openAcc')
                     setSubmenu(null)
@@ -224,12 +228,13 @@ function MenuLinks({ visible }) {
                   onMouseLeave={() => setHover(null)}
                   onFocus={() => void 0}
                   onBlur={() => void 0}
+                  onClick={emptyMenu}
                   className={classNames(styles['link'], {
                     [styles[`${theme}__link-hover`]]: hover === 'openAcc',
                   })}
                 >
                   {translate('menu.openAccount')}
-                </a>
+                </button>
               </Link>
             </div>
           </div>

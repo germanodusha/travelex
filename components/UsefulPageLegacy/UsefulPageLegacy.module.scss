@@ -11,11 +11,13 @@
   &__txt {
     @include config-transition-prop(margin-left);
 
+    font-size: clamp(10vw, 15vw, 1rem);
     margin: 0;
     padding-bottom: 0;
     padding-top: 0;
 
     &__second-page {
+      font-size: 5vw;
       margin-left: 0.7em;
     }
   }
