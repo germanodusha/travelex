@@ -29,3 +29,9 @@ button {
   outline: inherit;
   padding: 0;
 }
+
+.snap {
+  &__align-start {
+    scroll-snap-align: start;
+  }
+}
