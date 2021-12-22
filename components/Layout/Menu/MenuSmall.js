@@ -80,6 +80,17 @@ const MenuSmall = ({
           {/* <MenuClose fill={theme === 'dark' ? '#bebebe' : '#221f42'} /> */}
           <MenuClose fill={'#bebebe'} />
         </button>
+        <button
+          className={classNames(styles['header-small-closebtn'], {
+            [styles['menu-logo']]: !isOpen,
+          })}
+          onClick={() => {
+            toggleMenu()
+            handleClick()
+          }}
+        >
+          <MenuClose fill={theme === 'dark' ? '#bebebe' : '#221f42'} />
+        </button>
       </div>
     </nav>
   )
