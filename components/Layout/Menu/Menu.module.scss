@@ -391,6 +391,10 @@
   will-change: transform, height;
   z-index: -1;
 
+  &-cambio {
+    background-color: $white;
+  }
+
   &-enabled {
     transform: translateY(0);
   }
