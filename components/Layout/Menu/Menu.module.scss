@@ -11,6 +11,10 @@
   a {
     @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
   }
+
+  button {
+    @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+  }
 }
 
 .toggle {
@@ -72,12 +76,25 @@
   margin-right: $padding-horizontal;
 }
 
+.menu-links button {
+  color: $white;
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-right: $padding-horizontal;
+}
+
 .menu-cta {
   @include config-transition-prop(background-color);
 
   background-color: transparent;
 
   a {
+    @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+
+    margin: 0 0.5em;
+  }
+
+  button {
     @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
 
     margin: 0 0.5em;
@@ -92,6 +109,10 @@
   }
 
   a {
+    color: $gray-second !important;
+  }
+
+  button {
     color: $gray-second !important;
   }
 }
@@ -202,6 +223,94 @@
   display: none;
 }
 
+.light {
+  a {
+    color: $blue;
+    // color: $white;
+
+    &:hover {
+      color: $gray-second;
+    }
+  }
+
+  button {
+    color: $blue;
+    // color: $white;
+
+    &:hover {
+      color: $gray-second;
+    }
+  }
+
+  &__link-hover {
+    border-bottom-color: $blue !important;
+  }
+
+  &__link-active {
+    color: $gray-second !important;
+
+    &:hover {
+      color: $blue !important;
+    }
+  }
+}
+
+.dark {
+  a {
+    color: $white;
+
+    &:hover {
+      color: $gray-second;
+    }
+  }
+
+  button {
+    color: $white;
+
+    &:hover {
+      color: $gray-second;
+    }
+  }
+
+  &__link-hover {
+    border-bottom-color: $white !important;
+  }
+
+  &__link-active {
+    color: $gray-second !important;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+}
+
+.white {
+  a {
+    color: $white;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+
+  button {
+    color: $white;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+
+  &__link-active {
+    color: $gray-second !important;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+}
+
 @media (max-width: $max-width-sm) {
   .menu {
     visibility: hidden;
@@ -219,7 +328,7 @@
     height: 100vh;
     // justify-content: space-between;
     justify-content: flex-start;
-    position: absolute;
+    position: fixed;
     width: 100vw;
     z-index: 5;
   }
@@ -237,6 +346,19 @@
     font-family: Bebas Neue Regular;
     font-size: 1.5em;
     padding-left: 0.7em;
+
+    &:hover {
+      background-color: $white;
+      color: $navy-blue !important;
+    }
+  }
+
+  .menu-links button {
+    color: $white;
+    font-family: Bebas Neue Regular;
+    font-size: 1.5em;
+    padding-left: 0.7em;
+    text-align: start;
 
     &:hover {
       background-color: $white;
@@ -267,6 +389,11 @@
     width: 100%;
 
     a {
+      margin: 0;
+      width: 100vw;
+    }
+    
+    button {
       margin: 0;
       width: 100vw;
     }
@@ -310,66 +437,92 @@
   .menu-lang p {
     color: $white;
   }
-}
 
-.light {
-  a {
-    color: $blue;
+  .light {
+    a {
+      // color: $blue;
+      color: $white;
 
-    &:hover {
-      color: $gray-second;
+      &:hover {
+        color: $gray-second;
+      }
+    }
+
+    button {
+      // color: $blue;
+      color: $white;
+
+      &:hover {
+        color: $gray-second;
+      }
+    }
+
+    &__link-hover {
+      border-bottom-color: $white !important;
+    }
+
+    &__link-active {
+      color: $gray-second !important;
+
+      &:hover {
+        color: $blue !important;
+      }
     }
   }
 
-  &__link-hover {
-    border-bottom-color: $blue !important;
-  }
+  .dark {
+    a {
+      color: $white;
 
-  &__link-active {
-    color: $gray-second !important;
-
-    &:hover {
-      color: $blue !important;
+      &:hover {
+        color: $gray-second;
+      }
     }
-  }
-}
 
-.dark {
-  a {
-    color: $white;
+    button {
+      color: $white;
 
-    &:hover {
-      color: $gray-second;
+      &:hover {
+        color: $gray-second;
+      }
     }
-  }
 
-  &__link-hover {
-    border-bottom-color: $white !important;
-  }
-
-  &__link-active {
-    color: $gray-second !important;
-
-    &:hover {
-      color: $white !important;
+    &__link-hover {
+      border-bottom-color: $white !important;
     }
-  }
-}
 
-.white {
-  a {
-    color: $white;
+    &__link-active {
+      color: $gray-second !important;
 
-    &:hover {
-      color: $gray-second;
+      &:hover {
+        color: $white !important;
+      }
     }
   }
 
-  &__link-active {
-    color: $gray-second !important;
+  .white {
+    a {
+      color: $white;
 
-    &:hover {
-      color: $white !important;
+      &:hover {
+        color: $white !important;
+      }
+    }
+
+    button {
+      color: $white;
+
+      &:hover {
+        color: $white !important;
+      }
+    }
+
+    &__link-active {
+      color: $gray-second !important;
+
+      &:hover {
+        color: $white !important;
+      }
     }
   }
 }

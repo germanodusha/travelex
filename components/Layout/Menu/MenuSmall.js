@@ -8,18 +8,26 @@ import mainLogoColorful from '../../../public/images/TravelexLogo.png'
 import styles from './Menu.module.scss'
 import { MenuIcon, MenuClose } from '../../Icons'
 
-const MenuSmall = ({ toggleMenu }) => {
+const MenuSmall = ({
+  isOpen,
+  lockScroll,
+  setIsOpen,
+  toggleMenu,
+  unlockScroll,
+}) => {
   const { theme } = useMenuTheme()
-
-  const [isOpen, setIsOpen] = useState(false)
 
   function handleClick() {
     if (isOpen) {
       setIsOpen(false)
+      unlockScroll()
     } else {
       setIsOpen(true)
+      lockScroll()
     }
   }
+
+  const isMenuMobile = theme === 'dark' || isOpen
 
   return (
     <nav
@@ -30,9 +38,18 @@ const MenuSmall = ({ toggleMenu }) => {
     >
       <div className={styles['menu-mobile']}>
         <div className={styles['mobile-logo']}>
-          <Link href="/">
+          {/* <Link href="/">
             <a>
               {theme === 'dark' ? (
+                <Image src={mainLogoWhite} alt="Travelex Logo Mobile" />
+              ) : (
+                <Image src={mainLogoColorful} alt="Travelex Logo Mobile" />
+              )}
+            </a>
+          </Link> */}
+          <Link href="/">
+            <a>
+              {isMenuMobile ? (
                 <Image src={mainLogoWhite} alt="Travelex Logo Mobile" />
               ) : (
                 <Image src={mainLogoColorful} alt="Travelex Logo Mobile" />
@@ -50,6 +67,19 @@ const MenuSmall = ({ toggleMenu }) => {
           }}
         >
           <MenuIcon fill={theme === 'dark' ? '#bebebe' : '#221f42'} />
+          {/* <MenuIcon fill={'#bebebe'} /> */}
+        </button>
+        <button
+          className={classNames(styles['header-small-closebtn'], {
+            [styles['menu-logo']]: !isOpen,
+          })}
+          onClick={() => {
+            toggleMenu()
+            handleClick()
+          }}
+        >
+          {/* <MenuClose fill={theme === 'dark' ? '#bebebe' : '#221f42'} /> */}
+          <MenuClose fill={'#bebebe'} />
         </button>
         <button
           className={classNames(styles['header-small-closebtn'], {

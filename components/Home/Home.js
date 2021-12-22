@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTranslations } from 'use-intl'
 import CarouselWithInterval from '@/components/CarouselWithInterval'
-import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import Footer from '../Layout/Footer'
 import imgBannerTwo from '../../public/images/bannerTwoHome.png'
 import imgBannerThree from '../../public/images/bannerThreeHome.png'
@@ -23,8 +22,6 @@ function CarouselItem({ item }) {
 
 function Home() {
   const translate = useTranslations('Home')
-
-  useLockScrollFirstPage()
 
   const bannerItems = [
     {
@@ -55,8 +52,13 @@ function Home() {
 
   return (
     <main>
-      <CarouselWithInterval data={bannerItems} RenderItem={CarouselItem} />
-      <Footer />
+      <div className="snap__align-start">
+        <CarouselWithInterval data={bannerItems} RenderItem={CarouselItem} />
+      </div>
+
+      <div className="snap__align-start">
+        <Footer />
+      </div>
     </main>
   )
 }
