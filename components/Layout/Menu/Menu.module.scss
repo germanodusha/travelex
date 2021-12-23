@@ -394,7 +394,7 @@
       margin: 0;
       width: 100vw;
     }
-
+    
     button {
       margin: 0;
       width: 100vw;
@@ -546,6 +546,10 @@
   transition: transform 0.3s ease-in-out, height 0.3s ease-in;
   will-change: transform, height;
   z-index: -1;
+
+  &-cambio {
+    background-color: $white;
+  }
 
   &-enabled {
     transform: translateY(0);
