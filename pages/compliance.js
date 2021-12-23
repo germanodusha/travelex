@@ -1,5 +1,6 @@
 import { useTranslations } from 'use-intl'
 import UsefulPageLegacy from '@/components/UsefulPageLegacy'
+// import UsefulPage from '@/components/UsefulPage'
 
 function Compliance() {
   const translate = useTranslations('Compliance')
