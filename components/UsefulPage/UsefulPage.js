@@ -42,7 +42,7 @@ function UsefulPage({
           className={classNames(styles['title__border'], {
             [styles['title__border__second-page']]: !onCoverPage,
           })}
-          style={color ? { backgroundColor: color } : {}}
+          // style={color ? { backgroundColor: color } : {}}
         />
       </div>
 
@@ -65,7 +65,8 @@ function UsefulPage({
 
         <ChangeThemeOnScroll
           theme="light"
-          style={{ transform: 'translateY(-30%)' }}
+          options={{}}
+          style={{ transform: 'translateY(-100%)' }}
         />
         <ChangeThemeOnScroll theme="dark" options={{}} />
         <Footer />

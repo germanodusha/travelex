@@ -11,10 +11,16 @@
   &__txt {
     @include config-transition-prop(margin-left);
 
-    font-size: clamp(10vw, 15vw, 1rem);
+    font-size: 18vw;
     margin: 0;
     padding-bottom: 0;
+    padding-left: $padding-horizontal * 0.1;
     padding-top: 0;
+
+    @media (min-width: $min-width-sm) {
+      font-size: 7vw;
+      padding-left: 5rem;
+    }
 
     &__second-page {
       font-size: 5vw;
@@ -62,7 +68,7 @@
 .caption {
   bottom: 0;
   display: none;
-  left: 5.2em;
+  left: 5rem;
   position: absolute;
 
   @media (min-width: $min-width-sm) {

@@ -12,7 +12,7 @@ function Cadastro(props) {
   const translate = useTranslations('Jobs')
 
   return (
-    <Scroller>
+    <Scroller pages={2}>
       <div>
         <ChangeThemeOnScroll
           theme="light"

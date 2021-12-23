@@ -70,13 +70,15 @@ const Scroller = forwardRef((props, ref) => {
       const offset = isToNext ? 1 : -1
       setCurrentPage((v) => getNewPageNumber(v + offset))
     },
-    wait: 1000,
+    wait: 250,
     preventDefault: false,
   })
 
   return (
     <div>
       <ReactPageScroller
+        animationTimer={500}
+        animationTimerBuffer={100}
         blockScrollUp
         blockScrollDown
         renderAllPagesOnFirstRender
