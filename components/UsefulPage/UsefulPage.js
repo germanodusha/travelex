@@ -65,7 +65,8 @@ function UsefulPage({
 
         <ChangeThemeOnScroll
           theme="light"
-          style={{ transform: 'translateY(-30%)' }}
+          options={{}}
+          style={{ transform: 'translateY(-100%)' }}
         />
         <ChangeThemeOnScroll theme="dark" options={{}} />
         <Footer />
