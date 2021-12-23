@@ -77,6 +77,8 @@ const Scroller = forwardRef((props, ref) => {
   return (
     <div>
       <ReactPageScroller
+        animationTimer={500}
+        animationTimerBuffer={100}
         blockScrollUp
         blockScrollDown
         renderAllPagesOnFirstRender

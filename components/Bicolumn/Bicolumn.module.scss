@@ -1,11 +1,13 @@
 @import '@/styles/theme';
 
 .title {
+  // max-width: 35vw;
   min-height: 60vh;
   padding-top: $menu-height;
   // padding-left: $padding-horizontal * 3.2;
 
   @media (max-width: $max-width-sm) {
+    // max-width: unset;
     min-height: 100%;
     padding-left: $padding-horizontal;
   }
@@ -14,7 +16,7 @@
     font-size: 13vw;
 
     @media (min-width: $min-width-sm) {
-      font-size: 9vw;
+      font-size: 5vw;
     }
   }
 }
