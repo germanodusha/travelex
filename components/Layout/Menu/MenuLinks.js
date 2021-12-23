@@ -13,6 +13,7 @@ import styles from './Menu.module.scss'
 function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
   const router = useRouter()
   const translate = useTranslations(subMenu ? `cambio-${subMenu}` : 'cambio')
+  const { theme } = useMenuTheme()
   const items = Services[subMenu] || []
   const [path, service] = router.asPath.split('#')
 
@@ -22,7 +23,7 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
     <div
       className={classNames(styles['menu-links'], styles['submenu'], {
         [styles['submenu-enabled']]: (menuHover || menuTextHover) && subMenu,
-        [styles['submenu-cambio']]: isCambioPath,
+        [styles['submenu-opaque']]: isCambioPath || theme === 'light',
       })}
     >
       <div

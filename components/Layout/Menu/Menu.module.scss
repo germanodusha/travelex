@@ -1,6 +1,12 @@
 @import '@/styles/theme';
 
 .menu {
+  @include config-transition-prop(
+    background-color,
+    $delay: 0s,
+    $duration: 0.2s
+  );
+
   background-color: transparent;
   height: $menu-height * 1.4;
   position: fixed;
@@ -392,7 +398,7 @@
       margin: 0;
       width: 100vw;
     }
-    
+
     button {
       margin: 0;
       width: 100vw;
@@ -544,7 +550,7 @@
   will-change: transform, height;
   z-index: -1;
 
-  &-cambio {
+  &-opaque {
     background-color: $white;
   }
 
