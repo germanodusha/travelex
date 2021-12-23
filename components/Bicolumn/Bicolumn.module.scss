@@ -1,16 +1,20 @@
 @import '@/styles/theme';
 
 .title {
-  min-height: 50vh;
+  min-height: 60vh;
   padding-top: $menu-height;
+  // padding-left: $padding-horizontal * 3.2;
+
+  @media (max-width: $max-width-sm) {
+    min-height: 100%;
+    padding-left: $padding-horizontal;
+  }
 
   div {
-    font-size: 2em;
-    padding: $padding-vertical $padding-horizontal * 0.7;
+    font-size: 13vw;
 
     @media (min-width: $min-width-sm) {
-      font-size: 4em;
-      padding: $padding-vertical $padding-horizontal * 1.15;
+      font-size: 9vw;
     }
   }
 }
@@ -32,30 +36,39 @@
     top: 0;
     width: 100%;
     z-index: 1;
+
+    @media (max-width: $max-width-sm) {
+      height: $menu-height;
+    }
   }
 
   &__header-logo {
     background-color: $white;
 
     // Checar se há necessidade de deixar esquerda grande
-    height: $menu-height * 1.4;
+    height: $menu-height * 2;
     // height: $menu-height + 1em;
     position: sticky;
     top: 0;
-    width: 35%;
+    width: 36%;
     z-index: 1;
-    @media (min-width: $min-width-sm) {
-      height: $menu-height * 2;
+
+    @media (max-width: $max-width-sm) {
+      display: none;
     }
   }
 
   &__left {
     color: $navy-blue;
     font-family: Bebas Neue Regular;
-    font-size: 2em;
-    padding: $padding-vertical $padding-horizontal;
+    font-size: 8vw;
+    margin-bottom: 8vh;
+    padding: 0 $padding-horizontal * 0.7;
 
     @media (min-width: $min-width-sm) {
+      font-size: 2em;
+      margin-bottom: unset;
+      padding: $padding-vertical $padding-horizontal;
       padding-left: $padding-horizontal * 1.8;
       padding-top: $padding-vertical;
       width: 30%;
@@ -70,9 +83,10 @@
 
   &__right {
     font-size: 1.8em;
-    padding: $padding-vertical $padding-horizontal;
+    padding: 0 $padding-horizontal * 0.5;
 
     @media (min-width: $min-width-sm) {
+      padding: $padding-vertical $padding-horizontal;
       padding-left: $padding-horizontal * 2.6;
       padding-right: $padding-horizontal * 6;
       padding-top: $padding-vertical;

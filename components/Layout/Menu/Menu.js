@@ -33,6 +33,7 @@ const Menu = () => {
     <header>
       <MenuLinks emptyMenu={emptyMenu} visible={visible} />
       <MenuSmall
+        emptyMenu={emptyMenu}
         isOpen={isOpen}
         lockScroll={lockScroll}
         setIsOpen={setIsOpen}

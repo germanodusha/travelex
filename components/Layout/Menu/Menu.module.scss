@@ -137,92 +137,6 @@
   }
 }
 
-.menu-lang {
-  align-items: center;
-  display: flex;
-  flex: row;
-  font-family: Bebas Neue Regular;
-  margin-top: -1em;
-  padding: 0 $padding-horizontal;
-}
-
-// .menu-lang p {
-//   color: $navy-blue
-// }
-.menu-lang-p {
-  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
-
-  &__light {
-    color: $blue;
-  }
-
-  &__dark {
-    color: $white;
-  }
-
-  &__white {
-    color: $gray-blue;
-  }
-}
-
-.menu-lang > * {
-  // color: $white;
-  margin-left: 1em;
-}
-
-.menu-lang-btn {
-  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
-
-  &__light {
-    color: $gray-second;
-
-    &:hover {
-      color: $blue;
-    }
-  }
-
-  &__dark {
-    color: $gray-blue;
-
-    &:hover {
-      color: $white;
-    }
-  }
-
-  &__white {
-    color: $gray-second;
-
-    &:hover {
-      color: $blue;
-    }
-  }
-}
-
-/* small nav */
-.header-small-button {
-  margin: 0;
-  padding: $padding-vertical;
-  z-index: 10;
-}
-
-.header-small-closebtn {
-  bottom: 0;
-  margin: 0;
-  padding: 0 $padding-vertical $padding-vertical 0;
-  position: fixed;
-  right: 0;
-  z-index: 10;
-}
-
-.menu-small {
-  display: none;
-  width: 100%;
-}
-
-.mobile-logo {
-  display: none;
-}
-
 .light {
   a {
     color: $blue;
@@ -311,6 +225,92 @@
   }
 }
 
+.menu-lang {
+  align-items: center;
+  display: flex;
+  flex: row;
+  font-family: Bebas Neue Regular;
+  margin-top: -1em;
+  padding: 0 $padding-horizontal;
+}
+
+// .menu-lang p {
+//   color: $navy-blue
+// }
+.menu-lang-p {
+  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+
+  &__light {
+    color: $blue;
+  }
+
+  &__dark {
+    color: $white;
+  }
+
+  &__white {
+    color: $gray-blue;
+  }
+}
+
+.menu-lang > * {
+  // color: $white;
+  margin-left: 1em;
+}
+
+.menu-lang-btn {
+  @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
+
+  &__light {
+    color: $gray-second !important;
+
+    &:hover {
+      color: $blue !important;
+    }
+  }
+
+  &__dark {
+    color: $gray-blue !important;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+
+  &__white {
+    color: $gray-second !important;
+
+    &:hover {
+      color: $blue !important;
+    }
+  }
+}
+
+/* small nav */
+.header-small-button {
+  margin: 0;
+  padding: $padding-vertical;
+  z-index: 10;
+}
+
+.header-small-closebtn {
+  bottom: 0;
+  margin: 0;
+  padding: 0 $padding-vertical $padding-vertical 0;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+}
+
+.menu-small {
+  display: none;
+  width: 100%;
+}
+
+.mobile-logo {
+  display: none;
+}
+
 @media (max-width: $max-width-sm) {
   .menu {
     visibility: hidden;
@@ -343,9 +343,10 @@
 
   .menu-links a {
     color: $white;
-    font-family: Bebas Neue Regular;
+    // font-family: Bebas Neue Regular;
     font-size: 1.5em;
     padding-left: 0.7em;
+    text-transform: capitalize;
 
     &:hover {
       background-color: $white;
@@ -355,7 +356,7 @@
 
   .menu-links button {
     color: $white;
-    font-family: Bebas Neue Regular;
+    // font-family: Bebas Neue Regular;
     font-size: 1.5em;
     padding-left: 0.7em;
     text-align: start;
@@ -380,6 +381,7 @@
     display: flex;
     flex-direction: column;
     padding: 0;
+    text-transform: lowercase;
     // width: 100%;
   }
 
@@ -428,7 +430,8 @@
   }
 
   .menu-lang {
-    bottom: calc(24px + 2.5em);
+    bottom: calc(24px + 1.5em);
+    font-size: 1.3em;
     justify-content: flex-end;
     position: fixed;
     right: 0;

@@ -42,7 +42,7 @@ function UsefulPage({
           className={classNames(styles['title__border'], {
             [styles['title__border__second-page']]: !onCoverPage,
           })}
-          style={color ? { backgroundColor: color } : {}}
+          // style={color ? { backgroundColor: color } : {}}
         />
       </div>
 
