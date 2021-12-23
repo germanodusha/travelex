@@ -14,14 +14,17 @@ function FormPage({
   menuTheme = 'light',
   menuOptions = {},
   theme = undefined,
+  disableTheme = false,
   ...props
 }) {
   const { changeTheme } = useMenuTheme()
 
   useEffect(() => {
+    if (disableTheme) return
+
     changeTheme(menuTheme, menuOptions)
     return () => changeTheme('dark', {})
-  }, [changeTheme, menuTheme, menuOptions])
+  }, [disableTheme, changeTheme, menuTheme, menuOptions])
 
   return (
     <Banner
