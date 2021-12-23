@@ -9,7 +9,7 @@ function Cadastro(props) {
   const translate = useTranslations('Jobs')
 
   return (
-    <Scroller>
+    <Scroller pages={2}>
       <FormPage
         backgroundImage={imgBannerTwo}
         description={translate('description')}
