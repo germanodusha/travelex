@@ -15,7 +15,9 @@ const Scroller = forwardRef((props, ref) => {
     children,
     disableScroll = false,
     onBeforePageScroll = undefined,
+    onPageChange = undefined,
     pages = undefined,
+    disableAutoTheme = false,
   } = props
   const [isThemeInit, setTehemeInit] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
@@ -47,6 +49,7 @@ const Scroller = forwardRef((props, ref) => {
   }
 
   const setThemeByChildren = (page) => {
+    if (disableAutoTheme) return
     const currentChild = Array.isArray(children) ? children[page] : children
     changeTheme(currentChild?.props?.menuTheme || 'dark')
   }
@@ -55,6 +58,10 @@ const Scroller = forwardRef((props, ref) => {
     if (typeof onBeforePageScroll === 'function') onBeforePageScroll(page)
     if (!children) return
     setThemeByChildren(page)
+  }
+
+  const handlePageChange = (page) => {
+    if (typeof onPageChange === 'function') onPageChange(page)
   }
 
   useEffect(() => {
@@ -84,6 +91,7 @@ const Scroller = forwardRef((props, ref) => {
         renderAllPagesOnFirstRender
         customPageNumber={currentPage}
         onBeforePageScroll={handleBeforePageScroll}
+        pageOnChange={handlePageChange}
       >
         {children}
       </ReactPageScroller>
@@ -95,11 +103,13 @@ function ScrollerSection({
   children,
   className = undefined,
   menuTheme = 'dark',
+  menuOptions = {},
 }) {
   return (
     <div
       className={className}
       data-menu-theme={menuTheme} // prevent unused var
+      data-menu-options={menuOptions} // prevent unused var
     >
       {children}
     </div>

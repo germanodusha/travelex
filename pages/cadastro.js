@@ -1,45 +1,40 @@
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'use-intl'
 import FormPage from '@/components/FormPage'
 import { FormTypes } from '@/components/RegisterForm'
-import imgBannerOne from '../public/images/bannerOneHome.png'
 import Footer from '@/components/Layout/Footer'
-import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
+import Scroller from '@/components/Scroller'
+import { useMenuTheme } from '@/contexts/LayoutContext'
+import imgBannerOne from '../public/images/bannerOneHome.png'
+
+const themeOptions = { background: 'white' }
 
 function Cadastro(props) {
   const translate = useTranslations('openAccount')
+  const [current, setCurrent] = useState(0)
+  const { changeTheme } = useMenuTheme()
 
-  function FooterWrapper() {
-    return (
-      <>
-        <ChangeThemeOnScroll theme="dark" options={{}} />
-        <Footer />
-        <ChangeThemeOnScroll
-          theme="dark"
-          options={{}}
-          style={{ transform: 'translateY(-100%)' }}
-        />
-      </>
-    )
-  }
+  useEffect(() => {
+    const themes = [
+      ['light', themeOptions],
+      ['dark', {}],
+    ]
+    changeTheme(...themes[current])
+  }, [current, changeTheme])
 
   return (
-    <div>
+    <Scroller disableAutoTheme pages={2} onPageChange={setCurrent}>
       <FormPage
         backgroundImage={imgBannerOne}
         description={translate('description')}
-        // descriptionTitle="Trabalho conosco"
-        menuTheme="light"
-        hideFormType={false}
+        // descriptionTitle={translate('descriptionTitle')}
         formType={FormTypes.PESSOA_FISICA}
+        hideFormType={false}
+        disableTheme
         {...props}
       />
-      <ChangeThemeOnScroll
-        theme="light"
-        options={{}}
-        style={{ transform: 'translateY(-100%)' }}
-      />
-      <FooterWrapper />
-    </div>
+      <Footer />
+    </Scroller>
   )
 }
 

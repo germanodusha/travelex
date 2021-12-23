@@ -2,7 +2,10 @@
 
 .footer {
   background-color: $black;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  justify-content: flex-end;
   padding-bottom: 0;
   padding-left: $padding-horizontal * 1.5;
   padding-right: $padding-horizontal * 1.5;

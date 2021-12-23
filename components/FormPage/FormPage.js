@@ -12,15 +12,19 @@ function FormPage({
   hideFormType = false,
   formType = FormTypes.PESSOA_FISICA,
   menuTheme = 'light',
+  menuOptions = {},
   theme = undefined,
+  disableTheme = false,
   ...props
 }) {
   const { changeTheme } = useMenuTheme()
 
   useEffect(() => {
-    changeTheme(menuTheme)
-    return () => changeTheme('dark')
-  }, [changeTheme, menuTheme])
+    if (disableTheme) return
+
+    changeTheme(menuTheme, menuOptions)
+    return () => changeTheme('dark', {})
+  }, [disableTheme, changeTheme, menuTheme, menuOptions])
 
   return (
     <Banner
