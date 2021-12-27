@@ -2,7 +2,7 @@ import { useTranslations } from 'use-intl'
 import { useRouter } from 'next/router'
 import UsefulPageLegacy from '@/components/UsefulPageLegacy'
 import Interweave from 'interweave'
-import { readMarkdownLocale } from '@/utils/markdown
+import { readMarkdownLocale } from '@/utils/markdown'
 
 function Compliance({ markdown }) {
   const { locale } = useRouter()
