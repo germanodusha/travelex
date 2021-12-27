@@ -47,15 +47,14 @@ function UsefulPageLegacy({
           </div>
         </ScrollerSection>
 
-        {content && (
+        {(children || content) && (
           <ScrollerSection menuTheme="light" className={styles['section']}>
             <div className={styles['content']}>
               <p>{content}</p>
+              {children}
             </div>
           </ScrollerSection>
         )}
-
-        {children}
 
         <Footer />
       </Scroller>

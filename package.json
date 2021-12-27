@@ -16,6 +16,8 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "formik": "^2.2.9",
+    "interweave": "12.9.0",
+    "marked": "4.0.8",
     "next": "11.1.2",
     "next-intl": "^2.0.5",
     "react": "17.0.2",
@@ -38,6 +40,7 @@
     "eslint-plugin-react": "7.25.1",
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "7.0.2",
+    "interweave-ssr": "1.2.1",
     "lint-staged": "11.1.2",
     "next-sitemap": "1.6.168",
     "next-transpile-modules": "8.0.0",
