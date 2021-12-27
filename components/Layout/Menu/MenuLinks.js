@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef } from 'react'
+import { useCallback, useState, useRef, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -13,13 +13,17 @@ import styles from './Menu.module.scss'
 function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
   const router = useRouter()
   const translate = useTranslations(subMenu ? `cambio-${subMenu}` : 'cambio')
+  const { theme } = useMenuTheme()
   const items = Services[subMenu] || []
-  const [, service] = router.asPath.split('#')
+  const [path, service] = router.asPath.split('#')
+
+  const isCambioPath = useMemo(() => path.includes('cambio'), [path])
 
   return (
     <div
       className={classNames(styles['menu-links'], styles['submenu'], {
         [styles['submenu-enabled']]: (menuHover || menuTextHover) && subMenu,
+        [styles['submenu-opaque']]: isCambioPath || theme === 'light',
       })}
     >
       <div
@@ -242,7 +246,7 @@ function MenuLinks({ visible, emptyMenu }) {
             <p className={classNames(styles[`menu-lang-p__${theme}`])}>
               {translate('menu.currentLocale')}
             </p>
-            <Link href={route} locale={otherLocale}>
+            <Link href={route} locale={otherLocale} passHref>
               <button
                 className={classNames(
                   styles['menu-lang-btn'],

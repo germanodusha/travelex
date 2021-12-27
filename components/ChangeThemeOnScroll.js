@@ -25,6 +25,7 @@ function ChangeThemeOnScroll({ theme, options = {}, style }) {
         position: 'absolute',
         height: '100vh',
         width: '100%',
+        zIndex: '-1',
         ...style,
       }}
     />

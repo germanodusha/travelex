@@ -5,7 +5,7 @@
 
   opacity: 1;
   position: absolute;
-  top: 20vh;
+  top: $menu-height * 3;
   transform-origin: left center;
 
   &__fixed {
@@ -15,10 +15,16 @@
 
   &__txt {
     @include config-transition-prop(margin-left);
-
+    font-size: 18vw;
     margin: 0;
     padding-bottom: 0;
+    padding-left: $padding-horizontal * 0.1;
     padding-top: 0;
+
+    @media (min-width: $min-width-sm) {
+      font-size: 7vw;
+      padding-left: 5rem;
+    }
 
     &__second-page {
       margin-left: 0.7em;
@@ -66,7 +72,7 @@
   bottom: 0;
   display: none;
   font-size: 1.5em;
-  left: 5.2em;
+  left: 5rem;
   position: absolute;
 
   @media (min-width: $min-width-sm) {

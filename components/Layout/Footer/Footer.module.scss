@@ -2,7 +2,10 @@
 
 .footer {
   background-color: $black;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  justify-content: flex-end;
   padding-bottom: 0;
   padding-left: $padding-horizontal * 1.5;
   padding-right: $padding-horizontal * 1.5;
@@ -81,6 +84,7 @@
     height: 100vh;
     justify-content: space-between;
     padding-bottom: $padding-vertical;
+    padding-top: $padding-vertical;
   }
 
   .footer-text,
@@ -92,7 +96,7 @@
   .footer-links {
     flex-direction: column;
     margin-top: $padding-vertical;
-    padding: $padding-vertical 0;
+    padding: 1vh 0;
     text-align: center;
     width: 100%;
   }
@@ -113,7 +117,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    padding-top: $padding-vertical;
+    padding-top: $padding-vertical * 0.5;
     width: 100%;
   }
 
@@ -131,7 +135,7 @@
     display: flex;
     font-family: Bebas Neue Regular;
     font-size: 1em;
-    padding: $padding-horizontal;
+    padding: $padding-vertical * 0.5 $padding-horizontal;
   }
 
   .footer-bottom {
@@ -144,6 +148,6 @@
 
   .footer-logo {
     max-width: 200px;
-    padding: $padding-vertical 0;
+    padding: $padding-vertical * 0.5 0;
   }
 }

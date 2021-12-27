@@ -10,7 +10,7 @@ function Bicolumn({
 }) {
   return (
     <div>
-      {headerBg && <div className={styles['container__header-logo']} />}
+      {/* {headerBg && <div className={styles['container__header-logo']} />} */}
       {headerBg && <div className={styles['container__header']} />}
 
       <div id={id} className={styles['title']}>
