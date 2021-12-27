@@ -14,7 +14,7 @@ const Services = {
     { image: imgBanner, path: 'trade-finance' },
     { image: imgBanner, path: 'trade-service' },
     { image: imgBanner, path: 'hedge' },
-    { image: imgBanner, path: 'assesoria-e-servicos' },
+    { image: imgBanner, path: 'assessoria-e-servicos' },
     { image: imgBanner, path: 'analises-registros-e-declaracoes' },
   ],
   [CambiosTypes.PESSOA_FISICA]: [
