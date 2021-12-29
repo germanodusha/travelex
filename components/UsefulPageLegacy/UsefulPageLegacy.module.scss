@@ -23,7 +23,6 @@
     }
 
     &__second-page {
-      font-size: 5vw;
       margin-left: 0.7em;
     }
   }
@@ -52,7 +51,7 @@
   &__second-page {
     opacity: 0;
     top: 30vh;
-    transform: scale(0.7);
+    transform: scale(0.5);
 
     @media (min-width: $min-width-sm) {
       display: block;
