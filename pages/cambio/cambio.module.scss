@@ -83,7 +83,6 @@
 
     &-desk {
       display: none;
-      min-width: 35vw;
 
       @media (min-width: $min-width-sm) {
         display: block;
