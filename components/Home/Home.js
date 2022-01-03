@@ -1,6 +1,8 @@
 import React from 'react'
 import { useTranslations } from 'use-intl'
 import CarouselWithInterval from '@/components/CarouselWithInterval'
+import { useEffectOnce } from 'react-use'
+import { useMenuTheme } from '@/contexts/LayoutContext'
 import Footer from '../Layout/Footer'
 import imgBannerTwo from '../../public/images/bannerTwoHome.png'
 import imgBannerThree from '../../public/images/bannerThreeHome.png'
@@ -22,6 +24,11 @@ function CarouselItem({ item }) {
 
 function Home() {
   const translate = useTranslations('Home')
+  const { changeTheme } = useMenuTheme()
+
+  useEffectOnce(() => {
+    changeTheme('dark')
+  })
 
   const bannerItems = [
     {
