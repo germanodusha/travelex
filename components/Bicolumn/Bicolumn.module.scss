@@ -73,7 +73,6 @@
       padding: $padding-vertical $padding-horizontal;
       padding-left: $padding-horizontal * 1.8;
       padding-top: $padding-vertical;
-      width: 30%;
     }
 
     &-txt {
@@ -88,11 +87,7 @@
     padding: 0 $padding-horizontal * 0.5;
 
     @media (min-width: $min-width-sm) {
-      padding: $padding-vertical $padding-horizontal;
-      padding-left: $padding-horizontal * 2.6;
-      padding-right: $padding-horizontal * 6;
-      padding-top: $padding-vertical;
-      width: 70%;
+      padding: unset;
     }
   }
 }

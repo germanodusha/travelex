@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react'
+import { useEffectOnce, useMountedState } from 'react-use'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -50,6 +51,7 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
 }
 
 function MenuLinks({ visible, emptyMenu }) {
+  const isMonted = useMountedState()
   const { setLimits } = usePageLimits()
   const { theme, options } = useMenuTheme()
   const translate = useTranslations('Layout')
@@ -79,21 +81,27 @@ function MenuLinks({ visible, emptyMenu }) {
       ? corpRef.current?.getBoundingClientRect().left || 0
       : personRef.current?.getBoundingClientRect().left || 0
 
-  const handleLimits = useCallback(
-    () =>
-      setLimits({
-        left: JSON.parse(
-          JSON.stringify(logoRef?.current?.getBoundingClientRect())
-        ),
-        right: JSON.parse(
-          JSON.stringify(menuRef?.current?.getBoundingClientRect())
-        ),
-      }),
-    [setLimits]
-  )
+  const handleLimits = useCallback(() => {
+    setLimits({
+      leftColumn: JSON.parse(
+        JSON.stringify(logoRef?.current?.getBoundingClientRect())
+      ),
+      rightColumn: JSON.parse(
+        JSON.stringify(menuRef?.current?.getBoundingClientRect())
+      ),
+    })
+  }, [setLimits])
+
+  useEffectOnce(() => {
+    handleLimits()
+    const timeout = setTimeout(handleLimits, 200)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [isMonted, handleLimits])
 
   useEffect(() => {
-    handleLimits()
     window.addEventListener('resize', handleLimits)
 
     return () => {

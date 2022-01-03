@@ -7,6 +7,7 @@ import Footer from '@/components/Layout/Footer'
 import Bicolumn from '@/components/Bicolumn'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
+import { usePageLimits } from '@/contexts/LayoutContext'
 import styles from './Institucional.module.scss'
 import bannerInstitutional from '../../public/images/bannerInstitutional.png'
 import imgInstitutional from '../../public/images/imgInstitutional.png'
@@ -40,6 +41,7 @@ function InstitucionalContent({
 }
 
 function Carousel() {
+  const { limits } = usePageLimits()
   const [currentItem, setCurrentItem] = useState(0)
 
   const handleNext = () => setCurrentItem((v) => Math.min(2, v + 1))
@@ -82,7 +84,13 @@ function Carousel() {
               <div className={styles['carousel__content-left']}>
                 <p>{left}</p>
               </div>
-              <div className={styles['carousel__content-right']}>
+              <div
+                className={styles['carousel__content-right']}
+                style={{
+                  left: `${limits.rightColumn.left}px`,
+                  width: `${limits.rightColumn.width}px`,
+                }}
+              >
                 <p>{right}</p>
               </div>
             </div>

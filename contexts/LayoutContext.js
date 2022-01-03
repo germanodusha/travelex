@@ -21,7 +21,6 @@ function LayoutProvider({ children }) {
   const [menuTheme, setMenuTheme] = useState('dark')
   const [menuOptions, setOptions] = useState({})
   const [limits, setLimits] = useState({
-    // isBiColumn: false, // TODO is that necessary?
     leftColumn: DEFAULT_BOUNDING_RECT,
     rightColumn: DEFAULT_BOUNDING_RECT,
   })
