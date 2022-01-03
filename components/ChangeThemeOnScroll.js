@@ -1,6 +1,9 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useMemo } from 'react'
 import { useIntersection } from 'react-use'
 import { useMenuTheme } from '@/contexts/LayoutContext'
+import { randomRGBA } from '@/utils'
+
+const DEBUG = false
 
 function ChangeThemeOnScroll({ theme, options = {}, style }) {
   const ref = useRef()
@@ -18,6 +21,8 @@ function ChangeThemeOnScroll({ theme, options = {}, style }) {
     changeTheme(theme, options)
   }, [intersection, options, theme, currentTheme])
 
+  const debugColor = useMemo(randomRGBA, [])
+
   return (
     <div
       ref={ref}
@@ -26,6 +31,7 @@ function ChangeThemeOnScroll({ theme, options = {}, style }) {
         height: '100vh',
         width: '100%',
         zIndex: '-1',
+        ...(DEBUG ? { backgroundColor: debugColor, zIndex: 10000 } : {}),
         ...style,
       }}
     />
