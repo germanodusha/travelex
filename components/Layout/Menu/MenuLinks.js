@@ -1,10 +1,10 @@
-import { useCallback, useState, useRef, useMemo } from 'react'
+import { useCallback, useEffect, useState, useRef, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useTranslations } from 'next-intl'
 import classNames from 'classnames'
-import { useMenuTheme } from '@/contexts/LayoutContext'
+import { useMenuTheme, usePageLimits } from '@/contexts/LayoutContext'
 import { CambiosTypes, Services } from '@/enums/cambio'
 import mainLogoWhite from '../../../public/images/TravelexBranco.png'
 import mainLogoColorful from '../../../public/images/TravelexLogo.png'
@@ -50,6 +50,7 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
 }
 
 function MenuLinks({ visible, emptyMenu }) {
+  const { setLimits } = usePageLimits()
   const { theme, options } = useMenuTheme()
   const translate = useTranslations('Layout')
   const { locale, locales, route } = useRouter()
@@ -60,6 +61,8 @@ function MenuLinks({ visible, emptyMenu }) {
   const [menuTextHover, setMenuTextHover] = useState(false)
   const corpRef = useRef(null)
   const personRef = useRef(null)
+  const logoRef = useRef(null)
+  const menuRef = useRef(null)
 
   const onMouseEnterText = useCallback((type) => {
     setMenuTextHover(true)
@@ -76,6 +79,28 @@ function MenuLinks({ visible, emptyMenu }) {
       ? corpRef.current?.getBoundingClientRect().left || 0
       : personRef.current?.getBoundingClientRect().left || 0
 
+  const handleLimits = useCallback(
+    () =>
+      setLimits({
+        left: JSON.parse(
+          JSON.stringify(logoRef?.current?.getBoundingClientRect())
+        ),
+        right: JSON.parse(
+          JSON.stringify(menuRef?.current?.getBoundingClientRect())
+        ),
+      }),
+    [setLimits]
+  )
+
+  useEffect(() => {
+    handleLimits()
+    window.addEventListener('resize', handleLimits)
+
+    return () => {
+      window.removeEventListener('resize', handleLimits)
+    }
+  }, [handleLimits])
+
   return (
     <div
       onMouseOver={() => setMenuHover(true)}
@@ -89,7 +114,7 @@ function MenuLinks({ visible, emptyMenu }) {
     >
       <div className={styles['menu-wrapper']}>
         <Link href="/">
-          <a>
+          <a ref={logoRef}>
             <div
               className={classNames(
                 styles['menu-logo'],
@@ -115,7 +140,7 @@ function MenuLinks({ visible, emptyMenu }) {
         </Link>
         <div className={styles['menu-left']}>
           <div className={styles['menu-links']}>
-            <div className={styles['menu-about']}>
+            <div className={styles['menu-about']} ref={menuRef}>
               <div
                 className={classNames(
                   styles['menu-about-border'],
