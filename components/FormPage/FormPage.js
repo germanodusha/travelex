@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import classNames from 'classnames'
 import Banner from '@/components/Banner'
-import { useMenuTheme } from '@/contexts/LayoutContext'
+import { useMenuTheme, usePageLimits } from '@/contexts/LayoutContext'
 import RegisterForm, { FormTypes } from '@/components/RegisterForm'
+import useIsMobile from '@/hooks/useIsMobile'
 import styles from './FormPage.module.scss'
 
 function FormPage({
@@ -17,6 +18,8 @@ function FormPage({
   disableTheme = false,
   ...props
 }) {
+  const isMobile = useIsMobile()
+  const { limits } = usePageLimits()
   const { changeTheme } = useMenuTheme()
 
   useEffect(() => {
@@ -39,6 +42,7 @@ function FormPage({
           className={classNames(styles['page__desc'], {
             [styles['page__desc-white']]: theme === 'white',
           })}
+          style={isMobile ? {} : { width: `${limits.rightColumn.x}px` }}
         >
           {descriptionTitle && (
             <p className={styles['page__desc-title']}>{descriptionTitle}</p>

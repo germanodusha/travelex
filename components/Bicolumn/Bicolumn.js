@@ -1,24 +1,7 @@
-import { useState, useEffect } from 'react'
 import Title from '@/components/Title'
 import { usePageLimits } from '@/contexts/LayoutContext'
+import useIsMobile from '@/hooks/useIsMobile'
 import styles from './Bicolumn.module.scss'
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 768)
-    onResize()
-
-    window.addEventListener('resize', onResize)
-
-    return () => {
-      window.removeEventListener('resize', onResize)
-    }
-  }, [])
-
-  return isMobile
-}
 
 function Bicolumn({
   id = '',

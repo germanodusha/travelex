@@ -11,6 +11,7 @@
 
   @media (min-width: $min-width-sm) {
     flex-direction: row;
+    padding: unset;
     padding-top: 25vh;
   }
 
@@ -38,8 +39,9 @@
     }
 
     @media (min-width: $min-width-sm) {
-      padding-left: 5vw;
-      width: 38vw;
+      padding: unset;
+      padding-left: 7vw;
+      padding-right: 2em;
     }
   }
 }
