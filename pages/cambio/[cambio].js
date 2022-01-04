@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
 import classNames from 'classnames'
+import Interweave from 'interweave'
+import { readMarkdownLocale } from '@/utils/markdown'
 import Footer from '@/components/Layout/Footer'
 import Title from '@/components/Title'
 import FAQAccordion from '@/components/FAQAccordion'
@@ -14,9 +16,6 @@ import { usePageLimits } from '@/contexts/LayoutContext'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import { CambiosTypes, Services } from '@/enums/cambio'
 import styles from './cambio.module.scss'
-
-const LOREM_IPSUM =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci magna, fermentum eu scelerisque id, efficitur ut dui. Sed mattis aliquet placerat. Integer imperdiet, eros et semper malesuada, sapien lorem luctus erat, ac auctor erat velit sed odio. Quisque efficitur nulla sed tortor dictum, vitae lobortis turpis pharetra. Sed et tempor tellus, non accumsan enim. Curabitur scelerisque erat dignissim turpis commodo ullamcorper. Curabitur malesuada nibh in facilisis consectetur. Curabitur non luctus nunc, vitae rutrum risus. In sed mi leo. Vivamus tempor tellus quis velit sagittis bibendum. Mauris eu suscipit augue. In id nunc nisl.'
 
 const themeOptions = { background: 'white' }
 
@@ -47,7 +46,7 @@ function Cover() {
   )
 }
 
-function ServicesContent() {
+function ServicesContent({ markdowns }) {
   const serviceBody = useRef()
   const router = useRouter()
   const { cambio } = router.query
@@ -108,14 +107,16 @@ function ServicesContent() {
         <div className={styles['services__service-desk']} id={service.path}>
           <div className={styles['services__service-banner']}>
             <Image alt="background" src={service.image} objectFit="cover" />
-            {/** TODO locole this **/}
             <div className={styles['services__service-description']}>
-              <p>{LOREM_IPSUM}</p>
+              <p>{translate(`services.${service.path}-banner`)}</p>
             </div>
           </div>
 
           <div className={styles['services__service-body']}>
-            <p>{translate(`services.${service.path}-body`)}</p>
+            <Interweave
+              noWrap
+              content={markdowns[service.path][router.locale]}
+            />
           </div>
         </div>
 
@@ -130,16 +131,15 @@ function ServicesContent() {
               >
                 <div className={styles['services__service-banner']}>
                   <Image alt="background" src={image} objectFit="cover" />
-                  {/** TODO locole this **/}
                   <div className={styles['services__service-description']}>
-                    <p>{LOREM_IPSUM}</p>
+                    <p>{translate(`services.${path}-banner`)}</p>
                   </div>
                 </div>
               </div>
 
               <div className={styles['services__service-mobile-body']}>
                 <h3>{translate(`services.${path}`)}</h3>
-                <p>{translate(`services.${path}-body`)}</p>
+                <Interweave noWrap content={markdowns[path][router.locale]} />
               </div>
             </div>
           ))}
@@ -239,13 +239,13 @@ function FooterWrapper() {
   )
 }
 
-function Cambio() {
+function Cambio({ markdowns }) {
   useLockScrollFirstPage()
 
   return (
     <div>
       <Cover />
-      <ServicesContent />
+      <ServicesContent markdowns={markdowns} />
       <BUFFER />
       <FAQ />
       <Form />
@@ -266,13 +266,26 @@ export function getStaticPaths() {
   }
 }
 
-export function getStaticProps({ locale }) {
+export function getStaticProps({ locale, params }) {
   const messages = require(`../../content/${locale}.json`)
+
+  const markdowns = Services[params.cambio].reduce(
+    (prev, service) => ({
+      ...prev,
+      [service.path]: readMarkdownLocale(
+        `cambio/${params.cambio}/${service.path}`
+      ),
+    }),
+    {}
+  )
+
+  console.log(locale, params.cambio)
 
   return {
     props: {
       messages,
       locale,
+      markdowns,
     },
   }
 }

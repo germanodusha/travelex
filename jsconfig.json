@@ -4,6 +4,7 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/config": ["config/index.js"],
+      "@/content/*": ["content/*"],
       "@/contexts/*": ["contexts/*"],
       "@/enums/*": ["enums/*"],
       "@/hooks/*": ["hooks/*"],
