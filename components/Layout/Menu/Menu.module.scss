@@ -35,9 +35,26 @@
 }
 
 .menu-logo {
-  height: auto;
+  $size-big: 280px;
+  $size-small: 60px;
+
   margin-left: 1em;
-  width: 280px;
+  width: $size-small;
+
+  img {
+    height: 85.5px;
+    object-fit: cover;
+    object-position: left top;
+    width: $size-small;
+  }
+
+  @media (min-width: 1110px) {
+    width: $size-big;
+
+    img {
+      width: $size-big;
+    }
+  }
 }
 
 .menu-left {
@@ -87,6 +104,15 @@
   font-size: 1.25em;
   font-weight: 600;
   margin-right: $padding-horizontal;
+}
+
+@media (min-width: 768px) and (max-width: 884px) {
+  .menu-links {
+    a,
+    button {
+      font-size: 1em;
+    }
+  }
 }
 
 .menu-cta {

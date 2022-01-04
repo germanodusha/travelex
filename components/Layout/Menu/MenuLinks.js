@@ -98,17 +98,9 @@ function MenuLinks({ visible, emptyMenu }) {
             >
               {/* Logo da parte desktop */}
               {theme === 'dark' || theme === 'white' ? (
-                <Image
-                  src={mainLogoWhite}
-                  alt="Travelex Logo Mobile"
-                  layout="responsive"
-                />
+                <Image src={mainLogoWhite} alt="Travelex Logo Mobile" />
               ) : (
-                <Image
-                  src={mainLogoColorful}
-                  alt="Travelex Logo Mobile"
-                  layout="responsive"
-                />
+                <Image src={mainLogoColorful} alt="Travelex Logo Mobile" />
               )}
             </div>
           </a>
