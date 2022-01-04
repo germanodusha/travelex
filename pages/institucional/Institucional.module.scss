@@ -71,7 +71,6 @@
         height: unset;
         padding: 0;
         padding-left: 2rem;
-        width: 32%;
       }
     }
 
@@ -80,11 +79,10 @@
       padding: $padding-vertical $padding-horizontal;
 
       @media (min-width: $min-width-sm) {
-        flex: 1 1;
         font-size: 6em;
         line-height: 1em;
-        padding: 5rem;
-        padding-right: 10rem;
+        padding: unset;
+        position: absolute;
       }
     }
   }

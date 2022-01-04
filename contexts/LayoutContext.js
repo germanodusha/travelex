@@ -6,9 +6,24 @@ function isObject(value) {
 
 const LayoutContext = createContext(undefined)
 
+const DEFAULT_BOUNDING_RECT = {
+  x: 0,
+  y: 0,
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  width: 0,
+  height: 0,
+}
+
 function LayoutProvider({ children }) {
   const [menuTheme, setMenuTheme] = useState('dark')
   const [menuOptions, setOptions] = useState({})
+  const [limits, setLimits] = useState({
+    leftColumn: DEFAULT_BOUNDING_RECT,
+    rightColumn: DEFAULT_BOUNDING_RECT,
+  })
 
   const changeMenuTheme = useCallback((theme, options = {}) => {
     const isValidTheme = ['light', 'dark', 'white'].includes(theme)
@@ -26,7 +41,9 @@ function LayoutProvider({ children }) {
   }, [])
 
   return (
-    <LayoutContext.Provider value={{ menuTheme, changeMenuTheme, menuOptions }}>
+    <LayoutContext.Provider
+      value={{ menuTheme, changeMenuTheme, menuOptions, limits, setLimits }}
+    >
       {children}
     </LayoutContext.Provider>
   )
@@ -42,5 +59,10 @@ function useMenuTheme() {
   return { theme, changeTheme, options }
 }
 
+function usePageLimits() {
+  const { limits, setLimits } = useContext(LayoutContext)
+  return { limits, setLimits }
+}
+
 export default LayoutProvider
-export { useMenuTheme }
+export { useMenuTheme, usePageLimits }

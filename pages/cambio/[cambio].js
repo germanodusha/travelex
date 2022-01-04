@@ -12,6 +12,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import { FormTypes } from '@/components/RegisterForm'
 import FormPage from '@/components/FormPage'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
+import { usePageLimits } from '@/contexts/LayoutContext'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import { CambiosTypes, Services } from '@/enums/cambio'
 import styles from './cambio.module.scss'
@@ -51,6 +52,7 @@ function ServicesContent({ markdowns }) {
   const { cambio } = router.query
   const services = Services[cambio]
   const translate = useCambioTranslations()
+  const { limits } = usePageLimits()
 
   const service = useMemo(() => {
     const DEFAULT_SERVICE = services[0]
@@ -75,7 +77,10 @@ function ServicesContent({ markdowns }) {
 
   return (
     <div className={styles['services']}>
-      <div className={styles['services__nav-desk']}>
+      <div
+        className={styles['services__nav-desk']}
+        style={{ width: `${limits.rightColumn.x}px` }}
+      >
         <div className={styles['services__nav-sticky']}>
           {services.map(({ path }, id) => (
             <div key={id} className={styles['services__nav-item']}>
