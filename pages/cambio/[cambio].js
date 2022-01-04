@@ -207,6 +207,7 @@ function Form() {
       <FormPage
         description={translate('form-description')}
         hideType
+        disableTheme
         formType={type}
         menuTheme="light"
         theme="white"
@@ -223,12 +224,11 @@ function Form() {
 function FooterWrapper() {
   return (
     <>
-      <ChangeThemeOnScroll theme="dark" options={{}} />
       <Footer />
       <ChangeThemeOnScroll
         theme="dark"
         options={{}}
-        style={{ transform: 'translateY(-100%)' }}
+        style={{ transform: 'translateY(-140%)', height: '20%' }}
       />
     </>
   )
