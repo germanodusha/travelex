@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import Scroller, { ScrollerSection } from '@/components/Scroller'
 import Title from '@/components/Title'
@@ -14,13 +14,36 @@ function UsefulPageLegacy({
   backgroundColor = 'transparent',
 }) {
   const [onCoverPage, setCoverPage] = useState(true)
+  const [page, setPage] = useState(0)
+  const [scrollEnabled, setScrollEnabled] = useState(false)
 
-  const onBeforePageScroll = (page) => {
-    setCoverPage(page === 0)
+  const onBeforePageScroll = (newPage) => {
+    setCoverPage(newPage === 0)
+    setPage(newPage)
   }
 
+  useEffect(() => {
+    const shouldDefaultScroll = page === 1
+    setScrollEnabled(shouldDefaultScroll)
+  }, [page])
+
+  useEffect(() => {
+    const onScroll = (e) => {
+      if (scrollEnabled) return
+
+      e.preventDefault()
+      window.scrollTo(0, 0)
+    }
+
+    window.addEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [page, scrollEnabled])
+
   return (
-    <div style={{ backgroundColor }}>
+    <div style={{ backgroundColor }} className={styles.main}>
       <div
         className={classNames(styles['title'], {
           [styles['title__second-page']]: !onCoverPage,
@@ -55,9 +78,9 @@ function UsefulPageLegacy({
             </div>
           </ScrollerSection>
         )}
-
-        <Footer />
       </Scroller>
+
+      <Footer />
     </div>
   )
 }

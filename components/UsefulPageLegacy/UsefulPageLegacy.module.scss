@@ -1,5 +1,9 @@
 @import '@/styles/theme';
 
+.main {
+  overflow: hidden;
+}
+
 .title {
   @include config-transition-prop([opacity, top, transform]);
 
