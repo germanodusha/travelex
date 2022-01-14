@@ -45,6 +45,8 @@ function Banner({
 
       {!link && <div className={styles['title']}>{title}</div>}
       <div className={styles['content']}>{children}</div>
+
+      <div className={styles['white-out']}></div>
     </div>
   )
 }

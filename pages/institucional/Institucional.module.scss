@@ -1,9 +1,9 @@
 @import '@/styles/theme';
 
-.page {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-}
+// .page {
+//   scroll-behavior: smooth;
+//   scroll-snap-type: y mandatory;
+// }
 
 .media {
   transform: translateX(-$padding-horizontal * 0.5);
@@ -39,6 +39,7 @@
       img {
         filter: blur(4px);
         height: 100vh;
+        width: 100vw;
       }
     }
   }

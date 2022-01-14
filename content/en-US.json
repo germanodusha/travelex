@@ -1,23 +1,23 @@
 {
   "Home": {
     "bannerOne": {
-      "title": "Test 1",
+      "title": "Test Title 1",
       "link": "/institucional"
     },
     "bannerTwo": {
-      "title": "Test 2",
+      "title": "Test Title 2",
       "link": "/cambio/corporativo"
     },
     "bannerThree": {
-      "title": "Test 3",
+      "title": "Test Title 3",
       "link": "/cambio/pessoa-fisica"
     },
     "bannerFour": {
-      "title": "Test 4",
+      "title": "Test Title 4",
       "link": "/cadastro"
     },
     "FAQ": {
-      "questionOneTitle": "Novas linhas de crédito para clientes Travelex Partners Plus?",
+      "questionOneTitle": "New lines of credit for Travelex Partners Plus customers?",
       "questionOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       "questionTwoTitle": "New lines of credit for Travelex Partners Plus customers?",
       "questionTwo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
@@ -30,11 +30,11 @@
     "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     "questionOneTitle": "New lines of credit for Travelex Partners Plus customers?",
     "questionOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "questionTwoTitle": "Novas linhas de crédito para clientes Travelex Partners Plus?",
+    "questionTwoTitle": "New lines of credit for Travelex Partners Plus customers?",
     "questionTwo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "questionThreeTitle": "Novas linhas de crédito para clientes Travelex Partners Plus?",
+    "questionThreeTitle": "New lines of credit for Travelex Partners Plus customers?",
     "questionThree": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "contact": "Para outros dúvidas, entre em contato por telefone ou email"
+    "contact": "In case of any doubts contact us via phone or email"
   },
   "Layout": {
     "menu": {
@@ -59,8 +59,8 @@
     }
   },
   "About": {
-    "title": "Institutional",
-    "mainTitle": "Institutional",
+    "title": "About Us",
+    "mainTitle": "About Us",
     "mainSubtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     "mainParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "dataOne": "300K",
@@ -80,7 +80,7 @@
   },
   "cambio": {},
   "cambio-corporativo": {
-    "title": "Câmbio Corporativo\nTravelex Partners",
+    "title": "Company Exchange\nTravelex Partners",
     "services": {
       "analises-registros-e-declaracoes": "Análises, Registros e Declarações",
       "analises-registros-e-declaracoes-banner": "Análises, Registros e Declarações\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",

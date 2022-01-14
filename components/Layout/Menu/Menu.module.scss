@@ -462,11 +462,18 @@
   }
 
   .menu-lang {
-    bottom: calc(24px + 1.5em);
+    // bottom: calc(24px + 1.5em);
     font-size: 1.3em;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    left: 0;
+    padding: unset;
     position: fixed;
-    right: 0;
+    top: -25vh;
+  }
+
+  .menu-lang > * {
+    // color: $white;
+    margin-left: 0.8em;
   }
 
   .menu-lang p {

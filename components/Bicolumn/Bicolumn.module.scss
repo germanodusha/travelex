@@ -70,9 +70,13 @@
     @media (min-width: $min-width-sm) {
       font-size: 2em;
       margin-bottom: unset;
-      padding: $padding-vertical $padding-horizontal;
+      // max-width: 40vw;
+      padding: 0 $padding-vertical $padding-horizontal;
       padding-left: $padding-horizontal * 1.8;
-      padding-top: $padding-vertical;
+
+      p {
+        margin-top: 2rem;
+      }
     }
 
     &-txt {
@@ -87,7 +91,12 @@
     padding: 0 $padding-horizontal * 0.5;
 
     @media (min-width: $min-width-sm) {
+      // max-width: 60vw;
       padding: unset;
+
+      p {
+        margin-top: 2rem;
+      }
     }
   }
 }

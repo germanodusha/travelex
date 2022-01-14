@@ -55,7 +55,7 @@ function MenuLinks({ visible, emptyMenu }) {
   const { setLimits } = usePageLimits()
   const { theme, options } = useMenuTheme()
   const translate = useTranslations('Layout')
-  const { locale, locales, route } = useRouter()
+  const { locale, locales, route, asPath } = useRouter()
   const otherLocale = locales?.find((cur) => cur !== locale)
   const [hover, setHover] = useState(null)
   const [subMenu, setSubmenu] = useState(null)
@@ -108,6 +108,11 @@ function MenuLinks({ visible, emptyMenu }) {
       window.removeEventListener('resize', handleLimits)
     }
   }, [handleLimits])
+
+  useEffect(() => {
+    handleLimits()
+    // eslint-disable-next-line
+  }, [locale, handleLimits])
 
   return (
     <div
@@ -271,7 +276,7 @@ function MenuLinks({ visible, emptyMenu }) {
             <p className={classNames(styles[`menu-lang-p__${theme}`])}>
               {translate('menu.currentLocale')}
             </p>
-            <Link href={route} locale={otherLocale} passHref>
+            <Link href={asPath} locale={otherLocale} passHref>
               <button
                 className={classNames(
                   styles['menu-lang-btn'],

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
 import classNames from 'classnames'
@@ -14,6 +14,8 @@ import imgInstitutional from '../../public/images/imgInstitutional.png'
 import imgLivro from '../../public/images/IMG9.png'
 import imgNext from '../../public/images/seta.svg'
 // import imgNextHover from '../../public/images/seta_hover.svg'
+
+import useInterval from '@/hooks/useInterval'
 
 function InstitucionalContent({
   text,
@@ -67,6 +69,14 @@ function Carousel() {
       right: 'Novos investimentos no travelex bank em 2021',
     },
   ]
+
+  // timing to rotate
+  const nextItem = useCallback(() => {
+    const maxPage = items.length - 1
+    setCurrentItem((current) => (current >= maxPage ? 0 : current + 1))
+  }, [items.length])
+
+  useInterval(nextItem, 3000)
 
   const showNext = currentItem < items.length - 1
   const showPrev = currentItem > 0

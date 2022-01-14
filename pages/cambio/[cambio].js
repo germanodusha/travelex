@@ -57,6 +57,7 @@ function ServicesContent({ markdowns }) {
   const service = useMemo(() => {
     const DEFAULT_SERVICE = services[0]
 
+    console.log(router.asPath.split('#'))
     const [, path] = router.asPath.split('#')
     if (!path) return DEFAULT_SERVICE
 
@@ -256,8 +257,10 @@ function Cambio({ markdowns }) {
 
 export function getStaticPaths() {
   const paths = [
-    { params: { cambio: CambiosTypes.CORPORATIVO } },
-    { params: { cambio: CambiosTypes.PESSOA_FISICA } },
+    { params: { cambio: CambiosTypes.CORPORATIVO }, locale: 'pt-BR' },
+    { params: { cambio: CambiosTypes.PESSOA_FISICA }, locale: 'pt-BR' },
+    { params: { cambio: CambiosTypes.CORPORATIVO }, locale: 'en-US' },
+    { params: { cambio: CambiosTypes.PESSOA_FISICA }, locale: 'en-US' },
   ]
 
   return {
