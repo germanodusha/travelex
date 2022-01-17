@@ -590,6 +590,10 @@
     background-color: $white;
   }
 
+  &-transparent {
+    background-color: transparent;
+  }
+
   &-enabled {
     transform: translateY(0);
   }

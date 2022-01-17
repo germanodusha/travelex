@@ -12,7 +12,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import { FormTypes } from '@/components/RegisterForm'
 import FormPage from '@/components/FormPage'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
-import { usePageLimits } from '@/contexts/LayoutContext'
+import { useMenuTheme, usePageLimits } from '@/contexts/LayoutContext'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import { CambiosTypes, Services } from '@/enums/cambio'
 import styles from './cambio.module.scss'
@@ -56,8 +56,6 @@ function ServicesContent({ markdowns }) {
 
   const service = useMemo(() => {
     const DEFAULT_SERVICE = services[0]
-
-    console.log(router.asPath.split('#'))
     const [, path] = router.asPath.split('#')
     if (!path) return DEFAULT_SERVICE
 
@@ -242,9 +240,16 @@ function FooterWrapper() {
 
 function Cambio({ markdowns }) {
   useLockScrollFirstPage()
+  const { theme } = useMenuTheme()
 
   return (
     <div>
+      <div
+        className={classNames(styles['menu-bg'], {
+          [styles['menu-bg__dark']]: theme === 'dark',
+          [styles['menu-bg__light']]: theme === 'light',
+        })}
+      ></div>
       <Cover />
       <ServicesContent markdowns={markdowns} />
       <BUFFER />
@@ -281,8 +286,6 @@ export function getStaticProps({ locale, params }) {
     }),
     {}
   )
-
-  console.log(locale, params.cambio)
 
   return {
     props: {

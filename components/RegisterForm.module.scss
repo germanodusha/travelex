@@ -65,7 +65,13 @@
     max-width: 100%;
 
     &__divider {
-      min-height: 5vh;
+      min-height: 3vh;
+    }
+  }
+
+  .select {
+    button {
+      margin-bottom: 1rem;
     }
   }
 }

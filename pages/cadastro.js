@@ -1,29 +1,27 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 import { useTranslations } from 'use-intl'
 import FormPage from '@/components/FormPage'
 import { FormTypes } from '@/components/RegisterForm'
 import Footer from '@/components/Layout/Footer'
-import Scroller from '@/components/Scroller'
-import { useMenuTheme } from '@/contexts/LayoutContext'
+// import Scroller from '@/components/Scroller'
+// import { useMenuTheme } from '@/contexts/LayoutContext'
 import imgBannerOne from '../public/images/bannerOneHome.png'
 
-const themeOptions = { background: 'white' }
+import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 
-function Cadastro(props) {
+// const themeOptions = { background: 'white' }
+
+function Cover(props) {
   const translate = useTranslations('openAccount')
-  const [current, setCurrent] = useState(0)
-  const { changeTheme } = useMenuTheme()
 
-  useEffect(() => {
-    const themes = [
-      ['light', themeOptions],
-      ['dark', {}],
-    ]
-    changeTheme(...themes[current])
-  }, [current, changeTheme])
+  const containerStyle = {
+    height: '100vh',
+    overflow: 'hidden',
+    scrollSnapAlign: 'start',
+  }
 
   return (
-    <Scroller disableAutoTheme pages={2} onPageChange={setCurrent}>
+    <div style={containerStyle}>
       <FormPage
         backgroundImage={imgBannerOne}
         description={translate('description')}
@@ -33,8 +31,59 @@ function Cadastro(props) {
         disableTheme
         {...props}
       />
+      <ChangeThemeOnScroll
+        theme="light"
+        options={{}}
+        style={{ transform: 'translateY(-100%)', height: '20%' }}
+      />
+    </div>
+  )
+}
+
+function FooterWrapper() {
+  return (
+    <div className="snap__align-start">
       <Footer />
-    </Scroller>
+      <ChangeThemeOnScroll
+        theme="dark"
+        options={{}}
+        style={{ transform: 'translateY(-100%)', height: '20%' }}
+      />
+    </div>
+  )
+}
+
+function Cadastro() {
+  // const translate = useTranslations('openAccount')
+  // const [current, setCurrent] = useState(0)
+  // const { changeTheme } = useMenuTheme()
+
+  // useEffect(() => {
+  //   const themes = [
+  //     ['light', themeOptions],
+  //     ['dark', {}],
+  //   ]
+  //   changeTheme(...themes[current])
+  // }, [current, changeTheme])
+
+  return (
+    <div>
+      <Cover />
+      <FooterWrapper />
+    </div>
+
+    // <Scroller disableAutoTheme pages={2} onPageChange={setCurrent}>
+    //   <FormPage
+    //     backgroundImage={imgBannerOne}
+    //     description={translate('description')}
+    //     // descriptionTitle={translate('descriptionTitle')}
+    //     formType={FormTypes.PESSOA_FISICA}
+    //     hideFormType={false}
+    //     disableTheme
+    //     {...props}
+    //   />
+    //   <Footer />
+    // </Scroller>
   )
 }
 

@@ -40,7 +40,7 @@
     z-index: 1;
 
     @media (max-width: $max-width-sm) {
-      height: $menu-height;
+      height: $menu-height * 1.4;
     }
   }
 

@@ -20,8 +20,13 @@
   }
 
   &__desc {
-    padding-bottom: $padding-vertical * 2;
-    padding-right: $padding-vertical * 4;
+    padding-bottom: 0;
+    padding-right: 20vw;
+
+    @media (min-width: $min-width-sm) {
+      padding-bottom: $padding-vertical * 2;
+      padding-right: $padding-vertical * 4;
+    }
 
     &-white {
       color: $navy-blue;

@@ -24,7 +24,8 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
     <div
       className={classNames(styles['menu-links'], styles['submenu'], {
         [styles['submenu-enabled']]: (menuHover || menuTextHover) && subMenu,
-        [styles['submenu-opaque']]: isCambioPath || theme === 'light',
+        [styles['submenu-opaque']]: isCambioPath && theme === 'light',
+        [styles['submenu-transparent']]: isCambioPath && theme === 'dark',
       })}
     >
       <div

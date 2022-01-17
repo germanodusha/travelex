@@ -8,10 +8,13 @@
   justify-content: space-between;
   // ajuste
   margin-bottom: $menu-height * 1.4;
+  transform: translateY(-$menu-height * 1.4);
 
   &__header {
     background-color: $white;
     height: $menu-height * 1.4;
+    position: sticky;
+    top: 0;
   }
 
   &__title {
@@ -28,6 +31,23 @@
     margin-bottom: 1.5rem;
     margin-top: 1em;
     width: 10vw;
+  }
+}
+
+.menu-bg {
+  // background-color: $cherry-red;
+  height: $menu-height * 1.4;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+
+  &__dark {
+    background-color: transparent;
+  }
+
+  &__light {
+    background-color: $white;
   }
 }
 
@@ -135,7 +155,7 @@
 
     &-mobile {
       display: block;
-      padding-top: $menu-height;
+      padding-top: $menu-height * 1.4;
 
       @media (min-width: $min-width-sm) {
         display: none;
@@ -187,5 +207,6 @@
 
 .form {
   min-height: 100vh;
+  // padding-top: 5vh;
   scroll-snap-align: start;
 }
