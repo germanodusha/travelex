@@ -43,13 +43,24 @@ const useBounceScroll = ({ callback, wait, preventDefault = false }) => {
   useEffect(() => {
     const onScroll = (event) => {
       if (preventDefault) event.preventDefault()
-      if (!waiting.current) setScrolling({ x: event.deltaX, y: event.deltaY })
+      if (!waiting.current) {
+        setScrolling({ x: event.deltaX, y: event.deltaY })
+      }
+    }
+
+    const onTouchMove = (event) => {
+      if (preventDefault) event.preventDefault()
+      if (!waiting.current) {
+        setScrolling({ x: event.touches[0].pageX, y: event.touches[0].pageY })
+      }
     }
 
     window.addEventListener('wheel', onScroll, { passive: false })
+    window.addEventListener('touchmove', onTouchMove, { passive: false })
 
     return () => {
       window.removeEventListener('wheel', onScroll)
+      window.removeEventListener('touchmove', onTouchMove)
     }
   }, [preventDefault])
 
