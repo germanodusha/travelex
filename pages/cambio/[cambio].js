@@ -71,7 +71,11 @@ function ServicesContent({ markdowns }) {
   )
 
   const handleNavigate = () => {
-    serviceBody.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    serviceBody.current?.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+      inline: 'start',
+    })
   }
 
   return (
@@ -243,7 +247,7 @@ function Cambio({ markdowns }) {
   const { theme } = useMenuTheme()
 
   return (
-    <div>
+    <div className={styles['container']}>
       <div
         className={classNames(styles['menu-bg'], {
           [styles['menu-bg__dark']]: theme === 'dark',

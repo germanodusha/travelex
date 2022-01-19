@@ -1,5 +1,10 @@
 @import '@/styles/theme';
 
+.container {
+  overflow: hidden;
+  width: 100%;
+}
+
 .cover {
   background-color: $navy-blue;
   display: flex;
@@ -208,5 +213,6 @@
 .form {
   min-height: 100vh;
   // padding-top: 5vh;
+  overflow: hidden;
   scroll-snap-align: start;
 }
