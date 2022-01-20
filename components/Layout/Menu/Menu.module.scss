@@ -14,6 +14,10 @@
   width: 100%;
   z-index: 5;
 
+  @media (min-width: 2310px) {
+    height: $menu-height * 2.5;
+  }
+
   a {
     @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
   }
@@ -36,6 +40,8 @@
 
 .menu-logo {
   $size-big: 280px;
+  $size-large: 480px;
+  $size-medium: 210px;
   $size-small: 60px;
 
   margin-left: 1em;
@@ -48,11 +54,30 @@
     width: $size-small;
   }
 
+  @media (min-width: 790px) {
+    width: $size-medium;
+
+    img {
+      height: 50px;
+      width: $size-medium;
+    }
+  }
+
   @media (min-width: 1110px) {
     width: $size-big;
 
     img {
+      height: 85.5px;
       width: $size-big;
+    }
+  }
+
+  @media (min-width: 2310px) {
+    width: $size-large;
+
+    img {
+      height: 140px;
+      width: $size-large;
     }
   }
 }
@@ -106,11 +131,24 @@
   margin-right: $padding-horizontal;
 }
 
-@media (min-width: 768px) and (max-width: 884px) {
+@media (min-width: 884px) and (max-width: 1390px) {
   .menu-links {
     a,
     button {
-      font-size: 1em;
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+  .menu-links {
+    a,
+    button {
+      font-size: 2.5em;
+    }
+
+    button {
+      padding-top: 0.7em;
     }
   }
 }
@@ -263,7 +301,11 @@
   flex: row;
   font-family: Bebas Neue Regular;
   margin-top: -1em;
-  padding: 0 $padding-horizontal;
+  padding: 0 ($padding-horizontal);
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 2em;
+  }
 }
 
 // .menu-lang p {
@@ -575,6 +617,7 @@
 
 .submenu {
   background-color: rgba($gray-blue, 0.1);
+  // background-color: $white;
   bottom: unset;
   // height: fit-content;
   height: 13em;
@@ -586,12 +629,17 @@
   will-change: transform, height;
   z-index: -1;
 
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    height: 25em;
+    padding-top: $menu-height * 1.8;
+  }
+
   &-opaque {
     background-color: $white;
   }
 
   &-transparent {
-    background-color: transparent;
+    background-color: rgba($gray-blue, 0.1);
   }
 
   &-enabled {

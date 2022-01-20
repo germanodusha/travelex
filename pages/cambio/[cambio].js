@@ -74,7 +74,6 @@ function ServicesContent({ markdowns }) {
     serviceBody.current?.scrollIntoView({
       block: 'start',
       behavior: 'smooth',
-      inline: 'start',
     })
   }
 

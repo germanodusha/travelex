@@ -21,6 +21,10 @@
   left: $padding-horizontal * 3;
   position: absolute;
 
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    bottom: 3rem;
+  }
+
   &__item {
     margin-right: 0.3rem;
     opacity: 0.3;
@@ -30,6 +34,11 @@
     width: 3rem;
     will-change: opacity;
 
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      margin-right: 1rem;
+      width: 5rem;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -37,6 +46,10 @@
     &-bg {
       background-color: $white;
       height: 0.3rem;
+
+      @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+        height: 0.5rem;
+      }
     }
 
     &-active {

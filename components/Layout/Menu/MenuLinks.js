@@ -19,13 +19,16 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
   const [path, service] = router.asPath.split('#')
 
   const isCambioPath = useMemo(() => path.includes('cambio'), [path])
+  const isAboutPath = useMemo(() => path.includes('institucional'), [path])
 
   return (
     <div
       className={classNames(styles['menu-links'], styles['submenu'], {
         [styles['submenu-enabled']]: (menuHover || menuTextHover) && subMenu,
-        [styles['submenu-opaque']]: isCambioPath && theme === 'light',
-        [styles['submenu-transparent']]: isCambioPath && theme === 'dark',
+        [styles['submenu-opaque']]:
+          (isCambioPath || isAboutPath) && theme === 'light',
+        [styles['submenu-transparent']]:
+          (isCambioPath || isAboutPath) && theme === 'dark',
       })}
     >
       <div

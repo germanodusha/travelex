@@ -12,7 +12,11 @@
 
   @media (min-width: $min-width-sm) {
     transform: unset;
-    width: 130%;
+    width: 156%;
+  }
+
+  @media (min-width: $min-width-md) {
+    width: 147%;
   }
 
   video {

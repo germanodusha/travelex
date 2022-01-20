@@ -1,7 +1,7 @@
 @import '@/styles/theme';
 
 .container {
-  overflow: hidden;
+  // overflow: hidden;
   width: 100%;
 }
 
@@ -44,7 +44,7 @@
   height: $menu-height * 1.4;
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 3;
 
   &__dark {
