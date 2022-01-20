@@ -15,11 +15,20 @@
   margin-bottom: $menu-height * 1.4;
   transform: translateY(-$menu-height * 1.4);
 
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    margin-bottom: $menu-height * 2.5;
+    transform: translateY(-$menu-height * 2.5);
+  }
+
   &__header {
     background-color: $white;
     height: $menu-height * 1.4;
     position: sticky;
     top: 0;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      height: $menu-height * 2.5;
+    }
   }
 
   &__title {
@@ -28,6 +37,13 @@
     padding-bottom: $padding-vertical;
     padding-left: 1.3em;
     padding-top: $padding-vertical;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 5em;
+      padding-bottom: $padding-vertical * 0.2;
+      padding-left: 1.1em;
+      padding-top: $padding-vertical;
+    }
   }
 
   &__border {
@@ -36,6 +52,10 @@
     margin-bottom: 1.5rem;
     margin-top: 1em;
     width: 10vw;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      margin-bottom: 4.5rem;
+    }
   }
 }
 
@@ -46,6 +66,10 @@
   top: 0;
   width: 100%;
   z-index: 3;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    height: $menu-height * 2.5;
+  }
 
   &__dark {
     background-color: transparent;
@@ -64,12 +88,20 @@
   p {
     color: $navy-blue;
     font-size: 1.8em;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.8em;
+    }
   }
 
   h3 {
     color: $navy-blue;
     font-family: Bebas Neue Regular;
     font-size: 1.8em;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.8em;
+    }
   }
 
   &__nav {
@@ -104,6 +136,10 @@
       flex-direction: column;
       position: sticky;
       top: $menu-height * 1.85;
+
+      @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+        top: $menu-height * 3.3;
+      }
     }
 
     &-desk {
@@ -155,6 +191,10 @@
       p {
         margin: 0;
         padding-top: $menu-height;
+
+        @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+          padding-top: $menu-height * 1.2;
+        }
       }
     }
 
@@ -200,6 +240,10 @@
       @media (min-width: $min-width-sm) {
         font-size: 1.8em;
         line-height: 1em;
+      }
+
+      @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+        font-size: 2.8em;
       }
     }
   }

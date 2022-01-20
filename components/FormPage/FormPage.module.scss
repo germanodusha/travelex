@@ -28,6 +28,10 @@
       padding-right: $padding-vertical * 4;
     }
 
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 1.8em;
+    }
+
     &-white {
       color: $navy-blue;
     }
@@ -41,6 +45,10 @@
       margin: 0;
       opacity: 1 !important;
       padding: 0;
+
+      @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+        font-size: 2.5rem;
+      }
     }
 
     @media (min-width: $min-width-sm) {
