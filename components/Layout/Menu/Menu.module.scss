@@ -115,7 +115,7 @@
   margin-bottom: 0.5em;
 
   @media (min-width: 1024px) and (max-width: $min-width-smd) {
-    height: calc(1.8em - (200vw / 1024));
+    height: 1.7em;
   }
 
   @media (min-width: $min-width-smd) and (max-width: $min-width-md) {
@@ -236,7 +236,7 @@
   margin-bottom: 0.5em;
 
   @media (min-width: 1024px) and (max-width: $min-width-smd) {
-    height: calc(1.9em - (200vw / 1024));
+    height: 1.7em;
   }
 
   @media (min-width: $min-width-smd) and (max-width: $min-width-md) {
