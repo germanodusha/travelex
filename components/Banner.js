@@ -17,7 +17,7 @@ function Banner({
     <div className={classNames(styles['banner'], bannerClass)}>
       {image && (
         <div className={styles['banner-media']}>
-          <Image src={image} alt={id} />
+          <Image src={image} alt={id} objectFit="cover" />
         </div>
       )}
 
