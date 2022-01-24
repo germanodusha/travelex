@@ -5,7 +5,7 @@ import { FormTypes } from '@/components/RegisterForm'
 import Footer from '@/components/Layout/Footer'
 // import Scroller from '@/components/Scroller'
 // import { useMenuTheme } from '@/contexts/LayoutContext'
-import imgBannerOne from '../public/images/bannerOneHome.png'
+// import imgBannerOne from '../public/images/bannerOneHome.png'
 
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 
@@ -23,7 +23,7 @@ function Cover(props) {
   return (
     <div style={containerStyle}>
       <FormPage
-        backgroundImage={imgBannerOne}
+        backgroundImage={'/images/bannerOneHome.png'}
         description={translate('description')}
         // descriptionTitle={translate('descriptionTitle')}
         formType={FormTypes.PESSOA_FISICA}

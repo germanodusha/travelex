@@ -4,9 +4,9 @@ import CarouselWithInterval from '@/components/CarouselWithInterval'
 import { useEffectOnce } from 'react-use'
 import { useMenuTheme } from '@/contexts/LayoutContext'
 import Footer from '../Layout/Footer'
-import imgBannerTwo from '../../public/images/bannerTwoHome.png'
-import imgBannerThree from '../../public/images/bannerThreeHome.png'
-import imgBannerFour from '../../public/images/bannerFourHome.png'
+// import imgBannerTwo from '../../public/images/bannerTwoHome.png'
+// import imgBannerThree from '../../public/images/bannerThreeHome.png'
+// import imgBannerFour from '../../public/images/bannerFourHome.png'
 import Banner from '../Banner'
 
 function CarouselItem({ item }) {
@@ -41,19 +41,19 @@ function Home() {
       id: 'banner2',
       title: translate('bannerTwo.title'),
       link: translate('bannerTwo.link'),
-      image: imgBannerTwo,
+      image: '/images/bannerTwoHome.png',
     },
     {
       id: 'banner3',
       title: translate('bannerThree.title'),
       link: translate('bannerThree.link'),
-      image: imgBannerThree,
+      image: '/images/bannerThreeHome.png',
     },
     {
       id: 'banner4',
       title: translate('bannerFour.title'),
       link: translate('bannerFour.link'),
-      image: imgBannerFour,
+      image: '/images/bannerFourHome.png',
     },
   ]
 

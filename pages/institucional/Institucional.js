@@ -150,7 +150,7 @@ function Institucional() {
       <Banner
         showGradient
         title={translate('mainTitle')}
-        image={bannerInstitutional}
+        image="/images/bannerInstitutional.png"
       />
 
       <ChangeThemeOnScroll theme="light" />

@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import classNames from 'classnames'
 import styles from './Banner.module.scss'
 
@@ -17,7 +19,7 @@ function Banner({
     <div className={classNames(styles['banner'], bannerClass)}>
       {image && (
         <div className={styles['banner-media']}>
-          <Image src={image} alt={id} objectFit="cover" />
+          <img src={image} alt={id} />
         </div>
       )}
 
