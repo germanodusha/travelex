@@ -267,9 +267,13 @@ function MenuLinks({ visible, emptyMenu }) {
                   onFocus={() => void 0}
                   onBlur={() => void 0}
                   onClick={emptyMenu}
-                  className={classNames(styles['link'], {
-                    [styles[`${theme}__link-hover`]]: hover === 'openAcc',
-                  })}
+                  className={classNames(
+                    styles['link'],
+                    styles['link-openacc'],
+                    {
+                      [styles[`${theme}__link-hover`]]: hover === 'openAcc',
+                    }
+                  )}
                 >
                   {translate('menu.openAccount')}
                 </button>
