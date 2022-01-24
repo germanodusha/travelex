@@ -26,6 +26,7 @@
   justify-content: space-between;
   margin-top: $padding-vertical * 2;
   padding: $padding-vertical * 2;
+  padding-bottom: $padding-vertical;
 }
 
 .footer-text > * {
@@ -41,6 +42,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: $padding-vertical * 2;
+  padding-bottom: $padding-vertical * 0;
+  padding-top: $padding-vertical * 1;
 }
 
 .footer-contact {
@@ -90,11 +93,18 @@
 }
 
 .footer-logo {
-  padding: $padding-vertical * 2;
-  width: 280px;
+  // padding: $padding-vertical * 2;
+  padding-bottom: $padding-vertical;
+  padding-left: $padding-vertical * 2;
+  // width: 280px;
+  width: 200px;
+
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+    width: 240px;
+  }
 
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
-    width: 550px;
+    width: 420px;
   }
 }
 

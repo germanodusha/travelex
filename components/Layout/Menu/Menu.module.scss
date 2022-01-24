@@ -14,7 +14,7 @@
   width: 100%;
   z-index: 5;
 
-  @media (min-width: 2310px) {
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
     height: $menu-height * 2.5;
   }
 
@@ -39,40 +39,51 @@
 }
 
 .menu-logo {
-  $size-big: 280px;
+  $size-big: 330px;
   $size-large: 480px;
-  $size-medium: 210px;
+  $size-smd: 260px;
+  $size-medium: 300px;
   $size-small: 60px;
 
   margin-left: 1em;
   width: $size-small;
 
   img {
-    height: 85.5px;
+    height: 50px;
     object-fit: cover;
     object-position: left top;
     width: $size-small;
   }
 
-  @media (min-width: 790px) {
+  @media (min-width: 1024px) {
+    width: $size-smd;
+
+    img {
+      height: 64px;
+      width: $size-smd;
+    }
+  }
+
+  @media (min-width: $min-width-smd) and (max-width: $min-width-md) {
     width: $size-medium;
 
     img {
-      height: 50px;
+      height: 70px;
       width: $size-medium;
     }
   }
 
-  @media (min-width: 1110px) {
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
     width: $size-big;
 
     img {
       height: 85.5px;
+      transform: translateY(-5px);
       width: $size-big;
     }
   }
 
-  @media (min-width: 2310px) {
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
     width: $size-large;
 
     img {
@@ -104,6 +115,14 @@
   height: 2.5em;
   margin-bottom: 0.5em;
 
+  @media (min-width: 1024px) and (max-width: $min-width-smd) {
+    height: calc(2.3em - (200vw / 1024));
+  }
+
+  @media (min-width: $min-width-smd) and (max-width: $min-width-lg) {
+    height: 2.5em;
+  }
+
   &__light {
     border-left-color: $blue;
   }
@@ -119,23 +138,42 @@
 
 .menu-links a {
   color: $white;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 600;
   margin-right: $padding-horizontal;
 }
 
 .menu-links button {
   color: $white;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 600;
   margin-right: $padding-horizontal;
 }
 
-@media (min-width: 884px) and (max-width: 1390px) {
+@media (min-width: 1024px) {
   .menu-links {
     a,
     button {
-      font-size: 0.9em;
+      // font-size: 1.1em;
+      font-size: 1.75vw;
+    }
+  }
+}
+
+@media (min-width: $min-width-smd) and (max-width: $min-width-md) {
+  .menu-links {
+    a,
+    button {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+  .menu-links {
+    a,
+    button {
+      font-size: 1.7em;
     }
   }
 }
@@ -193,6 +231,10 @@
   border-left: 1px $white solid;
   height: 2.5em;
   margin-bottom: 0.5em;
+
+  @media (min-width: 1024px) and (max-width: $min-width-smd) {
+    height: calc(2.3em - (200vw / 1024));
+  }
 
   &__light {
     border-left-color: $blue;
@@ -620,7 +662,7 @@
   // background-color: $white;
   bottom: unset;
   // height: fit-content;
-  height: 13em;
+  height: 11.5em;
   inset: 0;
   padding-top: $menu-height;
   position: absolute;
@@ -628,6 +670,11 @@
   transition: transform 0.3s ease-in-out, height 0.3s ease-in;
   will-change: transform, height;
   z-index: -1;
+
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+    height: 15em;
+    padding-top: $menu-height;
+  }
 
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
     height: 25em;
