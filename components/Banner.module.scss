@@ -24,6 +24,12 @@
   padding: $padding-horizontal;
   position: absolute;
 
+  @media (min-width: $min-width-sm) and (max-width: $min-width-lg) {
+    // font-size: 5em;
+    // padding: 1em;
+    // width: 50vw;
+  }
+
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
     font-size: 5em;
     padding: 1em;
