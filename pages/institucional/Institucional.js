@@ -18,6 +18,7 @@ import styles from './Institucional.module.scss'
 // import imgDestaque3 from '../../public/images/8.Institucional_carrossel3.jpg'
 import imgInstitutional from '../../public/images/9.Institucional_SOS1.jpg'
 import imgInstitutional2 from '../../public/images/10.Institucional_SOS2.jpg'
+
 import imgNext from '../../public/images/seta.svg'
 // import imgNextHover from '../../public/images/seta_hover.svg'
 
