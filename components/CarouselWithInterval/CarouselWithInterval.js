@@ -11,7 +11,7 @@ function CarouselWithInterval({ data = [], RenderItem }) {
     setPage((current) => (current >= maxPage ? 0 : current + 1))
   }, [data.length])
 
-  useInterval(nextItem, 3000)
+  useInterval(nextItem, 8000)
 
   return (
     <div className={styles['content']}>
