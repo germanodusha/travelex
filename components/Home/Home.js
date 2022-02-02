@@ -35,25 +35,25 @@ function Home() {
       id: 'banner1',
       title: translate('bannerOne.title'),
       link: translate('bannerOne.link'),
-      video: '/videos/bg-teste.mp4',
+      video: '/videos/Home_Video.mov',
     },
     {
       id: 'banner2',
       title: translate('bannerTwo.title'),
       link: translate('bannerTwo.link'),
-      image: '/images/bannerTwoHome.png',
+      image: '/images/Home_1_CambCorp.jpg',
     },
     {
       id: 'banner3',
       title: translate('bannerThree.title'),
       link: translate('bannerThree.link'),
-      image: '/images/bannerThreeHome.png',
+      image: '/images/Home_2_CambPessoal.jpeg',
     },
     {
       id: 'banner4',
       title: translate('bannerFour.title'),
       link: translate('bannerFour.link'),
-      image: '/images/bannerFourHome.png',
+      image: '/images/Home_3_CambTurismo.jpg',
     },
   ]
 

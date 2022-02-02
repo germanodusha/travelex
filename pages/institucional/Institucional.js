@@ -9,9 +9,14 @@ import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import { usePageLimits } from '@/contexts/LayoutContext'
 import styles from './Institucional.module.scss'
-import bannerInstitutional from '../../public/images/bannerInstitutional.png'
-import imgInstitutional from '../../public/images/imgInstitutional.png'
-import imgLivro from '../../public/images/IMG9.png'
+// import bannerInstitutional from '../../public/images/bannerInstitutional.png'
+// import imgInstitutional from '../../public/images/imgInstitutional.png'
+// import imgLivro from '../../public/images/IMG9.png'
+import imgDestaque from '../../public/images/Institucional_2_Destaq1.jpg'
+import imgDestaque2 from '../../public/images/Institucional_3_Destaq2.jpg'
+import imgDestaque3 from '../../public/images/Institucional_4_Destaq3.jpg'
+import imgInstitutional from '../../public/images/Institucional_5_SOS1.jpg'
+import imgInstitutional2 from '../../public/images/Institucional_6_SOS2.jpg'
 import imgNext from '../../public/images/seta.svg'
 // import imgNextHover from '../../public/images/seta_hover.svg'
 
@@ -19,25 +24,33 @@ import useInterval from '@/hooks/useInterval'
 
 function InstitucionalContent({
   text,
+  text2,
+  text3,
   video = true,
   image = true,
+  image2 = true,
   extraText = true,
 }) {
   return (
     <>
-      <p>{[text, text].join('\n\n')}</p>
+      <p style={{ whiteSpace: 'pre-line' }}>{text}</p>
       {video && (
         <div className={styles['media']}>
-          <video src="/videos/bg-teste.mp4" controls autoPlay muted loop />
+          <video src="/videos/Home_Video.mov" controls autoPlay muted loop />
         </div>
       )}
-      {extraText && <p>{[text, text].join('\n\n')}</p>}
       {image && (
         <div className={styles['media']}>
           <Image src={imgInstitutional} alt="" />
         </div>
       )}
-      {extraText && <p>{[text, text].join('\n\n')}</p>}
+      {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text2}</p>}
+      {image2 && (
+        <div className={styles['media']}>
+          <Image src={imgInstitutional2} alt="" />
+        </div>
+      )}
+      {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text3}</p>}
     </>
   )
 }
@@ -49,24 +62,32 @@ function Carousel() {
   const handleNext = () => setCurrentItem((v) => Math.min(2, v + 1))
   const handlePrev = () => setCurrentItem((v) => Math.max(0, v - 1))
 
+  const translate = useTranslations('About')
+  const dataOne = translate('dataOne')
+  const dataOneDesc = translate('dataOneDescription')
+  const dataTwo = translate('dataTwo')
+  const dataTwoDesc = translate('dataTwoDescription')
+  const dataThree = translate('dataThree')
+  const dataThreeDesc = translate('dataThreeDescription')
+
   const items = [
     {
       id: 1,
-      bg: imgInstitutional,
-      left: '+300k',
-      right: 'Novos investimentos no travelex bank em 2021',
+      bg: imgDestaque,
+      left: dataOne,
+      right: dataOneDesc,
     },
     {
       id: 2,
-      bg: bannerInstitutional,
-      left: '+300k',
-      right: 'Novos investimentos no travelex bank em 2021',
+      bg: imgDestaque2,
+      left: dataTwo,
+      right: dataTwoDesc,
     },
     {
       id: 3,
-      bg: imgLivro,
-      left: '+300k',
-      right: 'Novos investimentos no travelex bank em 2021',
+      bg: imgDestaque3,
+      left: dataThree,
+      right: dataThreeDesc,
     },
   ]
 
@@ -164,6 +185,7 @@ function Institucional() {
           text={translate('mainParagraph')}
           video={false}
           image={false}
+          image2={false}
           extraText={false}
         />
       </Bicolumn>
@@ -173,17 +195,30 @@ function Institucional() {
       <Bicolumn
         id="nossa-trajetoria"
         title="Nossa Trajetória"
-        subTitle={translate('mainSubtitle')}
+        subTitle={translate('secondarySubtitle')}
       >
-        <InstitucionalContent text={translate('mainParagraph')} />
+        <InstitucionalContent
+          text={translate('secondaryParagraph')}
+          image={false}
+          image2={false}
+          extraText={false}
+        />
       </Bicolumn>
 
       <Bicolumn
         id="responsabilidade-socioambiental"
         title={'Responsabilidade\nSocioambiental'}
-        subTitle={translate('mainSubtitle')}
+        subTitle={translate('tertiarySubtitle')}
       >
-        <InstitucionalContent text={translate('mainParagraph')} />
+        <InstitucionalContent
+          text={translate('tertiaryParagraph')}
+          text2={translate('tertiaryParagraph2')}
+          text3={translate('tertiaryParagraph3')}
+          video={false}
+          image
+          image2
+          extraText
+        />
       </Bicolumn>
 
       <ChangeThemeOnScroll
