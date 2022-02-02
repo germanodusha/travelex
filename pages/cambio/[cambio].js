@@ -12,7 +12,7 @@ import FAQAccordion from '@/components/FAQAccordion'
 import { FormTypes } from '@/components/RegisterForm'
 import FormPage from '@/components/FormPage'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
-import { usePageLimits } from '@/contexts/LayoutContext'
+import { useMenuTheme, usePageLimits } from '@/contexts/LayoutContext'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import { CambiosTypes, Services } from '@/enums/cambio'
 import styles from './cambio.module.scss'
@@ -56,7 +56,6 @@ function ServicesContent({ markdowns }) {
 
   const service = useMemo(() => {
     const DEFAULT_SERVICE = services[0]
-
     const [, path] = router.asPath.split('#')
     if (!path) return DEFAULT_SERVICE
 
@@ -72,7 +71,10 @@ function ServicesContent({ markdowns }) {
   )
 
   const handleNavigate = () => {
-    serviceBody.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    serviceBody.current?.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+    })
   }
 
   return (
@@ -241,9 +243,16 @@ function FooterWrapper() {
 
 function Cambio({ markdowns }) {
   useLockScrollFirstPage()
+  const { theme } = useMenuTheme()
 
   return (
-    <div>
+    <div className={styles['container']}>
+      <div
+        className={classNames(styles['menu-bg'], {
+          [styles['menu-bg__dark']]: theme === 'dark',
+          [styles['menu-bg__light']]: theme === 'light',
+        })}
+      ></div>
       <Cover />
       <ServicesContent markdowns={markdowns} />
       <BUFFER />
@@ -256,8 +265,10 @@ function Cambio({ markdowns }) {
 
 export function getStaticPaths() {
   const paths = [
-    { params: { cambio: CambiosTypes.CORPORATIVO } },
-    { params: { cambio: CambiosTypes.PESSOA_FISICA } },
+    { params: { cambio: CambiosTypes.CORPORATIVO }, locale: 'pt-BR' },
+    { params: { cambio: CambiosTypes.PESSOA_FISICA }, locale: 'pt-BR' },
+    { params: { cambio: CambiosTypes.CORPORATIVO }, locale: 'en-US' },
+    { params: { cambio: CambiosTypes.PESSOA_FISICA }, locale: 'en-US' },
   ]
 
   return {
@@ -278,8 +289,6 @@ export function getStaticProps({ locale, params }) {
     }),
     {}
   )
-
-  console.log(locale, params.cambio)
 
   return {
     props: {

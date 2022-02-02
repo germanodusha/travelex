@@ -42,9 +42,19 @@
       font-family: Bebas Neue Regular;
       font-size: 1em;
     }
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.5em;
+    }
   }
 
   &__contact {
     padding-left: $padding-horizontal * 2;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      p {
+        font-size: 1.7em;
+      }
+    }
   }
 }

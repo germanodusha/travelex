@@ -12,6 +12,10 @@
   padding-top: $padding-vertical * 1.5;
   scroll-snap-align: start;
   width: 100%;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 2em;
+  }
 }
 
 .footer-text {
@@ -22,10 +26,15 @@
   justify-content: space-between;
   margin-top: $padding-vertical * 2;
   padding: $padding-vertical * 2;
+  padding-bottom: $padding-vertical;
 }
 
 .footer-text > * {
   max-width: 290px;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    max-width: 550px;
+  }
 }
 
 .footer-links {
@@ -33,11 +42,18 @@
   flex-direction: row;
   justify-content: space-between;
   padding: $padding-vertical * 2;
+  padding-bottom: $padding-vertical * 0;
+  padding-top: $padding-vertical * 1;
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
+  width: 290px;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    width: 550px;
+  }
 }
 
 .footer-links-left {
@@ -70,11 +86,26 @@
   justify-content: flex-start;
   margin: 0 0 0 auto;
   width: 390px;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    width: 750px;
+  }
 }
 
 .footer-logo {
-  padding: $padding-vertical * 2;
-  width: 280px;
+  // padding: $padding-vertical * 2;
+  padding-bottom: $padding-vertical;
+  padding-left: $padding-vertical * 2;
+  // width: 280px;
+  width: 200px;
+
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+    width: 240px;
+  }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    width: 420px;
+  }
 }
 
 @media (max-width: $max-width-sm) {

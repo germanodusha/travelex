@@ -14,6 +14,10 @@
   width: 100%;
   z-index: 5;
 
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    height: $menu-height * 2.5;
+  }
+
   a {
     @include config-transition-prop(color, $delay: 0s, $duration: 0.2s);
   }
@@ -35,24 +39,55 @@
 }
 
 .menu-logo {
-  $size-big: 280px;
+  $size-big: 320px;
+  $size-large: 480px;
+  $size-smd: 230px;
+  $size-medium: 280px;
   $size-small: 60px;
 
   margin-left: 1em;
   width: $size-small;
 
   img {
-    height: 85.5px;
+    height: 50px;
     object-fit: cover;
     object-position: left top;
     width: $size-small;
   }
 
-  @media (min-width: 1110px) {
+  @media (min-width: 1024px) {
+    width: $size-smd;
+
+    img {
+      height: 55px;
+      width: $size-smd;
+    }
+  }
+
+  @media (min-width: $min-width-smd) and (max-width: $min-width-md) {
+    width: $size-medium;
+
+    img {
+      height: 65px;
+      width: $size-medium;
+    }
+  }
+
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
     width: $size-big;
 
     img {
+      height: 80px;
       width: $size-big;
+    }
+  }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    width: $size-large;
+
+    img {
+      height: 140px;
+      width: $size-large;
     }
   }
 }
@@ -79,6 +114,18 @@
   height: 2.5em;
   margin-bottom: 0.5em;
 
+  @media (min-width: 1024px) and (max-width: $min-width-smd) {
+    height: 1.7em;
+  }
+
+  @media (min-width: $min-width-smd) and (max-width: $min-width-md) {
+    height: 2.4em;
+  }
+
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+    height: 2.7em;
+  }
+
   &__light {
     border-left-color: $blue;
   }
@@ -94,23 +141,55 @@
 
 .menu-links a {
   color: $white;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 600;
   margin-right: $padding-horizontal;
 }
 
 .menu-links button {
   color: $white;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: 600;
-  margin-right: $padding-horizontal;
+  margin-right: $padding-horizontal * 1.5;
 }
 
-@media (min-width: 768px) and (max-width: 884px) {
+@media (min-width: 1024px) {
   .menu-links {
     a,
     button {
-      font-size: 1em;
+      // font-size: 1.1em;
+      font-size: 1.6vw;
+    }
+  }
+}
+
+@media (min-width: $min-width-smd) and (max-width: $min-width-md) {
+  .menu-links {
+    a,
+    button {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+  .menu-links {
+    a,
+    button {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+  .menu-links {
+    a,
+    button {
+      font-size: 2.5em;
+    }
+
+    button {
+      padding-top: 0.7em;
     }
   }
 }
@@ -155,6 +234,18 @@
   border-left: 1px $white solid;
   height: 2.5em;
   margin-bottom: 0.5em;
+
+  @media (min-width: 1024px) and (max-width: $min-width-smd) {
+    height: 1.7em;
+  }
+
+  @media (min-width: $min-width-smd) and (max-width: $min-width-md) {
+    height: 2.4em;
+  }
+
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+    height: 2.7em;
+  }
 
   &__light {
     border-left-color: $blue;
@@ -263,7 +354,11 @@
   flex: row;
   font-family: Bebas Neue Regular;
   margin-top: -1em;
-  padding: 0 $padding-horizontal;
+  padding: 0 ($padding-horizontal);
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 2em;
+  }
 }
 
 // .menu-lang p {
@@ -462,11 +557,18 @@
   }
 
   .menu-lang {
-    bottom: calc(24px + 1.5em);
+    // bottom: calc(24px + 1.5em);
     font-size: 1.3em;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    left: 0;
+    padding: unset;
     position: fixed;
-    right: 0;
+    top: -25vh;
+  }
+
+  .menu-lang > * {
+    // color: $white;
+    margin-left: 0.8em;
   }
 
   .menu-lang p {
@@ -566,11 +668,20 @@
   border-bottom: 3px solid transparent;
 }
 
+// .link-openacc {
+//   // padding-top: 0.15em;
+
+//   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+//     padding-top: 0.85em !important;
+//   }
+// }
+
 .submenu {
   background-color: rgba($gray-blue, 0.1);
+  // background-color: $white;
   bottom: unset;
   // height: fit-content;
-  height: 13em;
+  height: 17.5vw;
   inset: 0;
   padding-top: $menu-height;
   position: absolute;
@@ -579,8 +690,27 @@
   will-change: transform, height;
   z-index: -1;
 
+  @media (min-width: $min-width-smd) and (max-width: $min-width-md) {
+    height: 13em;
+    padding-top: $menu-height;
+  }
+
+  @media (min-width: $min-width-md) and (max-width: $min-width-lg) {
+    height: 15em;
+    padding-top: $menu-height;
+  }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    height: 25em;
+    padding-top: $menu-height * 1.8;
+  }
+
   &-opaque {
     background-color: $white;
+  }
+
+  &-transparent {
+    background-color: rgba($gray-blue, 0.1);
   }
 
   &-enabled {

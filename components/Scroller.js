@@ -9,6 +9,8 @@ import ReactPageScroller from 'react-page-scroller'
 import { useMenuTheme } from '@/contexts/LayoutContext'
 import useBounceScroll from '@/hooks/useBounceScroll'
 
+import useIsMobile from '@/hooks/useIsMobile'
+
 // eslint-disable-next-line react/display-name
 const Scroller = forwardRef((props, ref) => {
   const {
@@ -22,6 +24,8 @@ const Scroller = forwardRef((props, ref) => {
   const [isThemeInit, setTehemeInit] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
   const { changeTheme } = useMenuTheme()
+
+  const isMobile = useIsMobile()
 
   const totalPages = useMemo(() => {
     if (pages) return pages - 1
@@ -86,8 +90,8 @@ const Scroller = forwardRef((props, ref) => {
       <ReactPageScroller
         animationTimer={500}
         animationTimerBuffer={100}
-        blockScrollUp
-        blockScrollDown
+        blockScrollUp={!isMobile}
+        blockScrollDown={!isMobile}
         renderAllPagesOnFirstRender
         customPageNumber={currentPage}
         onBeforePageScroll={handleBeforePageScroll}

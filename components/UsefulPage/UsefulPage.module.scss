@@ -78,6 +78,10 @@
   @media (min-width: $min-width-sm) {
     display: block;
   }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 1.9em;
+  }
 }
 
 .section {

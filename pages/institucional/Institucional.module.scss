@@ -1,8 +1,9 @@
 @import '@/styles/theme';
 
 .page {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  // scroll-behavior: smooth;
+  // scroll-snap-type: y mandatory;
+  overflow: hidden;
 }
 
 .media {
@@ -11,7 +12,11 @@
 
   @media (min-width: $min-width-sm) {
     transform: unset;
-    width: 130%;
+    width: 156%;
+  }
+
+  @media (min-width: $min-width-md) {
+    width: 147%;
   }
 
   video {
@@ -39,6 +44,7 @@
       img {
         filter: blur(4px);
         height: 100vh;
+        width: 100vw;
       }
     }
   }
@@ -62,15 +68,35 @@
     }
 
     &-left {
-      font-size: 15vh;
+      font-size: 9vh;
       height: 30vh;
       padding-left: 1rem;
 
+      @media (max-width: $min-width-sm) {
+        width: unset !important;
+      }
+
       @media (min-width: $min-width-sm) {
-        font-size: 8em;
+        display: flex;
+        font-size: 7vw;
         height: unset;
+        justify-content: flex-end;
         padding: 0;
         padding-left: 2rem;
+        padding-right: 4vw;
+      }
+
+      @media (min-width: $min-width-md) {
+        padding-right: 7vw;
+      }
+
+      @media (min-width: $min-width-lg) {
+        font-size: 6vw;
+        padding-right: 2vw;
+      }
+
+      @media (min-width: 2210px) {
+        padding-right: 6vw;
       }
     }
 
@@ -79,10 +105,14 @@
       padding: $padding-vertical $padding-horizontal;
 
       @media (min-width: $min-width-sm) {
-        font-size: 6em;
+        font-size: 7vw;
         line-height: 1em;
         padding: unset;
         position: absolute;
+      }
+
+      @media (min-width: $min-width-lg) {
+        font-size: 6vw;
       }
     }
   }

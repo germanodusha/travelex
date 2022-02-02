@@ -73,6 +73,10 @@
   @media (min-width: $min-width-sm) {
     display: block;
   }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 1.9em;
+  }
 }
 
 .section {
@@ -89,5 +93,9 @@
     padding: 0 20vw 0 39vw;
     position: absolute;
     top: 30vh;
+  }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 2.5em;
   }
 }

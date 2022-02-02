@@ -4,9 +4,9 @@ import CarouselWithInterval from '@/components/CarouselWithInterval'
 import { useEffectOnce } from 'react-use'
 import { useMenuTheme } from '@/contexts/LayoutContext'
 import Footer from '../Layout/Footer'
-import imgBannerTwo from '../../public/images/bannerTwoHome.png'
-import imgBannerThree from '../../public/images/bannerThreeHome.png'
-import imgBannerFour from '../../public/images/bannerFourHome.png'
+// import imgBannerTwo from '../../public/images/bannerTwoHome.png'
+// import imgBannerThree from '../../public/images/bannerThreeHome.png'
+// import imgBannerFour from '../../public/images/bannerFourHome.png'
 import Banner from '../Banner'
 
 function CarouselItem({ item }) {
@@ -35,25 +35,25 @@ function Home() {
       id: 'banner1',
       title: translate('bannerOne.title'),
       link: translate('bannerOne.link'),
-      video: '/videos/bg-teste.mp4',
+      video: '/videos/1.Home_Video.mp4',
     },
     {
       id: 'banner2',
       title: translate('bannerTwo.title'),
       link: translate('bannerTwo.link'),
-      image: imgBannerTwo,
+      image: '/images/2.Home_destaq1.jpg',
     },
     {
       id: 'banner3',
       title: translate('bannerThree.title'),
       link: translate('bannerThree.link'),
-      image: imgBannerThree,
+      image: '/images/3.Home_destaq2.jpg',
     },
     {
       id: 'banner4',
       title: translate('bannerFour.title'),
       link: translate('bannerFour.link'),
-      image: imgBannerFour,
+      image: '/images/4.Home_destaq3.jpg',
     },
   ]
 

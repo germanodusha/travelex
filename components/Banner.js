@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import classNames from 'classnames'
 import styles from './Banner.module.scss'
 
@@ -17,7 +19,7 @@ function Banner({
     <div className={classNames(styles['banner'], bannerClass)}>
       {image && (
         <div className={styles['banner-media']}>
-          <Image src={image} alt={id} />
+          <img src={image} alt={id} />
         </div>
       )}
 
@@ -45,6 +47,8 @@ function Banner({
 
       {!link && <div className={styles['title']}>{title}</div>}
       <div className={styles['content']}>{children}</div>
+
+      <div className={styles['white-out']}></div>
     </div>
   )
 }

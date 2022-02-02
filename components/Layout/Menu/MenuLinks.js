@@ -19,12 +19,20 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
   const [path, service] = router.asPath.split('#')
 
   const isCambioPath = useMemo(() => path.includes('cambio'), [path])
+  const isAboutPath = useMemo(() => path.includes('institucional'), [path])
+  const isCadastroPath = useMemo(() => path.includes('cadastro'), [path])
+  const isJobPath = useMemo(() => path.includes('trabalhe-conosco'), [path])
 
   return (
     <div
       className={classNames(styles['menu-links'], styles['submenu'], {
         [styles['submenu-enabled']]: (menuHover || menuTextHover) && subMenu,
-        [styles['submenu-opaque']]: isCambioPath || theme === 'light',
+        [styles['submenu-opaque']]:
+          (isCambioPath || isAboutPath || isCadastroPath || isJobPath) &&
+          theme === 'light',
+        [styles['submenu-transparent']]:
+          (isCambioPath || isAboutPath || isCadastroPath || isJobPath) &&
+          theme === 'dark',
       })}
     >
       <div
@@ -55,7 +63,7 @@ function MenuLinks({ visible, emptyMenu }) {
   const { setLimits } = usePageLimits()
   const { theme, options } = useMenuTheme()
   const translate = useTranslations('Layout')
-  const { locale, locales, route } = useRouter()
+  const { locale, locales, route, asPath } = useRouter()
   const otherLocale = locales?.find((cur) => cur !== locale)
   const [hover, setHover] = useState(null)
   const [subMenu, setSubmenu] = useState(null)
@@ -108,6 +116,11 @@ function MenuLinks({ visible, emptyMenu }) {
       window.removeEventListener('resize', handleLimits)
     }
   }, [handleLimits])
+
+  useEffect(() => {
+    handleLimits()
+    // eslint-disable-next-line
+  }, [locale, handleLimits])
 
   return (
     <div
@@ -258,9 +271,13 @@ function MenuLinks({ visible, emptyMenu }) {
                   onFocus={() => void 0}
                   onBlur={() => void 0}
                   onClick={emptyMenu}
-                  className={classNames(styles['link'], {
-                    [styles[`${theme}__link-hover`]]: hover === 'openAcc',
-                  })}
+                  className={classNames(
+                    styles['link'],
+                    styles['link-openacc'],
+                    {
+                      [styles[`${theme}__link-hover`]]: hover === 'openAcc',
+                    }
+                  )}
                 >
                   {translate('menu.openAccount')}
                 </button>
@@ -271,7 +288,7 @@ function MenuLinks({ visible, emptyMenu }) {
             <p className={classNames(styles[`menu-lang-p__${theme}`])}>
               {translate('menu.currentLocale')}
             </p>
-            <Link href={route} locale={otherLocale} passHref>
+            <Link href={asPath} locale={otherLocale} passHref>
               <button
                 className={classNames(
                   styles['menu-lang-btn'],

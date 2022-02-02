@@ -1,5 +1,10 @@
 @import '@/styles/theme';
 
+.container {
+  // overflow: hidden;
+  width: 100%;
+}
+
 .cover {
   background-color: $navy-blue;
   display: flex;
@@ -8,10 +13,22 @@
   justify-content: space-between;
   // ajuste
   margin-bottom: $menu-height * 1.4;
+  transform: translateY(-$menu-height * 1.4);
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    margin-bottom: $menu-height * 2.5;
+    transform: translateY(-$menu-height * 2.5);
+  }
 
   &__header {
     background-color: $white;
     height: $menu-height * 1.4;
+    position: sticky;
+    top: 0;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      height: $menu-height * 2.5;
+    }
   }
 
   &__title {
@@ -20,6 +37,13 @@
     padding-bottom: $padding-vertical;
     padding-left: 1.3em;
     padding-top: $padding-vertical;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 5em;
+      padding-bottom: $padding-vertical * 0.2;
+      padding-left: 1.1em;
+      padding-top: $padding-vertical;
+    }
   }
 
   &__border {
@@ -28,6 +52,31 @@
     margin-bottom: 1.5rem;
     margin-top: 1em;
     width: 10vw;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      margin-bottom: 4.5rem;
+    }
+  }
+}
+
+.menu-bg {
+  // background-color: $cherry-red;
+  height: $menu-height * 1.4;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    height: $menu-height * 2.5;
+  }
+
+  &__dark {
+    background-color: transparent;
+  }
+
+  &__light {
+    background-color: $white;
   }
 }
 
@@ -39,12 +88,29 @@
   p {
     color: $navy-blue;
     font-size: 1.8em;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.8em;
+    }
   }
 
   h3 {
     color: $navy-blue;
     font-family: Bebas Neue Regular;
     font-size: 1.8em;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.8em;
+    }
+  }
+
+  li {
+    color: $navy-blue;
+    font-size: 1.8em;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.8em;
+    }
   }
 
   &__nav {
@@ -79,6 +145,10 @@
       flex-direction: column;
       position: sticky;
       top: $menu-height * 1.85;
+
+      @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+        top: $menu-height * 3.3;
+      }
     }
 
     &-desk {
@@ -97,7 +167,7 @@
       width: 100%;
 
       img {
-        filter: blur(7px);
+        filter: blur(7px) brightness(110%);
         height: 100vh;
         transform: scale(1.1);
       }
@@ -117,7 +187,25 @@
 
     &-body {
       padding-right: $padding-horizontal * 1.1;
+      padding-top: $menu-height * 1.4;
       scroll-snap-align: start;
+
+      h2 {
+        color: $navy-blue;
+        font-family: Bebas Neue Regular;
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+        margin-top: 2em;
+      }
+
+      h3 {
+        margin-bottom: 0;
+        margin-top: 1.5em;
+      }
+
+      p {
+        padding-top: 1em !important;
+      }
     }
 
     &-desk {
@@ -130,12 +218,17 @@
       p {
         margin: 0;
         padding-top: $menu-height;
+        white-space: pre-line;
+
+        @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+          padding-top: $menu-height * 1.2;
+        }
       }
     }
 
     &-mobile {
       display: block;
-      padding-top: $menu-height;
+      padding-top: $menu-height * 1.4;
 
       @media (min-width: $min-width-sm) {
         display: none;
@@ -176,6 +269,10 @@
         font-size: 1.8em;
         line-height: 1em;
       }
+
+      @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+        font-size: 2.8em;
+      }
     }
   }
 }
@@ -187,5 +284,7 @@
 
 .form {
   min-height: 100vh;
+  // padding-top: 5vh;
+  overflow: hidden;
   scroll-snap-align: start;
 }

@@ -27,6 +27,10 @@
   font-size: 1.3em;
   width: fit-content;
 
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 2.3em;
+  }
+
   &:hover {
     border-bottom-color: $gray-second !important;
     color: $gray-second;
@@ -49,6 +53,12 @@
     margin-bottom: 3rem;
     margin-right: 1.3rem;
 
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.3rem;
+      margin-bottom: 4rem;
+      margin-right: 2.8rem;
+    }
+
     &:hover {
       border-bottom-color: $navy-blue !important;
       color: $navy-blue;
@@ -65,7 +75,13 @@
     max-width: 100%;
 
     &__divider {
-      min-height: 5vh;
+      min-height: 3vh;
+    }
+  }
+
+  .select {
+    button {
+      margin-bottom: 1rem;
     }
   }
 }

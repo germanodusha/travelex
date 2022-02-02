@@ -1,8 +1,14 @@
 @use 'sass:list';
 
 // Break points
-$max-width-sm: 767px;
-$min-width-sm: 768px;
+// $max-width-sm: 949px;
+// $min-width-sm: 950px;
+$max-width-sm: 1023px;
+$min-width-sm: 1024px;
+$min-width-smd: 1280px;
+$min-width-md: 1400px;
+$min-width-lg: 2100px;
+$min-width-xl: 4800px;
 $min-width-emph: 950px;
 
 // Colors
