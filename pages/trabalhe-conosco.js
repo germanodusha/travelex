@@ -33,7 +33,7 @@ function Cover(props) {
       />
       <ChangeThemeOnScroll
         theme="light"
-        options={ themeOptions }
+        options={themeOptions}
         style={{ transform: 'translateY(-100%)', height: '20%' }}
       />
     </div>
