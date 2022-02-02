@@ -2,9 +2,9 @@
 
 .title {
   // max-width: 35vw;
-  min-height: 60vh;
+  min-height: 42vh;
   padding-left: $padding-horizontal * 3.2;
-  padding-top: $menu-height;
+  padding-top: $menu-height * 1.6;
 
   @media (max-width: $max-width-sm) {
     // max-width: unset;
@@ -106,6 +106,7 @@
       margin-bottom: 1.5rem;
       position: sticky;
       top: $menu-height;
+      white-space: pre-line;
     }
   }
 

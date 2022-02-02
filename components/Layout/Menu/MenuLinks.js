@@ -20,15 +20,19 @@ function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
 
   const isCambioPath = useMemo(() => path.includes('cambio'), [path])
   const isAboutPath = useMemo(() => path.includes('institucional'), [path])
+  const isCadastroPath = useMemo(() => path.includes('cadastro'), [path])
+  const isJobPath = useMemo(() => path.includes('trabalhe-conosco'), [path])
 
   return (
     <div
       className={classNames(styles['menu-links'], styles['submenu'], {
         [styles['submenu-enabled']]: (menuHover || menuTextHover) && subMenu,
         [styles['submenu-opaque']]:
-          (isCambioPath || isAboutPath) && theme === 'light',
+          (isCambioPath || isAboutPath || isCadastroPath || isJobPath) &&
+          theme === 'light',
         [styles['submenu-transparent']]:
-          (isCambioPath || isAboutPath) && theme === 'dark',
+          (isCambioPath || isAboutPath || isCadastroPath || isJobPath) &&
+          theme === 'dark',
       })}
     >
       <div

@@ -23,6 +23,7 @@
   font-size: 3em;
   padding: $padding-horizontal;
   position: absolute;
+  white-space: pre-line;
 
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
     font-size: 5em;
@@ -67,7 +68,7 @@
   bottom: 0;
   height: 3vh;
   position: absolute;
-  transform: translateY(1px);
+  transform: translateY(2.2px);
   width: 100vw;
 }
 

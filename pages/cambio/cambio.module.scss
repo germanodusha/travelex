@@ -104,6 +104,15 @@
     }
   }
 
+  li {
+    color: $navy-blue;
+    font-size: 1.8em;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      font-size: 2.8em;
+    }
+  }
+
   &__nav {
     &-active {
       background-color: $navy-blue;
@@ -158,7 +167,7 @@
       width: 100%;
 
       img {
-        filter: blur(7px);
+        filter: blur(7px) brightness(110%);
         height: 100vh;
         transform: scale(1.1);
       }
@@ -178,7 +187,25 @@
 
     &-body {
       padding-right: $padding-horizontal * 1.1;
+      padding-top: $menu-height * 1.4;
       scroll-snap-align: start;
+
+      h2 {
+        color: $navy-blue;
+        font-family: Bebas Neue Regular;
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+        margin-top: 2em;
+      }
+
+      h3 {
+        margin-top: 1.5em;
+        margin-bottom: 0;
+      }
+
+      p {
+        padding-top: 1em !important;
+      }
     }
 
     &-desk {
@@ -191,6 +218,7 @@
       p {
         margin: 0;
         padding-top: $menu-height;
+        white-space: pre-line;
 
         @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
           padding-top: $menu-height * 1.2;

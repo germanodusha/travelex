@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
@@ -12,11 +13,11 @@ import styles from './Institucional.module.scss'
 // import bannerInstitutional from '../../public/images/bannerInstitutional.png'
 // import imgInstitutional from '../../public/images/imgInstitutional.png'
 // import imgLivro from '../../public/images/IMG9.png'
-import imgDestaque from '../../public/images/Institucional_2_Destaq1.jpg'
-import imgDestaque2 from '../../public/images/Institucional_3_Destaq2.jpg'
-import imgDestaque3 from '../../public/images/Institucional_4_Destaq3.jpg'
-import imgInstitutional from '../../public/images/Institucional_5_SOS1.jpg'
-import imgInstitutional2 from '../../public/images/Institucional_6_SOS2.jpg'
+// import imgDestaque from '../../public/images/6.Institucional_carrossel1.jpg'
+// import imgDestaque2 from '../../public/images/7.Institucional_carrossel2.jpg'
+// import imgDestaque3 from '../../public/images/8.Institucional_carrossel3.jpg'
+import imgInstitutional from '../../public/images/9.Institucional_SOS1.jpg'
+import imgInstitutional2 from '../../public/images/10.Institucional_SOS2.jpg'
 import imgNext from '../../public/images/seta.svg'
 // import imgNextHover from '../../public/images/seta_hover.svg'
 
@@ -36,7 +37,7 @@ function InstitucionalContent({
       <p style={{ whiteSpace: 'pre-line' }}>{text}</p>
       {video && (
         <div className={styles['media']}>
-          <video src="/videos/Home_Video.mov" controls autoPlay muted loop />
+          <video src="/videos/1.Home_Video.mp4" autoPlay muted loop />
         </div>
       )}
       {image && (
@@ -73,19 +74,19 @@ function Carousel() {
   const items = [
     {
       id: 1,
-      bg: imgDestaque,
+      bg: '/images/6.Institucional_carrossel1.jpg',
       left: dataOne,
       right: dataOneDesc,
     },
     {
       id: 2,
-      bg: imgDestaque2,
+      bg: '/images/7.Institucional_carrossel2.jpg',
       left: dataTwo,
       right: dataTwoDesc,
     },
     {
       id: 3,
-      bg: imgDestaque3,
+      bg: '/images/8.Institucional_carrossel3.jpg',
       left: dataThree,
       right: dataThreeDesc,
     },
@@ -97,7 +98,8 @@ function Carousel() {
     setCurrentItem((current) => (current >= maxPage ? 0 : current + 1))
   }, [items.length])
 
-  useInterval(nextItem, 3000)
+  // alterar tempo 3000
+  useInterval(nextItem, 6000)
 
   const showNext = currentItem < items.length - 1
   const showPrev = currentItem > 0
@@ -110,9 +112,14 @@ function Carousel() {
       >
         {items.map(({ id, bg, left, right }) => (
           <div key={id} className={styles['carousel__items-item']}>
-            <Image src={bg} alt="" objectFit="cover" />
+            <img src={bg} alt="" objectFit="cover" />
             <div className={styles['carousel__content']}>
-              <div className={styles['carousel__content-left']}>
+              <div
+                className={styles['carousel__content-left']}
+                style={{
+                  width: `${limits.rightColumn.left}px`,
+                }}
+              >
                 <p>{left}</p>
               </div>
               <div
@@ -171,7 +178,7 @@ function Institucional() {
       <Banner
         showGradient
         title={translate('mainTitle')}
-        image="/images/bannerInstitutional.png"
+        image="/images/5.Institucional_capa.jpg"
       />
 
       <ChangeThemeOnScroll theme="light" />

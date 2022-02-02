@@ -1,19 +1,19 @@
 {
   "Home": {
     "bannerOne": {
-      "title": "Maior correspondente do Travelex Bank ",
+      "title": "Maior correspondente Travelex Bank ",
       "link": "/institucional"
     },
     "bannerTwo": {
-      "title": "Somos especialistas em câmbio: know-how, agilidade e atendimento exclusivo para as operações de câmbio da sua empresa  ",
+      "title": "Especialistas em câmbio para sua empresa",
       "link": "/cambio/corporativo"
     },
     "bannerThree": {
-      "title": "Câmbio simples e seguro: realize suas transações internacionais de forma mais eficiente",
+      "title": "Transações internacionais de forma mais eficiente",
       "link": "/cambio/pessoa-fisica"
     },
     "bannerFour": {
-      "title": "As melhores condições de câmbio para a sua próxima viagem",
+      "title": "As melhores condições de câmbio para a sua viagem",
       "link": "/cadastro"
     },
     "FAQ": {
@@ -39,8 +39,8 @@
   "Layout": {
     "menu": {
       "about": "Institucional",
-      "company": "Câmbio Corporativo",
-      "personal": "Câmbio Pessoa Física",
+      "company": "Para sua empresa",
+      "personal": "Para você",
       "blog": "Blog",
       "openAccount": "Abra sua conta",
       "switchLocale": "EN",
@@ -61,21 +61,21 @@
   "About": {
     "title": "Institucional",
     "mainTitle": "Institucional",
-    "mainSubtitle": "Especialistas em câmbio, somos o maior correspondente bancário do Travelex Bank.",
+    "mainSubtitle": "Especialistas em câmbio:\nSomos o maior correspondente bancário do Travelex Bank",
     "mainParagraph_BU": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "mainParagraph": "O Travelex Partners é, atualmente, o correspondente cambial responsável pelo maior volume de transações em moeda estrangeira (ME) do Travelex Bank. Em 2021, atingimos a expressiva marca de 7,72% do volume total de transações realizadas pelo banco.\n\n Nossos objetivos não param por aí. Com uma taxa de crescimento de 187,60% ao ano e tendo realizado 6.459 operações, queremos ir além, inovando para levar aos nossos clientes as melhores soluções para os seus negócios e nos firmarmos como o maior correspondente de câmbio do Brasil.\n\n Em sua parceria com o Travalex Bank, o Travelex Partners atua de maneira significativa e direta no crescimento da base de clientes do banco, enquanto o Travelex Bank fica responsável por todo o operacional das transações cambiais realizadas. Assim, o Travelex Partners passou a ter um papel destaque, se posicionando de maneira estratégica como correspondente cambial, trabalhando na prospecção de novos clientes, e sempre proporcionando um atendimento mais exclusivo e totalmente personalizado.\n\n Com profissionais da mais alta competência e com ampla expertise em transações internacionais para os segmentos de empresas e de pessoas físicas, o Travelex Partners tem como objetivo trazer soluções e produtos inovadores que atendem todas as necessidades envolvendo câmbio e moedas estrangeiras.\n\n Para sua empresa: Somos especialistas no que fazemos. O  parceiro certo para as operações de câmbio da sua empresa\n\n Para você: conheça nossos serviços que facilitam a sua vida ao redor do mundo, seja para investir e movimentar recursos no exterior, seja para organizar suas viagens internacionais.\n\n Unimos a estrutura do maior banco de câmbio do mundo com um atendimento único, feito sob medida para garantir as melhores oportunidades envolvendo transações internacionais.",
-    "dataOne": "738 mi",
-    "dataOneDescription": "Movimentados em transações somente no ano de 2021.",
-    "dataTwo": "6.459",
-    "dataTwoDescription": "Operações cambiais concretizadas no ano de 2021.",
-    "dataThree": "20+",
-    "dataThreeDescription": "Diferentes moedas estrangeiras transacionadas.",
+    "mainParagraph": "O Travelex Partners é, atualmente, o maior correspondente bancário do Travelex Bank.\n\nNossos objetivos não param por aí. Queremos inovar para levar aos nossos clientes as melhores soluções para os seus negócios, nos posicionando como o maior correspondente de câmbio do Brasil.\n\nEm sua parceria com o Travalex Bank, o Travelex Partners atua de maneira significativa e direta no crescimento da base de clientes do banco, enquanto o banco fica responsável por toda parte operacional das transações cambiais realizadas pelos nossos clientes.\n\nDesse modo, o Travelex Partners passa a ter um papel destaque, trabalhando na prospecção de novos clientes, e sempre proporcionando um atendimento mais exclusivo e totalmente personalizado.\n\nCom profissionais de alta qualidade e com ampla expertise em transações internacionais para os segmentos de empresas e de pessoas físicas, o Travelex Partners tem como objetivo trazer soluções e produtos inovadores que atendem todas as necessidades envolvendo câmbio e moedas estrangeiras.\n\nUnimos a estrutura do maior grupo de câmbio do mundo com um atendimento único, feito sob medida para garantir as melhores oportunidades envolvendo transações internacionais.\n\nPara sua empresa: Somos especialistas no que fazemos. O  parceiro certo para as operações de câmbio da sua empresa.\n\nPara você: conheça nossos serviços que facilitam a sua vida ao redor do mundo, seja para investir e movimentar recursos no exterior, seja para organizar suas viagens internacionais.",
+    "dataOne": "+ US$700 mi",
+    "dataOneDescription": "movimentados em transações somente no ano de 2021",
+    "dataTwo": "+ 6.000,00",
+    "dataTwoDescription": "operações cambiais concretizadas no ano de 2021",
+    "dataThree": "+ 20",
+    "dataThreeDescription": "Diferentes moedas estrangeiras transacionadas",
     "secondaryTitle": "Nossa Trajetória",
-    "secondarySubtitle": "Há cinco anos crescendo no mercado de câmbio, o Travalex Partners.",
-    "secondaryParagraph": "O Travelex Partners foi criado para atender a crescente demanda por operações cambiais no Brasil, reconhecida pelo Banco Central desde a Resolução n°4.811 de 2012, permitindo aos Correspondentes Bancários atuar e contribuir para ampliar o acesso e elevar a qualidade destes serviços junto aos clientes.\n\nOperando gradualmente desde 2016, o Travelex Partners inaugura uma nova fase, estruturada para abarcar nossa curva de crescimento e atender clientes em maior escala com a mesma qualidade e segurança em todos os serviços oferecidos.\n\nGuiado pelos valores de agilidade e inovação, nos especializamos em atender nossos clientes de forma personalizada, desenhando as melhores soluções para suas demandas e conectando-os a serviços especializados.\n\nNo último ano, trabalhando com mais de 20 tipos de moedas estrangeiras, movimentamos 1.431.212.355,34 em moedas estrangeiras (ME) em 8.248 operações cambiais realizadas. Esses números refletem nosso compromisso com nossos valores institucionais e com a evolução de nossos clientes.",
+    "secondarySubtitle": "Crescendo exponencialmente no mercado de câmbio",
+    "secondaryParagraph": "O Travelex Partners foi criado para atender a crescente demanda por operações cambiais no Brasil, reconhecida pelo Banco Central desde a Resolução n°4.811 de 2012, permitindo que os Correspondentes Bancários possam contribuir para ampliar o acesso e elevar a qualidade desses serviços junto aos clientes.\n\nCom uma atuação sólida e inovadora, o Travelex Partners agora inaugura uma nova fase. Guiados pelos valores de agilidade e inovação, nos especializamos em atender nossos clientes de forma personalizada, desenhando as melhores soluções para suas demandas e conectando-os a serviços especializados.",
     "mainImgCaption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     "tertiaryTitle": "Responsabilidade Socioambiental",
-    "tertiarySubtitle": "Trabalhamos por um futuro sustentável, e pela preservação do meio ambiente.",
+    "tertiarySubtitle": "Trabalhamos por um futuro sustentável, e pela preservação do meio ambiente",
     "tertiaryParagraph": "O Travelex Partners é orientado por uma visão de futuro sustentável, com base em valores éticos que buscam apoiar o desenvolvimento mais equânime da sociedade e a preservação do meio ambiente. Desde a nossa fundação, atuamos com a noção de responsabilidade socioambiental de duas formas: em nossas ações internas e no apoio a projetos e organizações em que acreditamos.\n\nBuscamos garantir as melhores condições materiais e emocionais para nossa equipe e colaboradores, incentivando o bem-estar e crescimento profissional de todos e trabalhando para tornar a empresa mais inclusiva e diversa. Do mesmo modo, cuidamos para reduzir ao máximo o impacto ambiental das atividades de nosso escritório. Entre nossos esforços estão a separação de resíduos para a coleta seletiva e o descarte correto de materiais eletrônicos; a eliminação do uso desnecessário de papéis e a redução do consumo de recursos como energia, água e poluentes; além do amplo incentivo ao reuso e escolha por materiais reciclados e recicláveis.\n\nAlém do zelo em nossas atividades internas, o Travelex Partners está comprometido em apoiar projetos e organizações cuja seriedade e impacto são reconhecidos em suas áreas de atuação, como a Fundação SOS Mata Atlântica.",
     "tertiaryParagraph2": "PARCERIA: SOS MATA ATLANTICA\n\nO apoio se dedica a impulsionar o programa “Florestas do Futuro” por meio de um aporte financeiro e o trabalho voluntário de nossa equipe e colaboradores.\n\nO objetivo do programa é preservar diretamente os pouco mais de 10% da área original ainda existente do bioma Mata Atlântica e promover a restauração por meio da recuperação das bacias e sub-bacias hidrográficas e do reflorestamento com espécies nativas. Paralelamente, visa ampliar o conhecimento público sobre o bioma e gerar conscientização acerca da fundamental importância de garantirmos sua proteção e recuperação, sobretudo diante dos riscos iminentes e futuros advindos de mudanças climáticas e do desabastecimento de água.\n\nCom o “Florestas do Futuro”, a SOS Mata Atlântica já plantou mais de 40 milhões de mudas em nove estados e 550 municípios, que ajudaram a remover 6,5 milhões de toneladas de CO2 da atmosfera e promover a restauração de 23 mil hectares da floresta — área equivalente ao município de Recife.\n\nO Travelex Partners se orgulha de poder contribuir para os esforços incansáveis da SOS Mata Atlântica, na proteção deste bioma fundamental para a qualidade de vida do Brasil e do planeta.",
     "tertiaryParagraph3": "Conheça e apoie a SOS Mata Atlântica!",
@@ -83,18 +83,18 @@
   },
   "cambio": {},
   "cambio-corporativo": {
-    "title": "Câmbio Corporativo\nTravelex Partners",
+    "title": "Câmbio e serviços\nPara sua empresa",
     "services": {
-      "analises-registros-e-declaracoes": "Análises, Registros e Declarações",
-      "analises-registros-e-declaracoes-banner": "Análises, Registros e Declarações\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "hedge": "Hedge",
-      "hedge-banner": "Hedge\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "assessoria-e-servicos": "Assessoria e Serviços",
-      "assessoria-e-servicos-banner": "Assessoria e Serviços\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "trade-finance": "Trade Finance",
-      "trade-finance-banner": "Trade Finance\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "trade-finance-banner": "Oferecemos as melhores condições para todos os tipos de câmbio",
       "trade-service": "Trade Service",
-      "trade-service-banner": "Trade Service\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "trade-service-banner": "Diversas modalidades de crédito e garantias internacionais para operações de importação e exportação",
+      "hedge": "Hedge",
+      "hedge-banner": "Produtos de proteção cambial para garantir o sucesso de seus negócios de na importação ou na exportação",
+      "assessoria-e-servicos": "Assessoria e Serviços",
+      "assessoria-e-servicos-banner": "Suporte personalizado para atender a sua empresa de maneira exclusiva em todos os procedimentos envolvendo serviços de câmbio",
+      "analises-registros-e-declaracoes": "Análises, Registros e Declarações",
+      "analises-registros-e-declaracoes-banner": "Oferecemos suporte técnico completo para documentações e questões legais envolvendo agentes com transações internacionais"
     },
     "BUFFER": {
       "title": "Precisa de ajuda? Acesse nossa página de dúvidas frequêntes ou entre em contato conosco",
@@ -113,16 +113,16 @@
     "form-description": "Form description"
   },
   "cambio-pessoa-fisica": {
-    "title": "Câmbio Pessoa Física\nTravelex Partners",
+    "title": "Cambio e serviços\nPara você",
     "services": {
       "cambio-turismo": "Câmbio Turismo",
-      "cambio-turismo-banner": "Câmbio Turismo\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "cambio-turismo-banner": "As melhores condições e todo suporte para garantir que você tenha uma viagem segura e tranquila",
       "transferencias-internacionais": "Transferências Internacionais",
-      "transferencias-internacionais-banner": "Transferências Internacionais\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "transferencias-internacionais-banner": "Envie valores para o exterior ou receba recursos de contas estrangeiras com segurança e agilidade",
       "pagamentos-internacionais": "Pagamentos Internacionais",
-      "pagamentos-internacionais-banner": "Pagamentos Internacionais\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "pagamentos-internacionais-banner": "Trabalhamos de forma eficiente com pagamentos de produtos ou serviços adquiridos fora do Brasil",
       "hedge": "Hedge",
-      "hedge-banner": "Hedge\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "hedge-banner": "Expertise em operações de câmbio no mercado futuro"
     },
     "BUFFER": {
       "title": "Precisa de ajuda? Acesse nossa página de dúvidas frequêntes ou entre em contato conosco",

@@ -1,2 +1,18 @@
-assesoria e servicos
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris orci magna, fermentum eu scelerisque id, efficitur ut dui. Sed mattis aliquet placerat. Integer imperdiet, eros et semper malesuada, sapien lorem luctus erat, ac auctor erat velit sed odio. Quisque efficitur nulla sed tortor dictum, vitae lobortis turpis pharetra. Sed et tempor tellus, non accumsan enim. Curabitur scelerisque erat dignissim turpis commodo ullamcorper. Curabitur malesuada nibh in facilisis consectetur. Curabitur non luctus nunc, vitae rutrum risus. In sed mi leo. Vivamus tempor tellus quis velit sagittis bibendum. Mauris eu suscipit augue. In id nunc nisl.
+### Desoneração de Investimentos (Importação e Exportação)
+Assessoria na redução de tributos e incidentes sobre bens de capital para promoção dos investimentos produtivos, com a finalidade de aumentar a competitividade da indústria brasileira.
+
+### Ex-Tarifário 
+Assessoria para o processo de benefício fiscal Ex-Tarifário, que consiste na redução temporária da alíquota do imposto de importação incidente sobre a aquisição de bens de capital, informática e telecomunicações sem produção similar no Brasil.
+
+### Drawback
+Regime aduaneiro para suspensão ou eliminação de tributos incidentes sobre insumos importados com a finalidade de exportação, tornando os produtos brasileiros mais competitivos no mercado internacional.
+
+### Cobrança de Importação e Exportação
+Garantia de que a operação negociada entre importador e exportador será preservada.
+
+### Registros declaratórios
+Oferecemos suporte para todos os registros de capital estrangeiro junto ao Banco Central: Investimentos Estrangeiros Diretos (RDE-IED); Registros de Operações Financeiras (RDE-ROF); e Investimentos em Portfólios (RDE-PORTFÓLIO).
+
+### Pendência Cambiais
+Serviço de análise de situação cambial da empresa; e execução de todos os procedimentos necessários para devida adequação e regularização.
+

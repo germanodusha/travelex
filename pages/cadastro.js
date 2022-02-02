@@ -9,7 +9,7 @@ import Footer from '@/components/Layout/Footer'
 
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 
-// const themeOptions = { background: 'white' }
+const themeOptions = { background: 'white' }
 
 function Cover(props) {
   const translate = useTranslations('openAccount')
@@ -23,7 +23,7 @@ function Cover(props) {
   return (
     <div style={containerStyle}>
       <FormPage
-        backgroundImage={'/images/bannerOneHome.png'}
+        backgroundImage={'/images/20.Abrasuaconta.jpg'}
         description={translate('description')}
         // descriptionTitle={translate('descriptionTitle')}
         formType={FormTypes.PESSOA_FISICA}
@@ -33,7 +33,7 @@ function Cover(props) {
       />
       <ChangeThemeOnScroll
         theme="light"
-        options={{}}
+        options={ themeOptions }
         style={{ transform: 'translateY(-100%)', height: '20%' }}
       />
     </div>
