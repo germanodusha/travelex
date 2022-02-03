@@ -210,6 +210,7 @@ function Institucional({ instQS, instNT, instRS }) {
         title="Nossa Trajetória"
         subTitle={translate('secondarySubtitle')}
       >
+
         {/* <InstitucionalContent
           text={translate('secondaryParagraph')}
           image={false}
