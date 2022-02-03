@@ -1,4 +1,4 @@
-import Institucional from './Institucional'
+import Institucional from '../../components/Institucional/Institucional'
 import { readMarkdownLocale } from '@/utils/markdown'
 
 export default function InstitucionalPage({ locale, ...props }) {
