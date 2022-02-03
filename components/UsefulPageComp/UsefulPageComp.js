@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import Title from '@/components/Title'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import Footer from '@/components/Layout/Footer'
 import styles from './UsefulPageComp.module.scss'
 import { useMenuTheme } from '@/contexts/LayoutContext'
-import { useEffect } from 'react/cjs/react.development'
 
 function UsefulPageComp({
   title,
