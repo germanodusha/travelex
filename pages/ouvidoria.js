@@ -1,7 +1,7 @@
 import { useTranslations } from 'use-intl'
 import { useRouter } from 'next/router'
 import Interweave from 'interweave'
-import UsefulPageLegacy from '@/components/UsefulPageLegacy'
+import UsefulPageComp from '@/components/UsefulPageComp'
 import { readMarkdownLocale } from '@/utils/markdown'
 
 function Ouvidoria({ markdown }) {
@@ -9,9 +9,9 @@ function Ouvidoria({ markdown }) {
   const translate = useTranslations('Ouvidoria')
 
   return (
-    <UsefulPageLegacy title={translate('title')} caption={translate('caption')}>
+    <UsefulPageComp title={translate('title')} caption={translate('caption')}>
       <Interweave noWrap content={markdown[locale]} />
-    </UsefulPageLegacy>
+    </UsefulPageComp>
   )
 }
 

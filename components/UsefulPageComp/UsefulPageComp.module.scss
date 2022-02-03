@@ -1,0 +1,132 @@
+@import '@/styles/theme';
+
+.menu-bg {
+  // background-color: $cherry-red;
+  height: $menu-height * 1.4;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    height: $menu-height * 2.5;
+  }
+
+  &__dark {
+    background-color: transparent;
+  }
+
+  &__light {
+    background-color: $white;
+  }
+}
+
+.title {
+  @include config-transition-prop([opacity, top, transform], 0s);
+
+  height: 100vh;
+  opacity: 1;
+  position: fixed;
+  top: $menu-height * 5;
+  transform-origin: left center;
+  z-index: -1;
+
+  &__txt {
+    @include config-transition-prop(margin-left, 0s);
+
+    font-size: 18vw;
+    margin: 0;
+    padding-bottom: 0;
+    padding-left: $padding-horizontal * 0.1;
+    padding-top: 0;
+
+    @media (min-width: $min-width-sm) {
+      font-size: 7vw;
+      padding-left: 5rem;
+    }
+
+    &__second-page {
+      margin-left: 0.7em;
+    }
+  }
+
+  &__border {
+    @include config-transition-prop(width, 0s);
+
+    background-color: $navy-blue;
+    height: 0.7em;
+    position: absolute;
+    width: 35vw;
+
+    @media (min-width: $min-width-sm) {
+      width: 10vw;
+    }
+
+    &__second-page {
+      width: 0;
+    }
+  }
+
+  &__hide-title {
+    opacity: 0 !important;
+  }
+
+  &__second-page {
+    opacity: 0;
+    // position: sticky;
+    top: 0;
+    transform: scale(0.5);
+
+    @media (min-width: $min-width-sm) {
+      display: block;
+      opacity: 1;
+    }
+
+    @media (max-width: $max-width-sm) {
+      transform: translateY(-200%);
+    }
+  }
+}
+
+.caption {
+  bottom: 0;
+  display: none;
+  left: 5rem;
+  position: absolute;
+
+  @media (min-width: $min-width-sm) {
+    display: none;
+  }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 1.9em;
+  }
+}
+
+.section {
+  height: 100vh;
+  position: relative;
+}
+
+.content {
+  font-size: 1.5em;
+  height: 100%;
+  margin-top: 130vh;
+  padding: 10vh $padding-horizontal 0;
+  white-space: pre-line;
+
+  a {
+    color: $navy-blue;
+    text-decoration: underline;
+  }
+
+  @media (min-width: $min-width-sm) {
+    margin-bottom: $menu-height * 1.8;
+    padding: 0 20vw 0 39vw;
+    position: relative;
+  }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 2.5em;
+  }
+}
