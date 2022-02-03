@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
@@ -8,6 +9,7 @@ import Footer from '@/components/Layout/Footer'
 import Bicolumn from '@/components/Bicolumn'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
+import Interweave from 'interweave'
 import { usePageLimits } from '@/contexts/LayoutContext'
 import styles from './Institucional.module.scss'
 // import bannerInstitutional from '../../public/images/bannerInstitutional.png'
@@ -16,46 +18,45 @@ import styles from './Institucional.module.scss'
 // import imgDestaque from '../../public/images/6.Institucional_carrossel1.jpg'
 // import imgDestaque2 from '../../public/images/7.Institucional_carrossel2.jpg'
 // import imgDestaque3 from '../../public/images/8.Institucional_carrossel3.jpg'
-import imgInstitutional from '../../public/images/9.Institucional_SOS1.jpg'
-import imgInstitutional2 from '../../public/images/10.Institucional_SOS2.jpg'
-
+// import imgInstitutional from '../../public/images/9.Institucional_SOS1.jpg'
+// import imgInstitutional2 from '../../public/images/10.Institucional_SOS2.jpg'
 import imgNext from '../../public/images/seta.svg'
 // import imgNextHover from '../../public/images/seta_hover.svg'
 
 import useInterval from '@/hooks/useInterval'
 
-function InstitucionalContent({
-  text,
-  text2,
-  text3,
-  video = true,
-  image = true,
-  image2 = true,
-  extraText = true,
-}) {
-  return (
-    <>
-      <p style={{ whiteSpace: 'pre-line' }}>{text}</p>
-      {video && (
-        <div className={styles['media']}>
-          <video src="/videos/1.Home_Video.mp4" autoPlay muted loop />
-        </div>
-      )}
-      {image && (
-        <div className={styles['media']}>
-          <Image src={imgInstitutional} alt="" />
-        </div>
-      )}
-      {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text2}</p>}
-      {image2 && (
-        <div className={styles['media']}>
-          <Image src={imgInstitutional2} alt="" />
-        </div>
-      )}
-      {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text3}</p>}
-    </>
-  )
-}
+// function InstitucionalContent({
+//   text,
+//   text2,
+//   text3,
+//   video = true,
+//   image = true,
+//   image2 = true,
+//   extraText = true,
+// }) {
+//   return (
+//     <>
+//       <p style={{ whiteSpace: 'pre-line' }}>{text}</p>
+//       {video && (
+//         <div className={styles['media']}>
+//           <video src="/videos/1.Home_Video.mp4" autoPlay muted loop />
+//         </div>
+//       )}
+//       {image && (
+//         <div className={styles['media']}>
+//           <Image src={imgInstitutional} alt="" />
+//         </div>
+//       )}
+//       {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text2}</p>}
+//       {image2 && (
+//         <div className={styles['media']}>
+//           <Image src={imgInstitutional2} alt="" />
+//         </div>
+//       )}
+//       {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text3}</p>}
+//     </>
+//   )
+// }
 
 function Carousel() {
   const { limits } = usePageLimits()
@@ -127,7 +128,7 @@ function Carousel() {
                 className={styles['carousel__content-right']}
                 style={{
                   left: `${limits.rightColumn.left}px`,
-                  width: `${limits.rightColumn.width}px`,
+                  // width: `${limits.rightColumn.width}px`,
                 }}
               >
                 <p>{right}</p>
@@ -168,7 +169,8 @@ function Carousel() {
   )
 }
 
-function Institucional() {
+function Institucional({ instQS, instNT, instRS }) {
+  const { locale } = useRouter()
   const translate = useTranslations('About')
 
   useLockScrollFirstPage()
@@ -189,13 +191,16 @@ function Institucional() {
         title="Quem Somos"
         subTitle={translate('mainSubtitle')}
       >
-        <InstitucionalContent
+        {/* <InstitucionalContent
           text={translate('mainParagraph')}
           video={false}
           image={false}
           image2={false}
           extraText={false}
-        />
+        /> */}
+        <div>
+          <Interweave noWrap content={instQS[locale]} />
+        </div>
       </Bicolumn>
 
       <Carousel />
@@ -205,12 +210,15 @@ function Institucional() {
         title="Nossa Trajetória"
         subTitle={translate('secondarySubtitle')}
       >
-        <InstitucionalContent
+        {/* <InstitucionalContent
           text={translate('secondaryParagraph')}
           image={false}
           image2={false}
           extraText={false}
-        />
+        /> */}
+        <div>
+          <Interweave noWrap content={instNT[locale]} />
+        </div>
       </Bicolumn>
 
       <Bicolumn
@@ -218,7 +226,7 @@ function Institucional() {
         title={'Responsabilidade\nSocioambiental'}
         subTitle={translate('tertiarySubtitle')}
       >
-        <InstitucionalContent
+        {/* <InstitucionalContent
           text={translate('tertiaryParagraph')}
           text2={translate('tertiaryParagraph2')}
           text3={translate('tertiaryParagraph3')}
@@ -226,7 +234,10 @@ function Institucional() {
           image
           image2
           extraText
-        />
+        /> */}
+        <div>
+          <Interweave noWrap content={instRS[locale]} />
+        </div>
       </Bicolumn>
 
       <ChangeThemeOnScroll

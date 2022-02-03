@@ -105,15 +105,16 @@
       padding: $padding-vertical $padding-horizontal;
 
       @media (min-width: $min-width-sm) {
-        font-size: 7vw;
+        font-size: 5vw;
         line-height: 1em;
         padding: unset;
         position: absolute;
+        width: 40vw;
       }
 
-      @media (min-width: $min-width-lg) {
-        font-size: 6vw;
-      }
+      // @media (min-width: $min-width-lg) {
+      //   font-size: 5vw;
+      // }
     }
   }
 
