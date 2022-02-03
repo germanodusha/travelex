@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
@@ -9,7 +9,7 @@ import Footer from '@/components/Layout/Footer'
 import Bicolumn from '@/components/Bicolumn'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
-import Interweave from 'interweave'
+// import Interweave from 'interweave'
 import { usePageLimits } from '@/contexts/LayoutContext'
 import styles from './Institucional.module.scss'
 // import bannerInstitutional from '../../public/images/bannerInstitutional.png'
@@ -169,9 +169,10 @@ function Carousel() {
   )
 }
 
-function Institucional({ instQS, instRS }) {
-  const { locale } = useRouter()
-  const { limits } = usePageLimits()
+function Institucional() {
+  // { instQS, instRS }
+  // const { locale } = useRouter()
+  // const { limits } = usePageLimits()
   const translate = useTranslations('About')
 
   useLockScrollFirstPage()
@@ -199,7 +200,7 @@ function Institucional({ instQS, instRS }) {
           image2={false}
           extraText={false}
         /> */}
-        <div
+        {/* <div
           className={styles['media']}
           style={{
             left: `${limits.rightColumn.left}px`,
@@ -207,7 +208,7 @@ function Institucional({ instQS, instRS }) {
           }}
         >
           <Interweave noWrap content={instQS[locale]} />
-        </div>
+        </div> */}
       </Bicolumn>
 
       <Carousel />
@@ -242,7 +243,7 @@ function Institucional({ instQS, instRS }) {
           image2
           extraText
         /> */}
-        <div
+        {/* <div
           className={styles['media']}
           style={{
             left: `${limits.rightColumn.left}px`,
@@ -250,7 +251,7 @@ function Institucional({ instQS, instRS }) {
           }}
         >
           <Interweave noWrap content={instRS[locale]} />
-        </div>
+        </div> */}
       </Bicolumn>
 
       <ChangeThemeOnScroll
