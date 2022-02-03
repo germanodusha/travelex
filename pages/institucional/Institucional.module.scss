@@ -7,6 +7,7 @@
 }
 
 .media {
+  color: $navy-blue;
   transform: translateX(-$padding-horizontal * 0.5);
   width: 100vw;
 
@@ -17,6 +18,27 @@
 
   @media (min-width: $min-width-md) {
     width: 147%;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  h3 {
+    font-family: Bebas Neue Regular;
+  }
+
+  img {
+    width: 100vw;
+
+    @media (min-width: $min-width-sm) {
+      transform: unset;
+      width: 156%;
+    }
+
+    @media (min-width: $min-width-md) {
+      width: 147%;
+    }
   }
 
   video {

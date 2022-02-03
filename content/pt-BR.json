@@ -28,12 +28,18 @@
   "FAQ": {
     "title": "Dúvidas Frequentes",
     "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-    "questionOneTitle": "New lines of credit for Travelex Partners Plus customers?",
-    "questionOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "questionTwoTitle": "Novas linhas de crédito para clientes Travelex Partners Plus?",
-    "questionTwo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    "questionThreeTitle": "Novas linhas de crédito para clientes Travelex Partners Plus?",
-    "questionThree": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    "questionOneTitle": "O que é SWIFT ou BIC?",
+    "questionOne": "O SWIFT, ou BIC, é um código universal com de 8 a 11 caracteres que identificam a instituição bancária no processo de transferências internacionais.\n\nAs iniciais do SWIFT significam Society for Worldwide Interbank Financial Telecommunication, já o termo BIC é uma sigla referente a Bank International Code.\n\nCom esses códigos você consegue realizar o envio ou recebimento de dinheiro do exterior.",
+    "questionTwoTitle": "O código IBAN?",
+    "questionTwo": "A sigla IBAN significa International Bank Account Number (ou “Número Internacional de Conta Bancária”, em tradução direta para o português.\n\nAssim, o IBAN se tornou o padrão de identificação para fins de transferências internacionais de recursos para contas bancárias mantidas no Brasil ou no exterior como Estados Unidos e países da Europa.",
+    "questionThreeTitle": "Como funciona uma conta corrente em moeda estrangeira?",
+    "questionThree": "A Conta Corrente em Moeda Estrangeira (CCME) é uma modalidade de conta corrente que permite comprar, vender e fazer transferências internacionais em Dólar, Euro e outras moedas.\n\nSua empresa pode fazer pagamentos de fornecedores no exterior ou recebimentos em moedas estrangeiras, além de se proteger da variação cambial.\n\nHoje, a CCME está disponível para:\n\n- Agências de turismo e prestadores de serviços turísticos.\n\n- Corretoras de câmbio e distribuidora de valores.\n\n- Empresas administradoras de cartões de crédito de uso internacional.\n\n- Estrangeiros transitoriamente no país e brasileiros residentes ou domiciliados no exterior.\n\n- Embaixadas, legações estrangeiras e organismos internacionais.",
+    "questionFourTitle": "Como funciona uma conta corrente em moeda estrangeira?",
+    "questionFour": "A Conta Corrente em Moeda Estrangeira (CCME) é uma modalidade de conta corrente que permite comprar, vender e fazer transferências internacionais em Dólar, Euro e outras moedas.\n\nSua empresa pode fazer pagamentos de fornecedores no exterior ou recebimentos em moedas estrangeiras, além de se proteger da variação cambial.\n\nHoje, a CCME está disponível para:\n\n- Agências de turismo e prestadores de serviços turísticos.\n\n- Corretoras de câmbio e distribuidora de valores.\n\n- Empresas administradoras de cartões de crédito de uso internacional.\n\n- Estrangeiros transitoriamente no país e brasileiros residentes ou domiciliados no exterior.\n\n- Embaixadas, legações estrangeiras e organismos internacionais.",
+    "questionFiveTitle": "Como funciona uma conta corrente em moeda estrangeira?",
+    "questionFive": "A Conta Corrente em Moeda Estrangeira (CCME) é uma modalidade de conta corrente que permite comprar, vender e fazer transferências internacionais em Dólar, Euro e outras moedas.\n\nSua empresa pode fazer pagamentos de fornecedores no exterior ou recebimentos em moedas estrangeiras, além de se proteger da variação cambial.\n\nHoje, a CCME está disponível para:\n\n- Agências de turismo e prestadores de serviços turísticos.\n\n- Corretoras de câmbio e distribuidora de valores.\n\n- Empresas administradoras de cartões de crédito de uso internacional.\n\n- Estrangeiros transitoriamente no país e brasileiros residentes ou domiciliados no exterior.\n\n- Embaixadas, legações estrangeiras e organismos internacionais.",
+    "questionSixTitle": "Como funciona uma conta corrente em moeda estrangeira?",
+    "questionSix": "A Conta Corrente em Moeda Estrangeira (CCME) é uma modalidade de conta corrente que permite comprar, vender e fazer transferências internacionais em Dólar, Euro e outras moedas.\n\nSua empresa pode fazer pagamentos de fornecedores no exterior ou recebimentos em moedas estrangeiras, além de se proteger da variação cambial.\n\nHoje, a CCME está disponível para:\n\n- Agências de turismo e prestadores de serviços turísticos.\n\n- Corretoras de câmbio e distribuidora de valores.\n\n- Empresas administradoras de cartões de crédito de uso internacional.\n\n- Estrangeiros transitoriamente no país e brasileiros residentes ou domiciliados no exterior.\n\n- Embaixadas, legações estrangeiras e organismos internacionais.",
     "contact": "Para outros dúvidas, entre em contato por telefone ou email"
   },
   "Layout": {
@@ -102,7 +108,7 @@
       "telefone": "+55 11 xxxxx-xxxx"
     },
     "FAQ": {
-      "title": "Dúvidas Frequente",
+      "title": "Dúvidas Frequentes",
       "questionOneTitle": "Novas linhas de crédito para clientes Travelex Partners Plus?",
       "questionOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       "questionTwoTitle": "New lines of credit for Travelex Partners Plus customers?",

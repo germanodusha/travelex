@@ -18,45 +18,45 @@ import styles from './Institucional.module.scss'
 // import imgDestaque from '../../public/images/6.Institucional_carrossel1.jpg'
 // import imgDestaque2 from '../../public/images/7.Institucional_carrossel2.jpg'
 // import imgDestaque3 from '../../public/images/8.Institucional_carrossel3.jpg'
-// import imgInstitutional from '../../public/images/9.Institucional_SOS1.jpg'
-// import imgInstitutional2 from '../../public/images/10.Institucional_SOS2.jpg'
+import imgInstitutional from '../../public/images/9.Institucional_SOS1.jpg'
+import imgInstitutional2 from '../../public/images/10.Institucional_SOS2.jpg'
 // import imgNextHover from '../../public/images/seta_hover.svg'
 import imgNext from '../../public/images/seta.svg'
 
 import useInterval from '@/hooks/useInterval'
 
-// function InstitucionalContent({
-//   text,
-//   text2,
-//   text3,
-//   video = true,
-//   image = true,
-//   image2 = true,
-//   extraText = true,
-// }) {
-//   return (
-//     <>
-//       <p style={{ whiteSpace: 'pre-line' }}>{text}</p>
-//       {video && (
-//         <div className={styles['media']}>
-//           <video src="/videos/1.Home_Video.mp4" autoPlay muted loop />
-//         </div>
-//       )}
-//       {image && (
-//         <div className={styles['media']}>
-//           <Image src={imgInstitutional} alt="" />
-//         </div>
-//       )}
-//       {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text2}</p>}
-//       {image2 && (
-//         <div className={styles['media']}>
-//           <Image src={imgInstitutional2} alt="" />
-//         </div>
-//       )}
-//       {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text3}</p>}
-//     </>
-//   )
-// }
+function InstitucionalContent({
+  text,
+  text2,
+  text3,
+  video = true,
+  image = true,
+  image2 = true,
+  extraText = true,
+}) {
+  return (
+    <>
+      <p style={{ whiteSpace: 'pre-line' }}>{text}</p>
+      {video && (
+        <div className={styles['media']}>
+          <video src="/videos/1.Home_Video.mp4" autoPlay muted loop />
+        </div>
+      )}
+      {image && (
+        <div className={styles['media']}>
+          <Image src={imgInstitutional} alt="" />
+        </div>
+      )}
+      {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text2}</p>}
+      {image2 && (
+        <div className={styles['media']}>
+          <Image src={imgInstitutional2} alt="" />
+        </div>
+      )}
+      {extraText && <p style={{ whiteSpace: 'pre-line' }}>{text3}</p>}
+    </>
+  )
+}
 
 function Carousel() {
   const { limits } = usePageLimits()
@@ -169,8 +169,9 @@ function Carousel() {
   )
 }
 
-function Institucional({ instQS, instNT, instRS }) {
+function Institucional({ instQS, instRS }) {
   const { locale } = useRouter()
+  const { limits } = usePageLimits()
   const translate = useTranslations('About')
 
   useLockScrollFirstPage()
@@ -198,7 +199,13 @@ function Institucional({ instQS, instNT, instRS }) {
           image2={false}
           extraText={false}
         /> */}
-        <div>
+        <div
+          className={styles['media']}
+          style={{
+            left: `${limits.rightColumn.left}px`,
+            width: `${limits.rightColumn.width}px`,
+          }}
+        >
           <Interweave noWrap content={instQS[locale]} />
         </div>
       </Bicolumn>
@@ -210,15 +217,15 @@ function Institucional({ instQS, instNT, instRS }) {
         title="Nossa Trajetória"
         subTitle={translate('secondarySubtitle')}
       >
-        {/* <InstitucionalContent
+        <InstitucionalContent
           text={translate('secondaryParagraph')}
           image={false}
           image2={false}
           extraText={false}
-        /> */}
-        <div>
+        />
+        {/* <div>
           <Interweave noWrap content={instNT[locale]} />
-        </div>
+        </div> */}
       </Bicolumn>
 
       <Bicolumn
@@ -235,7 +242,13 @@ function Institucional({ instQS, instNT, instRS }) {
           image2
           extraText
         /> */}
-        <div>
+        <div
+          className={styles['media']}
+          style={{
+            left: `${limits.rightColumn.left}px`,
+            width: `${limits.rightColumn.width}px`,
+          }}
+        >
           <Interweave noWrap content={instRS[locale]} />
         </div>
       </Bicolumn>

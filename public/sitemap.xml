@@ -1,29 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>www.yourwebsite.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/cadastro</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/compliance</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/faq</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/institucional</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/institucional/Institucional</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/ouvidoria</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/trabalhe-conosco</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.107Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/institucional</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/institucional</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/trabalhe-conosco</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/trabalhe-conosco</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/cadastro</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/cadastro</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/cambio/corporativo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/cambio/pessoa-fisica</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/cambio/corporativo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/cambio/pessoa-fisica</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/faq</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/faq</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/ouvidoria</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/ouvidoria</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/pt-BR/compliance</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
-<url><loc>www.yourwebsite.com/en-US/compliance</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-02T20:24:52.108Z</lastmod></url>
+<url><loc>www.yourwebsite.com/faq</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-02-03T18:56:13.943Z</lastmod></url>
 </urlset>

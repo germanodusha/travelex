@@ -31,18 +31,18 @@ function FAQ() {
     },
     {
       id: 'faq4',
-      title: translate('questionOneTitle'),
-      content: translate('questionOne'),
+      title: translate('questionFourTitle'),
+      content: translate('questionFour'),
     },
     {
       id: 'faq5',
-      title: translate('questionTwoTitle'),
-      content: translate('questionTwo'),
+      title: translate('questionFiveTitle'),
+      content: translate('questionFive'),
     },
     {
       id: 'faq6',
-      title: translate('questionThreeTitle'),
-      content: translate('questionThree'),
+      title: translate('questionSixTitle'),
+      content: translate('questionSix'),
     },
   ]
 

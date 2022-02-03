@@ -17,7 +17,7 @@ function Compliance({ markdown }) {
 
 export function getStaticProps({ locale }) {
   const messages = require(`../content/${locale}.json`)
-  const markdown = readMarkdownLocale('ouvidoria')
+  const markdown = readMarkdownLocale('compliance')
 
   return {
     props: {
