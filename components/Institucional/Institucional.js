@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
 import classNames from 'classnames'
@@ -8,7 +8,7 @@ import Banner from '@/components/Banner'
 import Footer from '@/components/Layout/Footer'
 import Bicolumn from '@/components/Bicolumn'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
-import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
+// import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
 import Interweave from 'interweave'
 import { usePageLimits } from '@/contexts/LayoutContext'
 import styles from './Institucional.module.scss'
@@ -114,7 +114,7 @@ function Carousel() {
       >
         {items.map(({ id, bg, left, right }) => (
           <div key={id} className={styles['carousel__items-item']}>
-            <img src={bg} alt="" objectFit="cover" />
+            <img src={bg} alt="" />
             <div className={styles['carousel__content']}>
               <div
                 className={styles['carousel__content-left']}
@@ -173,24 +173,24 @@ function Institucional({ instQS, instRS }) {
   const { locale } = useRouter()
   const { limits } = usePageLimits()
   const translate = useTranslations('About')
-  const [rightWidth, setrightWidth] = useState(0)
+  // const [rightWidth, setrightWidth] = useState(0)
 
   // const mediaSize = rightWidth - limits.rightColumn.width
-  const mediaSize = rightWidth - limits.rightColumn.left
+  // const mediaSize = rightWidth - limits.rightColumn.left - 20
 
-  useEffect(() => {
-    const onResize = () => {
-      setrightWidth(window.innerWidth)
-    }
-    onResize()
-    window.addEventListener('resize', onResize)
+  // useEffect(() => {
+  //   const onResize = () => {
+  //     setrightWidth(window.innerWidth)
+  //   }
+  //   onResize()
+  //   window.addEventListener('resize', onResize)
 
-    return () => {
-      window.removeEventListener('resize', onResize)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('resize', onResize)
+  //   }
+  // }, [])
 
-  useLockScrollFirstPage()
+  // useLockScrollFirstPage()
 
   return (
     <div className={styles['page']}>
@@ -219,7 +219,6 @@ function Institucional({ instQS, instRS }) {
           className={styles['media']}
           style={{
             left: `${limits.rightColumn.left}px`,
-            // width: `${limits.rightColumn.width}px`,
             width: `${limits.rightColumn.width}px`,
           }}
         >
@@ -259,22 +258,15 @@ function Institucional({ instQS, instRS }) {
           image2
           extraText
         /> */}
+
         <div
+          className={styles['media']}
           style={{
-            // left: `${limits.rightColumn.left}px`,
-            overflow: `hidden`,
-            width: `${mediaSize}px`,
+            left: `${limits.rightColumn.left}px`,
+            width: `${limits.rightColumn.width}px`,
           }}
         >
-          <div
-            className={styles['media']}
-            style={{
-              left: `${limits.rightColumn.left}px`,
-              width: `${limits.rightColumn.width}px`,
-            }}
-          >
-            <Interweave noWrap content={instRS[locale]} />
-          </div>
+          <Interweave noWrap content={instRS[locale]} />
         </div>
       </Bicolumn>
 
