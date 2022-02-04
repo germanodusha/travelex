@@ -39,24 +39,29 @@ function FormPage({
     >
       <div className={styles['page']}>
         <div
-          className={classNames(styles['page__desc'], {
+          className={classNames(styles['page__form'], {
             [styles['page__desc-white']]: theme === 'white',
           })}
           style={isMobile ? {} : { width: `${limits.rightColumn.x}px` }}
         >
-          {descriptionTitle && (
-            <p className={styles['page__desc-title']}>{descriptionTitle}</p>
-          )}
-          {description && <p>{description}</p>}
-        </div>
-
-        <div className={styles['page__form']}>
           <RegisterForm
             hideType={hideFormType}
             formType={formType}
             theme={theme}
             {...props}
           />
+        </div>
+
+        <div
+          className={classNames(styles['page__desc'], {
+            [styles['page__desc-white']]: theme === 'white',
+          })}
+          style={isMobile ? {} : { width: `${limits.rightColumn.width}px` }}
+        >
+          {descriptionTitle && (
+            <p className={styles['page__desc-title']}>{descriptionTitle}</p>
+          )}
+          {description && <p>{description}</p>}
         </div>
       </div>
     </Banner>

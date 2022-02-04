@@ -25,7 +25,7 @@ function Cover(props) {
       <FormPage
         backgroundImage={'/images/20.Abrasuaconta.jpg'}
         description={translate('description')}
-        // descriptionTitle={translate('descriptionTitle')}
+        descriptionTitle={translate('descriptionTitle')}
         formType={FormTypes.PESSOA_FISICA}
         hideFormType={false}
         disableTheme

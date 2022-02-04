@@ -221,7 +221,7 @@ const RegisterForm = ({
                     [styles['register-form__white-input']]: theme === 'white',
                   })}
                 />
-                <Field
+                {/* <Field
                   name="file"
                   type="file"
                   label={translate('inputs.file')}
@@ -229,7 +229,7 @@ const RegisterForm = ({
                   className={classNames({
                     [styles['register-form__white-input']]: theme === 'white',
                   })}
-                />
+                /> */}
               </>
             )}
 

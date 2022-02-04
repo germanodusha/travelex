@@ -39,11 +39,11 @@ function FAQ() {
       title: translate('questionFiveTitle'),
       content: translate('questionFive'),
     },
-    {
-      id: 'faq6',
-      title: translate('questionSixTitle'),
-      content: translate('questionSix'),
-    },
+    // {
+    //   id: 'faq6',
+    //   title: translate('questionSixTitle'),
+    //   content: translate('questionSix'),
+    // },
   ]
 
   return (
@@ -61,6 +61,7 @@ function FAQ() {
 
       <style jsx>{`
         .faq-page {
+          margin-bottom: 8vh;
           padding-top: 10rem;
         }
       `}</style>

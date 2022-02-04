@@ -9,8 +9,8 @@ import { readMarkdownLocale } from '@/utils/markdown'
 import Footer from '@/components/Layout/Footer'
 import Title from '@/components/Title'
 import FAQAccordion from '@/components/FAQAccordion'
-import { FormTypes } from '@/components/RegisterForm'
-import FormPage from '@/components/FormPage'
+// import { FormTypes } from '@/components/RegisterForm'
+// import FormPage from '@/components/FormPage'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import { useMenuTheme, usePageLimits } from '@/contexts/LayoutContext'
 import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
@@ -79,6 +79,7 @@ function ServicesContent({ markdowns }) {
 
   return (
     <div className={styles['services']}>
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
       <div
         className={styles['services__nav-desk']}
         style={{ width: `${limits.rightColumn.x}px` }}
@@ -105,6 +106,7 @@ function ServicesContent({ markdowns }) {
         </div>
       </div>
 
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
       <div className={styles['services__body']} ref={serviceBody}>
         <div className={styles['services__service-desk']} id={service.path}>
           <div className={styles['services__service-banner']}>
@@ -200,33 +202,33 @@ function FAQ() {
   )
 }
 
-function Form() {
-  const { query } = useRouter()
-  const translate = useCambioTranslations()
+// function Form() {
+//   const { query } = useRouter()
+//   const translate = useCambioTranslations()
 
-  let type =
-    query.cambio === CambiosTypes.CORPORATIVO
-      ? FormTypes.CORPORATIVO
-      : FormTypes.PESSOA_FISICA
+//   let type =
+//     query.cambio === CambiosTypes.CORPORATIVO
+//       ? FormTypes.CORPORATIVO
+//       : FormTypes.PESSOA_FISICA
 
-  return (
-    <div className={styles['form']}>
-      <FormPage
-        description={translate('form-description')}
-        hideType
-        disableTheme
-        formType={type}
-        menuTheme="light"
-        theme="white"
-      />
-      <ChangeThemeOnScroll
-        theme="light"
-        options={themeOptions}
-        style={{ transform: 'translateY(-100%)' }}
-      />
-    </div>
-  )
-}
+//   return (
+//     <div className={styles['form']}>
+//       <FormPage
+//         description={translate('form-description')}
+//         hideType
+//         disableTheme
+//         formType={type}
+//         menuTheme="light"
+//         theme="white"
+//       />
+//       <ChangeThemeOnScroll
+//         theme="light"
+//         options={themeOptions}
+//         style={{ transform: 'translateY(-100%)' }}
+//       />
+//     </div>
+//   )
+// }
 
 function FooterWrapper() {
   return (
@@ -257,7 +259,7 @@ function Cambio({ markdowns }) {
       <ServicesContent markdowns={markdowns} />
       <BUFFER />
       <FAQ />
-      <Form />
+      {/* <Form /> */}
       <FooterWrapper />
     </div>
   )
