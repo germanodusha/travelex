@@ -3,16 +3,18 @@
 .page {
   // scroll-behavior: smooth;
   // scroll-snap-type: y mandatory;
+  // overflow-x: hidden;
 }
 
 .media {
   color: $navy-blue;
+  overflow: hidden;
   transform: translateX(-$padding-horizontal * 0.5);
   width: 100vw;
 
   @media (min-width: $min-width-sm) {
     transform: unset;
-    width: 156%;
+    width: 100%;
   }
 
   @media (min-width: $min-width-md) {
@@ -36,7 +38,7 @@
     }
 
     @media (min-width: $min-width-md) {
-      width: 147%;
+      width: 150%;
     }
   }
 

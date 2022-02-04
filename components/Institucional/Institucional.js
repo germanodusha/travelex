@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
 import classNames from 'classnames'
@@ -173,6 +173,22 @@ function Institucional({ instQS, instRS }) {
   const { locale } = useRouter()
   const { limits } = usePageLimits()
   const translate = useTranslations('About')
+  const [rightWidth, setrightWidth] = useState(0)
+
+  // const mediaSize = rightWidth - limits.rightColumn.width
+  const mediaSize = rightWidth - limits.rightColumn.left
+
+  useEffect(() => {
+    const onResize = () => {
+      setrightWidth(window.innerWidth)
+    }
+    onResize()
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
 
   useLockScrollFirstPage()
 
@@ -203,6 +219,7 @@ function Institucional({ instQS, instRS }) {
           className={styles['media']}
           style={{
             left: `${limits.rightColumn.left}px`,
+            // width: `${limits.rightColumn.width}px`,
             width: `${limits.rightColumn.width}px`,
           }}
         >
@@ -243,13 +260,21 @@ function Institucional({ instQS, instRS }) {
           extraText
         /> */}
         <div
-          className={styles['media']}
           style={{
-            left: `${limits.rightColumn.left}px`,
-            width: `${limits.rightColumn.width}px`,
+            // left: `${limits.rightColumn.left}px`,
+            overflow: `hidden`,
+            width: `${mediaSize}px`,
           }}
         >
-          <Interweave noWrap content={instRS[locale]} />
+          <div
+            className={styles['media']}
+            style={{
+              left: `${limits.rightColumn.left}px`,
+              width: `${limits.rightColumn.width}px`,
+            }}
+          >
+            <Interweave noWrap content={instRS[locale]} />
+          </div>
         </div>
       </Bicolumn>
 

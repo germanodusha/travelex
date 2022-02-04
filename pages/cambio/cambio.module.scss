@@ -149,10 +149,10 @@
       display: flex;
       flex-direction: column;
       position: sticky;
-      top: $menu-height * 1.85;
+      top: $menu-height * 3;
 
       @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
-        top: $menu-height * 3.3;
+        top: $menu-height * 5.3;
       }
     }
 
@@ -197,10 +197,16 @@
 
       p {
         font-size: 1.8em;
-        padding-top: $menu-height * 0.7;
+        padding-top: $menu-height * 0.7 !important;
+
+        @media (min-width: $min-width-sm) {
+          font-size: 3em;
+          padding-top: $menu-height * 0.574 !important;
+        }
 
         @media (min-width: $min-width-lg) {
-          font-size: 3em;
+          font-size: 5em;
+          padding-top: $menu-height * 0.648 !important;
         }
       }
     }
