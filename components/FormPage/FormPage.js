@@ -11,6 +11,7 @@ function FormPage({
   descriptionTitle,
   backgroundImage,
   hideFormType = false,
+  faq = false,
   formType = FormTypes.PESSOA_FISICA,
   menuTheme = 'light',
   menuOptions = {},
@@ -36,8 +37,13 @@ function FormPage({
       bannerClass={classNames({
         [styles['page-white']]: theme === 'white',
       })}
+      faq
     >
-      <div className={styles['page']}>
+      <div
+        className={classNames(styles['page'], {
+          [styles['page__bg']]: faq === true,
+        })}
+      >
         <div
           className={classNames(styles['page__form'], {
             [styles['page__desc-white']]: theme === 'white',
@@ -48,6 +54,7 @@ function FormPage({
             hideType={hideFormType}
             formType={formType}
             theme={theme}
+            faqPage={faq}
             {...props}
           />
         </div>

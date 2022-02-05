@@ -9,7 +9,7 @@
   transform-origin: left center;
 
   &__fixed {
-    height: 100vh;
+    height: 38vh;
     position: relative;
   }
 
@@ -76,7 +76,7 @@
   position: absolute;
 
   @media (min-width: $min-width-sm) {
-    display: block;
+    display: none;
   }
 
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
@@ -98,4 +98,11 @@
     position: absolute;
     top: 30vh;
   }
+}
+
+.form {
+  min-height: 100vh;
+  // padding-top: 5vh;
+  overflow: hidden;
+  scroll-snap-align: start;
 }

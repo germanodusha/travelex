@@ -17,6 +17,10 @@
     padding-top: 25vh;
   }
 
+  &__bg {
+    background-color: $gray-light;
+  }
+
   &__form {
     padding: 0 $padding-horizontal * 1.4;
 
@@ -45,6 +49,7 @@
     font-size: 1.2rem;
     padding-bottom: 0;
     padding-right: 20vw;
+    white-space: pre-line;
 
     @media (min-width: $min-width-mb) {
       font-size: 1.6rem;
@@ -69,7 +74,8 @@
     }
 
     &-faq {
-      color: $black;
+      // color: $black;
+      color: $navy-blue;
     }
 
     p {

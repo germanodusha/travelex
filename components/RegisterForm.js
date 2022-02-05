@@ -16,6 +16,7 @@ const FormTypes = {
   PESSOA_FISICA: 'PessoaFisica',
   CORPORATIVO: 'Corporativo',
   TRABALHE_CONOSCO: 'TrabalheConosco',
+  FAQ: 'FAQ',
 }
 
 const INITIAL_VALUE = {
@@ -34,6 +35,7 @@ const RegisterForm = ({
   hideType = false,
   formType = FormTypes.PESSOA_FISICA,
   theme = undefined,
+  faqPage = false,
 }) => {
   const translate = useTranslations('Form')
   const [type, setType] = useState(formType)
@@ -153,56 +155,59 @@ const RegisterForm = ({
                 />
               </>
             )}
+            {/* {type !== FormTypes.FAQ && ( */}
+            {type !== false && (
+              <>
+                <Field
+                  name="name"
+                  type="text"
+                  label={
+                    type === FormTypes.CORPORATIVO
+                      ? translate('inputs.representativeName')
+                      : translate('inputs.name')
+                  }
+                  className={classNames({
+                    [styles['register-form__white-input']]: theme === 'white',
+                  })}
+                />
 
-            <Field
-              name="name"
-              type="text"
-              label={
-                type === FormTypes.CORPORATIVO
-                  ? translate('inputs.representativeName')
-                  : translate('inputs.name')
-              }
-              className={classNames({
-                [styles['register-form__white-input']]: theme === 'white',
-              })}
-            />
+                <FieldGroup>
+                  <Field
+                    name="cpf"
+                    type="text"
+                    label={
+                      type === FormTypes.CORPORATIVO
+                        ? translate('inputs.representativeCpf')
+                        : translate('inputs.cpf')
+                    }
+                    className={classNames({
+                      [styles['register-form__white-input']]: theme === 'white',
+                    })}
+                  />
+                  <PhoneField
+                    name="phone"
+                    errorMessage={translate('errors.phoneInvalid')}
+                    label={translate('inputs.phone')}
+                    className={classNames({
+                      [styles['register-form__white-input']]: theme === 'white',
+                    })}
+                  />
+                </FieldGroup>
 
-            <FieldGroup>
-              <Field
-                name="cpf"
-                type="text"
-                label={
-                  type === FormTypes.CORPORATIVO
-                    ? translate('inputs.representativeCpf')
-                    : translate('inputs.cpf')
-                }
-                className={classNames({
-                  [styles['register-form__white-input']]: theme === 'white',
-                })}
-              />
-              <PhoneField
-                name="phone"
-                errorMessage={translate('errors.phoneInvalid')}
-                label={translate('inputs.phone')}
-                className={classNames({
-                  [styles['register-form__white-input']]: theme === 'white',
-                })}
-              />
-            </FieldGroup>
-
-            <EmailField
-              name="email"
-              errorMessage={translate('errors.emailInvalid')}
-              label={
-                type === FormTypes.CORPORATIVO
-                  ? translate('inputs.representativeEmail')
-                  : translate('inputs.email')
-              }
-              className={classNames({
-                [styles['register-form__white-input']]: theme === 'white',
-              })}
-            />
-
+                <EmailField
+                  name="email"
+                  errorMessage={translate('errors.emailInvalid')}
+                  label={
+                    type === FormTypes.CORPORATIVO
+                      ? translate('inputs.representativeEmail')
+                      : translate('inputs.email')
+                  }
+                  className={classNames({
+                    [styles['register-form__white-input']]: theme === 'white',
+                  })}
+                />
+              </>
+            )}
             {type === FormTypes.TRABALHE_CONOSCO && (
               <>
                 <Field
@@ -235,9 +240,13 @@ const RegisterForm = ({
 
             <div className={styles['register-form__divider']} />
             <div
-              className={classNames(styles['button'], {
-                [styles['button__white']]: theme === 'white',
-              })}
+              className={classNames(
+                styles['button'],
+                { [styles['button__faq']]: faqPage },
+                {
+                  [styles['button__white']]: theme === 'white',
+                }
+              )}
             >
               <button type="submit">{translate('send')}</button>
             </div>

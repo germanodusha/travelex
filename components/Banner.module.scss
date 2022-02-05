@@ -77,6 +77,10 @@
   position: absolute;
   transform: translateY(2.2px);
   width: 100vw;
+
+  &-faq {
+    background-color: $gray-light;
+  }
 }
 
 @media (max-width: $max-width-sm) {

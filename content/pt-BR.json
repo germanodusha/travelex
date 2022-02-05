@@ -40,7 +40,10 @@
     "questionFive": "Não há definição de valor, no entanto é necessário comprovar capacidade financeira e origem dos recursos.",
     "questionSixTitle": "Como funciona uma conta corrente em moeda estrangeira?",
     "questionSix": "A Conta Corrente em Moeda Estrangeira (CCME) é uma modalidade de conta corrente que permite comprar, vender e fazer transferências internacionais em Dólar, Euro e outras moedas.\n\nSua empresa pode fazer pagamentos de fornecedores no exterior ou recebimentos em moedas estrangeiras, além de se proteger da variação cambial.\n\nHoje, a CCME está disponível para:\n\n- Agências de turismo e prestadores de serviços turísticos.\n\n- Corretoras de câmbio e distribuidora de valores.\n\n- Empresas administradoras de cartões de crédito de uso internacional.\n\n- Estrangeiros transitoriamente no país e brasileiros residentes ou domiciliados no exterior.\n\n- Embaixadas, legações estrangeiras e organismos internacionais.",
-    "contact": "Para outros dúvidas, entre em contato por telefone ou email"
+    "contact": "Para outros dúvidas, entre em contato por telefone ou email",
+    "descriptionTitle": "Não encontrou sua dúvida?",
+    "description": "Entre em contato conosco pelo formulário, telefone ou email:\n+55 11 XXXXX-XXXX\ncontato@travelex.com.br",
+    "sended": "Obrigada pelo seu interesse, entraremos em contato!"
   },
   "Layout": {
     "menu": {
@@ -147,8 +150,8 @@
     "form-description": "Form description"
   },
   "openAccount": {
-    "descriptionTitle": "Abra sua conta",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    "descriptionTitle": "Se interessou?",
+    "description": "Junte-se a nós e deixe nosso time de experts facilitar a sua vida financeira internacional!\nO primeiro passo para abrir sua conta é preencher o formulário de acordo com a natureza da conta que deseja ou entrar em contato conosco via telefone ou email:\n+55 11 XXXXX-XXXX\ncontato@travelexpartners.com.br",
     "sended": "Enviado.",
     "title": "Abra sua conta"
   },
@@ -196,6 +199,7 @@
   },
   "Jobs": {
     "descriptionTitle": "Trabalhe conosco",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    "description": "Quer fazer parte da nossa equipe de especialistas em câmbio, transações e serviços internacionais?\nComece preenchendo o formulário ao lado!",
+    "sended": "Obrigada pelo seu interesse, entraremos em contato!"
   }
 }

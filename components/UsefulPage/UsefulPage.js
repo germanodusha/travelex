@@ -3,8 +3,35 @@ import classNames from 'classnames'
 import Scroller, { ScrollerSection } from '@/components/Scroller'
 import Title from '@/components/Title'
 import Footer from '@/components/Layout/Footer'
+import { FormTypes } from '@/components/RegisterForm'
+import FormPage from '@/components/FormPage'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
 import styles from './UsefulPage.module.scss'
+
+function Form({ description, descriptionTitle }) {
+  let type = FormTypes.FAQ
+
+  return (
+    <div className={styles['form']}>
+      <FormPage
+        // description={translate('form-description')}
+        description={description}
+        descriptionTitle={descriptionTitle}
+        hideType
+        disableTheme
+        faq
+        formType={type}
+        menuTheme="light"
+        theme="white"
+      />
+      <ChangeThemeOnScroll
+        theme="light"
+        options={{}}
+        style={{ transform: 'translateY(-100%)' }}
+      />
+    </div>
+  )
+}
 
 function UsefulPage({
   title,
@@ -12,6 +39,8 @@ function UsefulPage({
   content,
   children,
   color = undefined,
+  description = '',
+  descriptionTitle = '',
   alwaysShowTitle = true,
   backgroundColor = 'transparent',
   Wrapper = Scroller,
@@ -68,6 +97,8 @@ function UsefulPage({
           options={{}}
           style={{ transform: 'translateY(-100%)' }}
         />
+
+        <Form description={description} descriptionTitle={descriptionTitle} />
         <ChangeThemeOnScroll theme="dark" options={{}} />
         <Footer />
         <ChangeThemeOnScroll

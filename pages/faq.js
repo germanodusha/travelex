@@ -3,6 +3,7 @@ import { useTranslations } from 'use-intl'
 import { useMenuTheme } from '@/contexts/LayoutContext'
 import UsefulPage from '@/components/UsefulPage'
 import FAQAccordion from '@/components/FAQAccordion'
+// import { FormTypes } from '@/components/RegisterForm'
 
 function FAQ() {
   const translate = useTranslations('FAQ')
@@ -52,11 +53,13 @@ function FAQ() {
       caption={translate('caption')}
       backgroundColor="#a6a6a6"
       color="#000"
+      description={translate('description')}
+      descriptionTitle={translate('descriptionTitle')}
       alwaysShowTitle={false}
       Wrapper="div"
     >
       <div className="faq-page">
-        <FAQAccordion theme="light" faqItems={faqItems} showContact />
+        <FAQAccordion theme="light" faqItems={faqItems} />
       </div>
 
       <style jsx>{`

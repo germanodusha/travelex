@@ -14,6 +14,7 @@ function Banner({
   video,
   showGradient = true,
   bannerClass = undefined,
+  faq = false,
 }) {
   return (
     <div className={classNames(styles['banner'], bannerClass)}>
@@ -48,7 +49,11 @@ function Banner({
       {!link && <div className={styles['title']}>{title}</div>}
       <div className={styles['content']}>{children}</div>
 
-      <div className={styles['white-out']}></div>
+      <div
+        className={classNames(styles['white-out'], {
+          [styles['white-out-faq']]: faq === true,
+        })}
+      ></div>
     </div>
   )
 }
