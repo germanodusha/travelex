@@ -15,6 +15,7 @@ function Banner({
   showGradient = true,
   bannerClass = undefined,
   faq = false,
+  home = false,
 }) {
   return (
     <div className={classNames(styles['banner'], bannerClass)}>
@@ -52,6 +53,7 @@ function Banner({
       <div
         className={classNames(styles['white-out'], {
           [styles['white-out-faq']]: faq === true,
+          [styles['white-out-home']]: home === true,
         })}
       ></div>
     </div>

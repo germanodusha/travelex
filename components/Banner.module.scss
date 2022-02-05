@@ -1,7 +1,8 @@
 @import '@/styles/theme';
 
 .banner {
-  background-color: $navy-blue;
+  background-color: $white;
+  // background-color: $navy-blue;
   display: flex;
   flex-direction: column;
   height: 103vh;
@@ -80,6 +81,10 @@
 
   &-faq {
     background-color: $gray-light;
+  }
+
+  &-home {
+    background-color: $black;
   }
 }
 

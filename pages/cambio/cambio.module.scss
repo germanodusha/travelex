@@ -24,7 +24,7 @@
     background-color: $navy-blue;
     height: $menu-height * 1.4;
     position: sticky;
-    top: 0;
+    top: $menu-height * 0.1;
 
     @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
       height: $menu-height * 2.5;
@@ -48,10 +48,17 @@
 
   &__border {
     background-color: $white;
+    bottom: 0;
     height: 0.7em;
     margin-bottom: 1.5rem;
     margin-top: 1em;
+    position: absolute;
     width: 10vw;
+    z-index: 2;
+
+    @media (max-width: $max-width-sm) {
+      display: none;
+    }
 
     @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
       margin-bottom: 4.5rem;
@@ -136,6 +143,7 @@
 
       p,
       h3 {
+        font-size: 1.5em;
         margin: 0;
       }
 
@@ -161,12 +169,12 @@
 
       @media (min-width: $min-width-sm) {
         display: block;
-        margin-top: 8.1em;
+        margin-top: $menu-height * 1.4;
       }
 
       @media (min-width: $min-width-lg) {
         display: block;
-        margin-top: 15.2em;
+        margin-top: $menu-height * 2.5;
       }
     }
   }
@@ -177,6 +185,16 @@
       position: relative;
       width: 100%;
 
+      @media (min-width: $min-width-sm) {
+        display: block;
+        margin-top: $menu-height * 1.4;
+      }
+
+      @media (min-width: $min-width-lg) {
+        display: block;
+        margin-top: $menu-height * 2.5;
+      }
+
       img {
         // filter: blur(7px);
         height: 100vh;
@@ -185,36 +203,45 @@
     }
 
     &-description {
-      font-weight: bold;
-      padding: 0 $padding-horizontal;
-      position: absolute;
-      top: 0;
+      // font-weight: bold;
+      // top: 0;
+      padding: 20vh $padding-horizontal;
+      position: sticky;
 
       @media (min-width: $min-width-sm) {
-        padding-left: $padding-horizontal * 4;
-        width: 70%;
+        padding-left: $padding-horizontal * 1.1;
+        width: 90%;
       }
 
       p {
-        font-size: 1.8em;
+        font-size: 1.5em;
         padding-top: $menu-height * 0.7 !important;
 
         @media (min-width: $min-width-sm) {
-          font-size: 3em;
+          // font-size: 3em;
           padding-top: $menu-height * 0.574 !important;
         }
 
         @media (min-width: $min-width-lg) {
-          font-size: 5em;
+          // font-size: 5em;
           padding-top: $menu-height * 0.648 !important;
         }
       }
     }
 
     &-body {
+      padding-bottom: $menu-height * 2;
       padding-right: $padding-horizontal * 1.1;
-      padding-top: $menu-height * 3;
+      padding-top: $menu-height;
       scroll-snap-align: start;
+
+      @media (min-width: $min-width-sm) {
+        padding-top: $menu-height * 1.4;
+      }
+
+      @media (min-width: $min-width-lg) {
+        padding-top: $menu-height * 2.5;
+      }
 
       h2 {
         color: $navy-blue;

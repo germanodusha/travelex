@@ -7,7 +7,8 @@ import classNames from 'classnames'
 import Interweave from 'interweave'
 import { readMarkdownLocale } from '@/utils/markdown'
 import Footer from '@/components/Layout/Footer'
-import Title from '@/components/Title'
+// import Title from '@/components/Title'
+import Banner from '@/components/Banner'
 import FAQAccordion from '@/components/FAQAccordion'
 // import { FormTypes } from '@/components/RegisterForm'
 // import FormPage from '@/components/FormPage'
@@ -27,6 +28,8 @@ const useCambioTranslations = () => {
 }
 
 function Cover() {
+  const router = useRouter()
+  const { cambio } = router.query
   const translate = useCambioTranslations()
 
   return (
@@ -34,16 +37,47 @@ function Cover() {
       <ChangeThemeOnScroll theme="light" options={themeOptions} />
       <div className={styles['cover__header']} />
       <div>
-        <Title
-          mainTitle={translate('title')}
-          color="white"
-          titleClassName={styles['cover__title']}
-        />
-        <div className={styles['cover__border']} />
+        {cambio === 'corporativo' && (
+          <>
+            <Banner
+              showGradient
+              title={translate('title')}
+              image={'/images/2.Home_destaq1.jpg'}
+            />
+            <div className={styles['cover__border']} />
+          </>
+        )}
+        {cambio === 'pessoa-fisica' && (
+          <>
+            <Banner
+              showGradient
+              title={translate('title')}
+              image={'/images/3.Home_destaq2.jpg'}
+            />
+            <div className={styles['cover__border']} />
+          </>
+        )}
       </div>
       <ChangeThemeOnScroll theme="light" options={themeOptions} />
     </div>
   )
+
+  // Blue BG
+  // return (
+  //   <div className={styles['cover']}>
+  //     <ChangeThemeOnScroll theme="light" options={themeOptions} />
+  //     <div className={styles['cover__header']} />
+  //     <div>
+  //       <Title
+  //         mainTitle={translate('title')}
+  //         color="white"
+  //         titleClassName={styles['cover__title']}
+  //       />
+  //       <div className={styles['cover__border']} />
+  //     </div>
+  //     <ChangeThemeOnScroll theme="light" options={themeOptions} />
+  //   </div>
+  // )
 }
 
 function ServicesContent({ markdowns }) {
@@ -104,6 +138,9 @@ function ServicesContent({ markdowns }) {
             </div>
           ))}
         </div>
+        <div className={styles['services__service-description']}>
+          <p>{translate(`services.${service.path}-banner`)}</p>
+        </div>
       </div>
 
       <ChangeThemeOnScroll theme="light" options={themeOptions} />
@@ -111,9 +148,9 @@ function ServicesContent({ markdowns }) {
         <div className={styles['services__service-desk']} id={service.path}>
           <div className={styles['services__service-banner']}>
             <Image alt="background" src={service.image} objectFit="cover" />
-            <div className={styles['services__service-description']}>
+            {/* <div className={styles['services__service-description']}>
               <p>{translate(`services.${service.path}-banner`)}</p>
-            </div>
+            </div> */}
           </div>
 
           <div className={styles['services__service-body']}>
