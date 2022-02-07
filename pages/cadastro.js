@@ -22,6 +22,7 @@ function Cover(props) {
 
   return (
     <div style={containerStyle}>
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
       <FormPage
         backgroundImage={'/images/20.Abrasuaconta.jpg'}
         description={translate('description')}
@@ -29,6 +30,7 @@ function Cover(props) {
         formType={FormTypes.PESSOA_FISICA}
         hideFormType={false}
         disableTheme
+        showGradient
         {...props}
       />
       <ChangeThemeOnScroll

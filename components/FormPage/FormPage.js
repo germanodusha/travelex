@@ -15,6 +15,7 @@ function FormPage({
   formType = FormTypes.PESSOA_FISICA,
   menuTheme = 'light',
   menuOptions = {},
+  showGradient = false,
   theme = undefined,
   disableTheme = false,
   ...props
@@ -32,7 +33,7 @@ function FormPage({
 
   return (
     <Banner
-      showGradient={false}
+      showGradient={showGradient}
       image={backgroundImage}
       bannerClass={classNames({
         [styles['page-white']]: theme === 'white',

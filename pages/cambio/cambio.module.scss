@@ -207,8 +207,10 @@
       // top: 0;
       padding: 20vh $padding-horizontal;
       position: sticky;
+      top: 40vh;
 
       @media (min-width: $min-width-sm) {
+        margin-top: 2em;
         padding-left: $padding-horizontal * 1.1;
         width: 90%;
       }

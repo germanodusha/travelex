@@ -38,6 +38,10 @@
 
   &__faq {
     color: $black !important;
+
+    &::placeholder {
+      color: $black;
+    }
   }
 
   &__white {

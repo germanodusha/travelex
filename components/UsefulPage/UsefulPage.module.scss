@@ -5,8 +5,16 @@
 
   opacity: 1;
   position: absolute;
-  top: 40vh;
+  top: 33vh;
   transform-origin: left center;
+
+  @media (min-width: $min-width-mb) {
+    top: 15vh;
+  }
+
+  @media (min-width: $min-width-sm) {
+    top: 33vh;
+  }
 
   &__fixed {
     height: 38vh;
@@ -101,6 +109,7 @@
 }
 
 .form {
+  color: $black;
   min-height: 100vh;
   // padding-top: 5vh;
   overflow: hidden;

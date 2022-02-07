@@ -175,6 +175,9 @@ function Institucional({ instQS, instRS }) {
   const { locale } = useRouter()
   const { limits } = usePageLimits()
   const translate = useTranslations('About')
+
+  const themeOptions = { background: 'white' }
+
   // const [rightWidth, setrightWidth] = useState(0)
 
   // const mediaSize = rightWidth - limits.rightColumn.width
@@ -205,7 +208,7 @@ function Institucional({ instQS, instRS }) {
         />
       </div>
 
-      <ChangeThemeOnScroll theme="light" />
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
 
       <Bicolumn
         id="quem-somos"
@@ -277,6 +280,7 @@ function Institucional({ instQS, instRS }) {
       <ChangeThemeOnScroll
         theme="light"
         style={{ transform: 'translateY(-100%)' }}
+        options={themeOptions}
       />
       <ChangeThemeOnScroll theme="dark" />
       <Footer />

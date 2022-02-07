@@ -166,9 +166,12 @@ const RegisterForm = ({
                       ? translate('inputs.representativeName')
                       : translate('inputs.name')
                   }
-                  className={classNames({
-                    [styles['register-form__white-input']]: theme === 'white',
-                  })}
+                  className={classNames(
+                    {
+                      [styles['register-form__white-input']]: theme === 'white',
+                    },
+                    { [styles['button__faq']]: faqPage }
+                  )}
                 />
 
                 <FieldGroup>
@@ -180,17 +183,25 @@ const RegisterForm = ({
                         ? translate('inputs.representativeCpf')
                         : translate('inputs.cpf')
                     }
-                    className={classNames({
-                      [styles['register-form__white-input']]: theme === 'white',
-                    })}
+                    className={classNames(
+                      {
+                        [styles['register-form__white-input']]:
+                          theme === 'white',
+                      },
+                      { [styles['button__faq']]: faqPage }
+                    )}
                   />
                   <PhoneField
                     name="phone"
                     errorMessage={translate('errors.phoneInvalid')}
                     label={translate('inputs.phone')}
-                    className={classNames({
-                      [styles['register-form__white-input']]: theme === 'white',
-                    })}
+                    className={classNames(
+                      {
+                        [styles['register-form__white-input']]:
+                          theme === 'white',
+                      },
+                      { [styles['button__faq']]: faqPage }
+                    )}
                   />
                 </FieldGroup>
 
@@ -202,9 +213,12 @@ const RegisterForm = ({
                       ? translate('inputs.representativeEmail')
                       : translate('inputs.email')
                   }
-                  className={classNames({
-                    [styles['register-form__white-input']]: theme === 'white',
-                  })}
+                  className={classNames(
+                    {
+                      [styles['register-form__white-input']]: theme === 'white',
+                    },
+                    { [styles['button__faq']]: faqPage }
+                  )}
                 />
               </>
             )}

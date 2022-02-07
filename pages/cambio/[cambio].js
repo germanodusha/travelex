@@ -137,9 +137,9 @@ function ServicesContent({ markdowns }) {
               </Link>
             </div>
           ))}
-        </div>
-        <div className={styles['services__service-description']}>
-          <p>{translate(`services.${service.path}-banner`)}</p>
+          <div className={styles['services__service-description']}>
+            <p>{translate(`services.${service.path}-banner`)}</p>
+          </div>
         </div>
       </div>
 
