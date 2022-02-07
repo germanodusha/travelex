@@ -733,3 +733,15 @@
     }
   }
 }
+
+@media (min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Retina-specific stuff here */
+
+  .link-openacc {
+    padding-top: 0.05em;
+
+    @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      padding-top: 0.75em !important;
+    }
+  }
+}

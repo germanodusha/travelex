@@ -11,9 +11,11 @@ function FormPage({
   descriptionTitle,
   backgroundImage,
   hideFormType = false,
+  faq = false,
   formType = FormTypes.PESSOA_FISICA,
   menuTheme = 'light',
   menuOptions = {},
+  showGradient = false,
   theme = undefined,
   disableTheme = false,
   ...props
@@ -31,32 +33,43 @@ function FormPage({
 
   return (
     <Banner
-      showGradient={false}
+      showGradient={showGradient}
       image={backgroundImage}
       bannerClass={classNames({
         [styles['page-white']]: theme === 'white',
       })}
+      faq
     >
-      <div className={styles['page']}>
+      <div
+        className={classNames(styles['page'], {
+          [styles['page__bg']]: faq === true,
+        })}
+      >
+        <div
+          className={classNames(styles['page__form'], {
+            [styles['page__desc-white']]: theme === 'white',
+          })}
+          style={isMobile ? {} : { width: `${limits.rightColumn.x}px` }}
+        >
+          <RegisterForm
+            hideType={hideFormType}
+            formType={formType}
+            theme={theme}
+            faqPage={faq}
+            {...props}
+          />
+        </div>
+
         <div
           className={classNames(styles['page__desc'], {
             [styles['page__desc-white']]: theme === 'white',
           })}
-          style={isMobile ? {} : { width: `${limits.rightColumn.x}px` }}
+          style={isMobile ? {} : { width: `${limits.rightColumn.width}px` }}
         >
           {descriptionTitle && (
             <p className={styles['page__desc-title']}>{descriptionTitle}</p>
           )}
           {description && <p>{description}</p>}
-        </div>
-
-        <div className={styles['page__form']}>
-          <RegisterForm
-            hideType={hideFormType}
-            formType={formType}
-            theme={theme}
-            {...props}
-          />
         </div>
       </div>
     </Banner>

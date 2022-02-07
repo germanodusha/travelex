@@ -1,14 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react'
 import { useEffectOnce, useMountedState } from 'react-use'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useTranslations } from 'next-intl'
 import classNames from 'classnames'
 import { useMenuTheme, usePageLimits } from '@/contexts/LayoutContext'
 import { CambiosTypes, Services } from '@/enums/cambio'
-import mainLogoWhite from '../../../public/images/TravelexBranco.png'
-import mainLogoColorful from '../../../public/images/TravelexLogo.png'
+// import mainLogoWhite from '../../../public/images/TravelexBranco.png'
+// import mainLogoColorful from '../../../public/images/TravelexLogo.png'
 import styles from './Menu.module.scss'
 
 function SubMenu({ menuHover, menuTextHover, subMenu, subMenuPadding }) {
@@ -144,9 +145,15 @@ function MenuLinks({ visible, emptyMenu }) {
             >
               {/* Logo da parte desktop */}
               {theme === 'dark' || theme === 'white' ? (
-                <Image src={mainLogoWhite} alt="Travelex Logo Mobile" />
+                <img
+                  src="/images/TravelexBranco.png"
+                  alt="Travelex Logo Mobile"
+                />
               ) : (
-                <Image src={mainLogoColorful} alt="Travelex Logo Mobile" />
+                <img
+                  src="/images/TravelexLogo.png"
+                  alt="Travelex Logo Mobile"
+                />
               )}
             </div>
           </a>

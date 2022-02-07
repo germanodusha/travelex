@@ -89,6 +89,11 @@
   padding: 10vh $padding-horizontal 0;
   white-space: pre-line;
 
+  a {
+    color: $navy-blue;
+    text-decoration: underline;
+  }
+
   @media (min-width: $min-width-sm) {
     padding: 0 20vw 0 39vw;
     position: absolute;

@@ -24,16 +24,24 @@
 .button {
   border-bottom: 0.2rem solid transparent;
   color: $white;
-  font-size: 1.3em;
+  font-size: 1.5em;
   width: fit-content;
 
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
-    font-size: 2.3em;
+    font-size: 1.5em;
   }
 
   &:hover {
     border-bottom-color: $gray-second !important;
     color: $gray-second;
+  }
+
+  &__faq {
+    color: $black !important;
+
+    &::placeholder {
+      color: $black;
+    }
   }
 
   &__white {

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Title from '@/components/Title'
 import { usePageLimits } from '@/contexts/LayoutContext'
 import useIsMobile from '@/hooks/useIsMobile'
@@ -16,6 +17,23 @@ function Bicolumn({
   const { limits } = usePageLimits()
   const { theme } = useMenuTheme()
   const isMobile = useIsMobile()
+
+  const [rightWidth, setrightWidth] = useState(0)
+
+  // const mediaSize = rightWidth - limits.rightColumn.width
+  const mediaSize = rightWidth - limits.rightColumn.left - 20
+
+  useEffect(() => {
+    const onResize = () => {
+      setrightWidth(window.innerWidth)
+    }
+    onResize()
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
 
   return (
     <div>
@@ -44,10 +62,15 @@ function Bicolumn({
         </div>
 
         <div
-          className={styles['container__right']}
-          style={isMobile ? {} : { width: `${limits.rightColumn.width}px` }}
+          className={styles['container__page']}
+          style={isMobile ? {} : { width: `${mediaSize}px` }}
         >
-          {children}
+          <div
+            className={styles['container__right']}
+            style={isMobile ? {} : { width: `${limits.rightColumn.width}px` }}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>

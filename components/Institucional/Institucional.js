@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
@@ -7,7 +8,8 @@ import Banner from '@/components/Banner'
 import Footer from '@/components/Layout/Footer'
 import Bicolumn from '@/components/Bicolumn'
 import ChangeThemeOnScroll from '@/components/ChangeThemeOnScroll'
-import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
+// import useLockScrollFirstPage from '@/hooks/useLockScrollFirstPage'
+import Interweave from 'interweave'
 import { usePageLimits } from '@/contexts/LayoutContext'
 import styles from './Institucional.module.scss'
 // import bannerInstitutional from '../../public/images/bannerInstitutional.png'
@@ -18,9 +20,8 @@ import styles from './Institucional.module.scss'
 // import imgDestaque3 from '../../public/images/8.Institucional_carrossel3.jpg'
 import imgInstitutional from '../../public/images/9.Institucional_SOS1.jpg'
 import imgInstitutional2 from '../../public/images/10.Institucional_SOS2.jpg'
-
-import imgNext from '../../public/images/seta.svg'
 // import imgNextHover from '../../public/images/seta_hover.svg'
+import imgNext from '../../public/images/seta.svg'
 
 import useInterval from '@/hooks/useInterval'
 
@@ -113,7 +114,7 @@ function Carousel() {
       >
         {items.map(({ id, bg, left, right }) => (
           <div key={id} className={styles['carousel__items-item']}>
-            <img src={bg} alt="" objectFit="cover" />
+            <img src={bg} alt="" />
             <div className={styles['carousel__content']}>
               <div
                 className={styles['carousel__content-left']}
@@ -127,7 +128,7 @@ function Carousel() {
                 className={styles['carousel__content-right']}
                 style={{
                   left: `${limits.rightColumn.left}px`,
-                  width: `${limits.rightColumn.width}px`,
+                  // width: `${limits.rightColumn.width}px`,
                 }}
               >
                 <p>{right}</p>
@@ -145,8 +146,9 @@ function Carousel() {
         onClick={handlePrev}
         onPress={handlePrev}
         onKeyPress={() => {}}
-        role="button"
-        tabIndex={0}
+        role="presentation"
+        // role="button"
+        // tabIndex={0}
       >
         <Image src={imgNext} alt="" objectFit="cover" />
       </div>
@@ -159,8 +161,9 @@ function Carousel() {
         onClick={handleNext}
         onPress={handleNext}
         onKeyPress={() => {}}
-        role="button"
-        tabIndex={0}
+        role="presentation"
+        // role="button"
+        // tabIndex={0}
       >
         <Image src={imgNext} alt="" objectFit="cover" />
       </div>
@@ -168,34 +171,66 @@ function Carousel() {
   )
 }
 
-function Institucional() {
+function Institucional({ instQS, instRS }) {
+  const { locale } = useRouter()
+  const { limits } = usePageLimits()
   const translate = useTranslations('About')
 
-  useLockScrollFirstPage()
+  const themeOptions = { background: 'white' }
+
+  // const [rightWidth, setrightWidth] = useState(0)
+
+  // const mediaSize = rightWidth - limits.rightColumn.width
+  // const mediaSize = rightWidth - limits.rightColumn.left - 20
+
+  // useEffect(() => {
+  //   const onResize = () => {
+  //     setrightWidth(window.innerWidth)
+  //   }
+  //   onResize()
+  //   window.addEventListener('resize', onResize)
+
+  //   return () => {
+  //     window.removeEventListener('resize', onResize)
+  //   }
+  // }, [])
+
+  // useLockScrollFirstPage()
 
   return (
     <div className={styles['page']}>
       <ChangeThemeOnScroll theme="dark" />
-      <Banner
-        showGradient
-        title={translate('mainTitle')}
-        image="/images/5.Institucional_capa.jpg"
-      />
+      <div className={styles['page-limitation']}>
+        <Banner
+          showGradient
+          title={translate('mainTitle')}
+          image="/images/5.Institucional_capa.jpg"
+        />
+      </div>
 
-      <ChangeThemeOnScroll theme="light" />
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
 
       <Bicolumn
         id="quem-somos"
         title="Quem Somos"
         subTitle={translate('mainSubtitle')}
       >
-        <InstitucionalContent
+        {/* <InstitucionalContent
           text={translate('mainParagraph')}
           video={false}
           image={false}
           image2={false}
           extraText={false}
-        />
+        /> */}
+        <div
+          className={styles['media']}
+          style={{
+            left: `${limits.rightColumn.left}px`,
+            width: `${limits.rightColumn.width}px`,
+          }}
+        >
+          <Interweave noWrap content={instQS[locale]} />
+        </div>
       </Bicolumn>
 
       <Carousel />
@@ -211,6 +246,9 @@ function Institucional() {
           image2={false}
           extraText={false}
         />
+        {/* <div>
+          <Interweave noWrap content={instNT[locale]} />
+        </div> */}
       </Bicolumn>
 
       <Bicolumn
@@ -218,7 +256,7 @@ function Institucional() {
         title={'Responsabilidade\nSocioambiental'}
         subTitle={translate('tertiarySubtitle')}
       >
-        <InstitucionalContent
+        {/* <InstitucionalContent
           text={translate('tertiaryParagraph')}
           text2={translate('tertiaryParagraph2')}
           text3={translate('tertiaryParagraph3')}
@@ -226,12 +264,23 @@ function Institucional() {
           image
           image2
           extraText
-        />
+        /> */}
+
+        <div
+          className={styles['media']}
+          style={{
+            left: `${limits.rightColumn.left}px`,
+            width: `${limits.rightColumn.width}px`,
+          }}
+        >
+          <Interweave noWrap content={instRS[locale]} />
+        </div>
       </Bicolumn>
 
       <ChangeThemeOnScroll
         theme="light"
         style={{ transform: 'translateY(-100%)' }}
+        options={themeOptions}
       />
       <ChangeThemeOnScroll theme="dark" />
       <Footer />

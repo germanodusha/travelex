@@ -13,6 +13,7 @@
   }
 
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    min-height: 60vh;
     padding-left: $padding-horizontal * 5.4;
     padding-top: $menu-height * 4;
   }
@@ -108,6 +109,10 @@
       top: $menu-height;
       white-space: pre-line;
     }
+  }
+
+  &__page {
+    overflow: hidden;
   }
 
   &__right {

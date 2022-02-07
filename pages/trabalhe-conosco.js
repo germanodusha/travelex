@@ -29,6 +29,7 @@ function Cover(props) {
         formType={FormTypes.TRABALHE_CONOSCO}
         hideFormType
         disableTheme
+        showGradient
         {...props}
       />
       <ChangeThemeOnScroll

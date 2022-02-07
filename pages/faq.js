@@ -3,6 +3,7 @@ import { useTranslations } from 'use-intl'
 import { useMenuTheme } from '@/contexts/LayoutContext'
 import UsefulPage from '@/components/UsefulPage'
 import FAQAccordion from '@/components/FAQAccordion'
+// import { FormTypes } from '@/components/RegisterForm'
 
 function FAQ() {
   const translate = useTranslations('FAQ')
@@ -31,19 +32,19 @@ function FAQ() {
     },
     {
       id: 'faq4',
-      title: translate('questionOneTitle'),
-      content: translate('questionOne'),
+      title: translate('questionFourTitle'),
+      content: translate('questionFour'),
     },
     {
       id: 'faq5',
-      title: translate('questionTwoTitle'),
-      content: translate('questionTwo'),
+      title: translate('questionFiveTitle'),
+      content: translate('questionFive'),
     },
-    {
-      id: 'faq6',
-      title: translate('questionThreeTitle'),
-      content: translate('questionThree'),
-    },
+    // {
+    //   id: 'faq6',
+    //   title: translate('questionSixTitle'),
+    //   content: translate('questionSix'),
+    // },
   ]
 
   return (
@@ -52,15 +53,18 @@ function FAQ() {
       caption={translate('caption')}
       backgroundColor="#a6a6a6"
       color="#000"
+      description={translate('description')}
+      descriptionTitle={translate('descriptionTitle')}
       alwaysShowTitle={false}
       Wrapper="div"
     >
       <div className="faq-page">
-        <FAQAccordion theme="light" faqItems={faqItems} showContact />
+        <FAQAccordion theme="light" faqItems={faqItems} />
       </div>
 
       <style jsx>{`
         .faq-page {
+          margin-bottom: 8vh;
           padding-top: 10rem;
         }
       `}</style>

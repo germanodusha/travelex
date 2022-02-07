@@ -1,1 +1,5 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare blandit libero in fermentum. Integer placerat nisi quis justo interdum, nec consectetur nisl finibus. Vestibulum placerat magna non urna vehicula fringilla. Nullam vel purus ac lorem pulvinar posuere a ut neque. Quisque suscipit fermentum hendrerit. Integer augue nulla, pellentesque ac pellentesque posuere, sollicitudin id odio. Aenean ultrices ex sit amet neque posuere venenatis. Fusce volutpat rhoncus fermentum. Integer at lobortis nisi, id ultricies elit. Donec ut consectetur est, eget mattis orci. Nulla ut porta tellus. Integer non cursus quam. Donec quis placerat eros.
+A Ouvidoria do Travelex Partners é pautada por valores éticos pautados pelo cumprimento da legislação, imparcialidade, confidencialidade, independência e transparência, e presta atendimento de última instância para demandas relacionadas às nossas atividades que não tenham sido satisfatoriamente solucionadas pelos canais de atendimento comuns.
+A Ouvidoria, portanto, não substitui os nossos primeiros canais de contato acessíveis aos nossos clientes, devendo ser acionada somente como último recurso. Se for esse o caso, a Ouvidoria estará preparada para receber o contato e abordar situações de quaisquer naturezas com todo cuidado e celeridade.
+
+Entre em contato pelo seguinte e-mail:
+ouvidoria@travelexpartners.com.br

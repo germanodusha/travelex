@@ -1,28 +1,39 @@
 @import '@/styles/theme';
 
+.menu-bg {
+  // background-color: $cherry-red;
+  height: $menu-height * 1.4;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    height: $menu-height * 2.5;
+  }
+
+  &__dark {
+    background-color: transparent;
+  }
+
+  &__light {
+    background-color: $white;
+  }
+}
+
 .title {
-  @include config-transition-prop(opacity, top, transform);
+  @include config-transition-prop([opacity, top, transform], 0s);
 
+  height: 100vh;
   opacity: 1;
-  position: absolute;
-  top: 33vh;
+  position: fixed;
+  top: $menu-height * 5;
   transform-origin: left center;
-
-  @media (min-width: $min-width-mb) {
-    top: 15vh;
-  }
-
-  @media (min-width: $min-width-sm) {
-    top: 33vh;
-  }
-
-  &__fixed {
-    height: 38vh;
-    position: relative;
-  }
+  z-index: -1;
 
   &__txt {
-    @include config-transition-prop(margin-left);
+    @include config-transition-prop(margin-left, 0s);
+
     font-size: 18vw;
     margin: 0;
     padding-bottom: 0;
@@ -40,7 +51,7 @@
   }
 
   &__border {
-    @include config-transition-prop(width);
+    @include config-transition-prop(width, 0s);
 
     background-color: $navy-blue;
     height: 0.7em;
@@ -62,8 +73,9 @@
 
   &__second-page {
     opacity: 0;
-    top: 30vh;
-    transform: scale(0.7);
+    // position: sticky;
+    top: 0;
+    transform: scale(0.5);
 
     @media (min-width: $min-width-sm) {
       display: block;
@@ -79,7 +91,6 @@
 .caption {
   bottom: 0;
   display: none;
-  font-size: 1.5em;
   left: 5rem;
   position: absolute;
 
@@ -98,20 +109,24 @@
 }
 
 .content {
+  font-size: 1.5em;
+  height: 100%;
+  margin-top: 130vh;
   padding: 10vh $padding-horizontal 0;
   white-space: pre-line;
 
-  @media (min-width: $min-width-sm) {
-    padding: 0 20vw 0 39vw;
-    position: absolute;
-    top: 30vh;
+  a {
+    color: $navy-blue;
+    text-decoration: underline;
   }
-}
 
-.form {
-  color: $black;
-  min-height: 100vh;
-  // padding-top: 5vh;
-  overflow: hidden;
-  scroll-snap-align: start;
+  @media (min-width: $min-width-sm) {
+    margin-bottom: $menu-height * 1.8;
+    padding: 0 20vw 0 39vw;
+    position: relative;
+  }
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    font-size: 2.5em;
+  }
 }

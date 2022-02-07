@@ -12,19 +12,19 @@
   height: 100vh;
   justify-content: space-between;
   // ajuste
-  margin-bottom: $menu-height * 1.4;
+  // margin-bottom: $menu-height * 1.4;
   transform: translateY(-$menu-height * 1.4);
 
   @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
-    margin-bottom: $menu-height * 2.5;
+    // margin-bottom: $menu-height * 2.5;
     transform: translateY(-$menu-height * 2.5);
   }
 
   &__header {
-    background-color: $white;
+    background-color: $navy-blue;
     height: $menu-height * 1.4;
     position: sticky;
-    top: 0;
+    top: $menu-height * 0.1;
 
     @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
       height: $menu-height * 2.5;
@@ -48,10 +48,17 @@
 
   &__border {
     background-color: $white;
+    bottom: 0;
     height: 0.7em;
     margin-bottom: 1.5rem;
     margin-top: 1em;
+    position: absolute;
     width: 10vw;
+    z-index: 2;
+
+    @media (max-width: $max-width-sm) {
+      display: none;
+    }
 
     @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
       margin-bottom: 4.5rem;
@@ -84,6 +91,11 @@
   display: flex;
   min-height: 100vh;
   scroll-snap-align: start;
+  transform: translateY(-$menu-height * 1.39);
+
+  @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+    transform: translateY(-$menu-height * 2.49);
+  }
 
   p {
     color: $navy-blue;
@@ -131,6 +143,7 @@
 
       p,
       h3 {
+        font-size: 1.5em;
         margin: 0;
       }
 
@@ -144,10 +157,10 @@
       display: flex;
       flex-direction: column;
       position: sticky;
-      top: $menu-height * 1.85;
+      top: $menu-height * 3;
 
       @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
-        top: $menu-height * 3.3;
+        top: $menu-height * 5.3;
       }
     }
 
@@ -156,6 +169,12 @@
 
       @media (min-width: $min-width-sm) {
         display: block;
+        margin-top: $menu-height * 1.4;
+      }
+
+      @media (min-width: $min-width-lg) {
+        display: block;
+        margin-top: $menu-height * 2.5;
       }
     }
   }
@@ -166,29 +185,65 @@
       position: relative;
       width: 100%;
 
+      @media (min-width: $min-width-sm) {
+        display: block;
+        margin-top: $menu-height * 1.4;
+      }
+
+      @media (min-width: $min-width-lg) {
+        display: block;
+        margin-top: $menu-height * 2.5;
+      }
+
       img {
-        filter: blur(7px) brightness(110%);
+        // filter: blur(7px);
         height: 100vh;
         transform: scale(1.1);
       }
     }
 
     &-description {
-      font-weight: bold;
-      padding: 0 $padding-horizontal;
-      position: absolute;
-      top: 0;
+      // font-weight: bold;
+      // top: 0;
+      padding: 20vh $padding-horizontal;
+      position: sticky;
+      top: 40vh;
 
       @media (min-width: $min-width-sm) {
-        padding-left: $padding-horizontal * 4;
-        width: 70%;
+        margin-top: 2em;
+        padding-left: $padding-horizontal * 1.1;
+        width: 90%;
+      }
+
+      p {
+        font-size: 1.5em;
+        padding-top: $menu-height * 0.7 !important;
+
+        @media (min-width: $min-width-sm) {
+          // font-size: 3em;
+          padding-top: $menu-height * 0.574 !important;
+        }
+
+        @media (min-width: $min-width-lg) {
+          // font-size: 5em;
+          padding-top: $menu-height * 0.648 !important;
+        }
       }
     }
 
     &-body {
+      padding-bottom: $menu-height * 2;
       padding-right: $padding-horizontal * 1.1;
-      padding-top: $menu-height * 1.4;
+      padding-top: $menu-height;
       scroll-snap-align: start;
+
+      @media (min-width: $min-width-sm) {
+        padding-top: $menu-height * 1.4;
+      }
+
+      @media (min-width: $min-width-lg) {
+        padding-top: $menu-height * 2.5;
+      }
 
       h2 {
         color: $navy-blue;
@@ -221,14 +276,16 @@
         white-space: pre-line;
 
         @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
-          padding-top: $menu-height * 1.2;
+          padding-top: $menu-height * 1.12;
         }
       }
     }
 
     &-mobile {
+      // background-color: $navy-blue;
       display: block;
-      padding-top: $menu-height * 1.4;
+      // padding-top: $menu-height * 1.4;
+      transform: translateY(-1px);
 
       @media (min-width: $min-width-sm) {
         display: none;

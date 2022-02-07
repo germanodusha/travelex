@@ -4,15 +4,41 @@
   color: $white;
   display: flex;
   flex: 1 1;
-  flex-direction: column;
+  flex-direction: column-reverse;
   height: 100%;
+  justify-content: flex-end;
   padding: $padding-vertical $padding-horizontal;
   padding-top: 15vh;
 
   @media (min-width: $min-width-sm) {
     flex-direction: row;
+    justify-content: unset;
     padding: unset;
     padding-top: 25vh;
+  }
+
+  &__bg {
+    background-color: $gray-light;
+  }
+
+  &__form {
+    padding: 0 $padding-horizontal * 1.4;
+
+    @media (min-width: $min-width-mb) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: $min-width-sm) {
+      font-size: 1rem;
+    }
+
+    @media (min-width: $min-width-md) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: $min-width-lg) {
+      font-size: 2.5rem;
+    }
   }
 
   &-white {
@@ -20,24 +46,40 @@
   }
 
   &__desc {
+    font-size: 1.2rem;
     padding-bottom: 0;
     padding-right: 20vw;
+    white-space: pre-line;
+
+    @media (min-width: $min-width-mb) {
+      font-size: 1.6rem;
+    }
 
     @media (min-width: $min-width-sm) {
+      font-size: 1.2rem;
       padding-bottom: $padding-vertical * 2;
       padding-right: $padding-vertical * 4;
     }
 
+    @media (min-width: $min-width-md) {
+      font-size: 1.5rem;
+    }
+
     @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
-      font-size: 1.8em;
+      font-size: 2.2em;
     }
 
     &-white {
       color: $navy-blue;
     }
 
+    &-faq {
+      // color: $black;
+      color: $navy-blue;
+    }
+
     p {
-      opacity: 0.5;
+      opacity: 0.8;
     }
 
     &-title {
@@ -46,7 +88,15 @@
       opacity: 1 !important;
       padding: 0;
 
-      @media (min-width: $min-width-lg) and (max-width: $min-width-xl) {
+      @media (min-width: $min-width-mb) {
+        font-size: 2.8rem;
+      }
+
+      @media (min-width: $min-width-sm) {
+        font-size: 2rem;
+      }
+
+      @media (min-width: $min-width-lg) {
         font-size: 2.5rem;
       }
     }
