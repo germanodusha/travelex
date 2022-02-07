@@ -3,7 +3,11 @@
 .page {
   // scroll-behavior: smooth;
   // scroll-snap-type: y mandatory;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+
+  &-limitation {
+    overflow-x: hidden;
+  }
 }
 
 .media {
@@ -64,7 +68,7 @@
       width: 100vw;
 
       img {
-        filter: blur(4px);
+        filter: blur(4px) opacity(0.8);
         height: 100vh;
         width: 100vw;
       }

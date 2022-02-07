@@ -229,6 +229,7 @@ function FAQ() {
 
   return (
     <div className={styles['faq']}>
+      <ChangeThemeOnScroll theme="light" options={themeOptions} />
       <FAQAccordion
         showTitle
         title={translate('FAQ.title')}

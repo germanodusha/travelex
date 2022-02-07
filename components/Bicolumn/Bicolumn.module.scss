@@ -111,6 +111,10 @@
     }
   }
 
+  &__page {
+    overflow: hidden;
+  }
+
   &__right {
     font-size: 1.8em;
     padding: 0 $padding-horizontal * 0.5;

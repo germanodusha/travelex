@@ -146,8 +146,9 @@ function Carousel() {
         onClick={handlePrev}
         onPress={handlePrev}
         onKeyPress={() => {}}
-        role="button"
-        tabIndex={0}
+        role="presentation"
+        // role="button"
+        // tabIndex={0}
       >
         <Image src={imgNext} alt="" objectFit="cover" />
       </div>
@@ -160,8 +161,9 @@ function Carousel() {
         onClick={handleNext}
         onPress={handleNext}
         onKeyPress={() => {}}
-        role="button"
-        tabIndex={0}
+        role="presentation"
+        // role="button"
+        // tabIndex={0}
       >
         <Image src={imgNext} alt="" objectFit="cover" />
       </div>
@@ -195,11 +197,13 @@ function Institucional({ instQS, instRS }) {
   return (
     <div className={styles['page']}>
       <ChangeThemeOnScroll theme="dark" />
-      <Banner
-        showGradient
-        title={translate('mainTitle')}
-        image="/images/5.Institucional_capa.jpg"
-      />
+      <div className={styles['page-limitation']}>
+        <Banner
+          showGradient
+          title={translate('mainTitle')}
+          image="/images/5.Institucional_capa.jpg"
+        />
+      </div>
 
       <ChangeThemeOnScroll theme="light" />
 
